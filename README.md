@@ -43,6 +43,11 @@ unsafe archives.
 owner can merge or delete. See [CONTRIBUTING.md](CONTRIBUTING.md) for the exact
 fork → publish → PR workflow.
 
+The Git Plugin Marketplace plugin can do it automatically: tick **Submit as a
+pull request** in the Publish dialog, or run
+`git_marketplace_cli.py submit <folder>`. It forks, commits to a branch and
+opens the PR; only the owner merges.
+
 Maintainer deletion: only the owner's write token can commit a removal; the
 plugin's **Delete from marketplace** action fails with 403 for everyone else.
 
