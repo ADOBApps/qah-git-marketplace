@@ -7,7 +7,7 @@ Git instead of Firebase.
 
 ## For users
 
-1. Download **`git_plugin_marketplace-1.0.0.qplugin.zip`** from
+1. Download the latest **`git_plugin_marketplace-*.qplugin.zip`** from
    [Releases](https://github.com/ADOBApps/qah-git-marketplace/releases/latest).
 2. In QAH: **Plugins → Import Plugin…** and choose the ZIP.
 3. Restart QAH / scan plugins, then open **Git Plugin Marketplace**.
