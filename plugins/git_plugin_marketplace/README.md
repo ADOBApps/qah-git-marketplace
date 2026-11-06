@@ -148,9 +148,16 @@ Token resolution order:
 
 Create a **fine-grained token** with:
 
-- *Repository access*: the marketplace repository (and any repo you publish
-  from, if it is private),
-- *Permissions*: **Contents: Read and write**.
+- *Repository access*: the marketplace repository (and your fork, if you submit
+  pull requests),
+- *Permissions*:
+  - **Contents: Read and write** on the marketplace (owner) or on your fork
+    (contributor),
+  - **Pull requests: Read and write** on the upstream marketplace when you use
+    **Submit as a pull request**.
+
+A classic PAT with `public_repo` works for public repositories; `repo` also
+covers private ones.
 
 The token is stored in `~/.qah/git_marketplace.json` with mode `0600` on
 Linux/macOS. On Windows it relies on the user-profile ACL. Never commit that
@@ -236,6 +243,34 @@ What happens:
    are written in **one Git commit** using the GitHub Git Data API,
 5. an existing version with the same number is replaced; other versions stay.
 
+### Submit as a pull request
+
+For a protected/public catalog where only the owner merges:
+
+GUI: **Publish Plugin…** → tick **Submit as a pull request (fork + PR)**. It is
+pre-selected automatically when your token does not have write access to the
+upstream repository.
+
+CLI:
+
+```powershell
+py -3 git_marketplace_cli.py submit "C:\path\to\plugin" `
+    --changelog "What changed"
+```
+
+The plugin:
+
+1. builds and validates the ZIP exactly like `publish`,
+2. identifies your GitHub account,
+3. creates (or reuses) your fork of the marketplace,
+4. creates a branch from the upstream head,
+5. commits `index.json`, manifest, README and ZIP to **your fork**,
+6. opens a pull request against the upstream base branch.
+
+Nothing changes in the upstream catalog until the owner merges. CI (`validate`)
+runs on the PR. Failures delete the temporary branch. Add `--draft` for a draft
+PR.
+
 Build locally without uploading:
 
 ```powershell
@@ -273,8 +308,9 @@ write**:
 
 See the catalog's
 [CONTRIBUTING.md](https://github.com/ADOBApps/qah-git-marketplace/blob/master/CONTRIBUTING.md).
-The GUI/CLI publish action commits directly, so contributors point it at their
-own fork first and then open the PR.
+The plugin can open the PR automatically: tick **Submit as a pull request** in
+the Publish dialog (or run `git_marketplace_cli.py submit`). It forks, commits to
+a branch and opens the PR; only the owner merges.
 
 ---
 
@@ -314,6 +350,8 @@ info <id>                   full JSON for one plugin
 install <id> [--version]    download, verify and install
 uninstall <id>              remove from the user plugin folder
 publish <folder> [--version] [--changelog] [--homepage]
+                            [--name] [--author] [--category] [--description]
+submit  <folder> [--version] [--changelog] [--homepage] [--draft]
                             [--name] [--author] [--category] [--description]
 delete <id> [--version|--all]
 init [--name] [--description]
