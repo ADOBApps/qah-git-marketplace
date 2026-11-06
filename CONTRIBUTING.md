@@ -20,7 +20,26 @@ On GitHub: **Fork** → `YOUR_USER/qah-git-marketplace`.
 
 ## 2. Build and publish to your fork
 
-### CLI (recommended)
+### Automatic pull request (recommended)
+
+The Git Plugin Marketplace plugin can do the whole fork → branch → PR flow:
+
+- **GUI:** Publish Plugin → tick **Submit as a pull request (fork + PR)**.
+- **CLI:**
+  ```powershell
+  py -3 git_marketplace_cli.py submit "C:\path\to\your_plugin" `
+      --changelog "Describe this release"
+  ```
+
+It builds the ZIP, creates/reuses your fork, commits the catalog + files to a
+branch, and opens the PR against `ADOBApps:master`. The temporary branch is
+deleted if the PR cannot be created.
+
+Token: a classic PAT with `public_repo`, or a fine-grained token with
+**Contents: Read and write** on your fork and **Pull requests: Read and write**
+on the upstream repository.
+
+### Manual publish to your fork
 
 You need a token that can write to **your fork**:
 
@@ -41,7 +60,7 @@ This writes `index.json`, `plugins/<id>/manifest.json`, the optional README and
 the ZIP to **your fork** in one commit. It does not touch the upstream
 repository.
 
-### GUI
+### GUI settings
 
 1. **Git Plugin Marketplace → Settings**
 2. Owner: `YOUR_USER`, Repository: `qah-git-marketplace`, Branch: `master`
