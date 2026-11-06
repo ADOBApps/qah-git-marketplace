@@ -89,3 +89,6 @@ repository and only publish approved ZIPs here.
 ## Questions
 
 Open an issue or contact [@ADOBApps](https://github.com/ADOBApps).
+
+<!-- CI smoke test; not merged. -->
+
