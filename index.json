@@ -2,7 +2,7 @@
   "schema": 1,
   "name": "QAH Git Marketplace",
   "description": "Plugins for Quantum Analysis Helper, stored in Git.",
-  "updated": "2026-11-06T22:19:23Z",
+  "updated": "2026-11-06T22:28:09Z",
   "plugins": [
     {
       "id": "git_plugin_marketplace",
@@ -30,9 +30,19 @@
           "changelog": "Git Plugin Marketplace 1.0.0: public catalog defaults and pull-request contribution workflow.",
           "published": "2026-11-06T22:19:23Z",
           "yanked": false
+        },
+        {
+          "version": "1.1.0",
+          "path": "plugins/git_plugin_marketplace/1.1.0/git_plugin_marketplace-1.1.0.qplugin.zip",
+          "url": "",
+          "sha256": "2577a42dc1461ec177c4650ab31d659f6be54f57e3b740d5a22ae8ef58784b9c",
+          "size": 52918,
+          "changelog": "Automatic pull-request submission: fork, branch, commit and open a PR from the GUI or CLI.",
+          "published": "2026-11-06T22:28:09Z",
+          "yanked": false
         }
       ],
-      "version": "1.0.0"
+      "version": "1.1.0"
     },
     {
       "id": "wheel_plugin_manager",
