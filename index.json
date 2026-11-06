@@ -2,8 +2,38 @@
   "schema": 1,
   "name": "QAH Git Marketplace",
   "description": "Plugins for Quantum Analysis Helper, stored in Git.",
-  "updated": "2026-11-06T21:58:25Z",
+  "updated": "2026-11-06T22:18:46Z",
   "plugins": [
+    {
+      "id": "git_plugin_marketplace",
+      "name": "Git Plugin Marketplace",
+      "author": "Acxel Orozco",
+      "description": "Discover, install, update, publish and delete QAH plugins using a Git repository (GitHub) instead of Firebase.",
+      "category": "development",
+      "type": "python",
+      "dependencies": [],
+      "requires_qah": "2.0.8",
+      "homepage": "",
+      "tags": [],
+      "price": 0.0,
+      "currency": "USD",
+      "price_model": "free",
+      "license_type": "free",
+      "max_activations": 100,
+      "versions": [
+        {
+          "version": "1.0.0",
+          "path": "plugins/git_plugin_marketplace/1.0.0/git_plugin_marketplace-1.0.0.qplugin.zip",
+          "url": "",
+          "sha256": "5ff7bac712762367482e6b94014ceba4ba40f76276d8a9d9f1bbbcebc68ddc21",
+          "size": 49543,
+          "changelog": "Git Plugin Marketplace 1.0.0: public catalog defaults and pull-request contribution workflow.",
+          "published": "2026-11-06T22:18:46Z",
+          "yanked": false
+        }
+      ],
+      "version": "1.0.0"
+    },
     {
       "id": "wheel_plugin_manager",
       "name": "Wheel Plugin Manager",
