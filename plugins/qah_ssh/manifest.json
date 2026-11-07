@@ -1,0 +1,21 @@
+{
+  "name": "QAH SSH",
+  "id": "qah_ssh",
+  "version": "3.7.0",
+  "author": "Acxel Orozco",
+  "description": "Enhanced Cluster Connector with folder upload/download, server-side compressed downloads, temporal files and credential history",
+  "type": "python",
+  "category": "tools",
+  "main": "__init__.py",
+  "dependencies": [
+    "cryptography",
+    "json",
+    "os",
+    "paramiko",
+    "pathlib",
+    "stat",
+    "sys",
+    "tempfile",
+    "typing"
+  ]
+}
