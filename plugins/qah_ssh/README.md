@@ -105,6 +105,6 @@ button in the terminal toolbar to fetch the cluster command list again.
 | `one_click_importer.py` | Simplified plugin installation |
 | `debug_plugin_import.py` | Debug utilities for plugin loading |
 
-Version: 3.9.1
+Version: 3.9.2
 Author: Acxel Orozco
 Created: 2026-02-07

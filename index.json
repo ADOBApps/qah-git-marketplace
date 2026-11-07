@@ -2,7 +2,7 @@
   "schema": 1,
   "name": "QAH Git Marketplace",
   "description": "Plugins for Quantum Analysis Helper, stored in Git.",
-  "updated": "2026-11-07T17:17:34Z",
+  "updated": "2026-11-07T17:31:57Z",
   "plugins": [
     {
       "id": "git_plugin_marketplace",
@@ -160,9 +160,19 @@
           "changelog": "QAH SSH 3.9.1: moves the Transfer Queue out of the file browser into its own main tab, next to SSH Browser, Text Editor and Temporary Files. Queue behaviour and existing immediate upload/download buttons are unchanged.",
           "published": "2026-11-07T17:17:34Z",
           "yanked": false
+        },
+        {
+          "version": "3.9.2",
+          "path": "plugins/qah_ssh/3.9.2/qah_ssh-3.9.2.qplugin.zip",
+          "url": "",
+          "sha256": "313de735c87a59cb83f396f730e76f1e0369438033599dd04b46a235ae52e423",
+          "size": 56323,
+          "changelog": "QAH SSH 3.9.2: places all Transfer Queue buttons on one row and shortens the control labels to Pause, Cancel and Clear. Queue behaviour is unchanged.",
+          "published": "2026-11-07T17:31:57Z",
+          "yanked": false
         }
       ],
-      "version": "3.9.1"
+      "version": "3.9.2"
     },
     {
       "id": "qah_ws_client",
