@@ -44,6 +44,28 @@ files individually.
 Large archives still use the chunked transfer path, so multi-GB downloads keep
 flat memory use and progress reporting.
 
+## Transfer queue
+
+The file browser includes a **Transfer Queue** below the file list. It runs
+uploads and downloads one at a time, so you can select several transfers and
+let them finish without waiting between dialogs.
+
+- **Upload Files** / **Upload Folder**: choose local items and add them to the
+  queue. The destination is the remote folder shown when you add the job.
+- **Download**: queue the currently selected remote files/folders. If
+  **Compress on server (tar.gz)** is checked, the queued job also compresses,
+  downloads and extracts the archive.
+- **Pause queue**: lets the current transfer finish, then stops before the next
+  job. Click **Resume queue** to continue.
+- **Cancel current**: cancels the active transfer. Queued jobs remain in the
+  list.
+- **Clear finished**: removes completed, failed and canceled rows.
+
+The original **Upload File**, **Upload Folder** and **Download** buttons still
+run immediately for single-transfer use. Queue jobs capture their source and
+destination when added, so navigating to another remote folder does not move an
+already queued upload or download.
+
 ## Credential manager
 
 **Use in Form** fills the connection fields from a saved credential.
@@ -83,6 +105,6 @@ button in the terminal toolbar to fetch the cluster command list again.
 | `one_click_importer.py` | Simplified plugin installation |
 | `debug_plugin_import.py` | Debug utilities for plugin loading |
 
-Version: 3.8.1
+Version: 3.9.0
 Author: Acxel Orozco
 Created: 2026-02-07
