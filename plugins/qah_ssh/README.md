@@ -46,9 +46,9 @@ flat memory use and progress reporting.
 
 ## Transfer queue
 
-The file browser includes a **Transfer Queue** below the file list. It runs
-uploads and downloads one at a time, so you can select several transfers and
-let them finish without waiting between dialogs.
+The plugin includes a separate **Transfer Queue** tab, next to **SSH Browser**
+and **Text Editor**. It runs uploads and downloads one at a time, so you can
+select several transfers and let them finish without waiting between dialogs.
 
 - **Upload Files** / **Upload Folder**: choose local items and add them to the
   queue. The destination is the remote folder shown when you add the job.
@@ -105,6 +105,6 @@ button in the terminal toolbar to fetch the cluster command list again.
 | `one_click_importer.py` | Simplified plugin installation |
 | `debug_plugin_import.py` | Debug utilities for plugin loading |
 
-Version: 3.9.0
+Version: 3.9.1
 Author: Acxel Orozco
 Created: 2026-02-07
