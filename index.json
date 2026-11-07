@@ -2,7 +2,7 @@
   "schema": 1,
   "name": "QAH Git Marketplace",
   "description": "Plugins for Quantum Analysis Helper, stored in Git.",
-  "updated": "2026-11-06T22:31:04Z",
+  "updated": "2026-11-07T05:02:28Z",
   "plugins": [
     {
       "id": "git_plugin_marketplace",
@@ -53,6 +53,36 @@
         }
       ],
       "version": "1.1.1"
+    },
+    {
+      "id": "luaqah_studio",
+      "name": "LuaQAH Studio",
+      "author": "Acxel Orozco",
+      "description": "A professional visual programming studio for Lua inside QAH: typed blocks, connection-aware code generation, undo/redo, syntax-highlighted preview and an interactive Lua terminal.",
+      "category": "development",
+      "type": "python",
+      "dependencies": [],
+      "requires_qah": "",
+      "homepage": "",
+      "tags": [],
+      "price": 0.0,
+      "currency": "USD",
+      "price_model": "free",
+      "license_type": "free",
+      "max_activations": 0,
+      "versions": [
+        {
+          "version": "2.1.0",
+          "path": "plugins/luaqah_studio/2.1.0/luaqah_studio-2.1.0.qplugin.zip",
+          "url": "",
+          "sha256": "08a266e1699a24512db5594953cf2423cad3ebb4389b47a7458a08d036cec542",
+          "size": 42549,
+          "changelog": "",
+          "published": "2026-11-07T05:02:28Z",
+          "yanked": false
+        }
+      ],
+      "version": "2.1.0"
     },
     {
       "id": "wheel_plugin_manager",
