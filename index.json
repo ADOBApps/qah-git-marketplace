@@ -2,7 +2,7 @@
   "schema": 1,
   "name": "QAH Git Marketplace",
   "description": "Plugins for Quantum Analysis Helper, stored in Git.",
-  "updated": "2026-11-07T06:22:40Z",
+  "updated": "2026-11-07T06:33:54Z",
   "plugins": [
     {
       "id": "git_plugin_marketplace",
@@ -83,6 +83,46 @@
         }
       ],
       "version": "2.1.0"
+    },
+    {
+      "id": "qah_ssh",
+      "name": "QAH SSH",
+      "author": "Acxel Orozco",
+      "description": "Enhanced Cluster Connector with folder upload/download, server-side compressed downloads, temporal files and credential history",
+      "category": "tools",
+      "type": "python",
+      "dependencies": [
+        "cryptography",
+        "json",
+        "os",
+        "paramiko",
+        "pathlib",
+        "stat",
+        "sys",
+        "tempfile",
+        "typing"
+      ],
+      "requires_qah": "",
+      "homepage": "",
+      "tags": [],
+      "price": 0.0,
+      "currency": "USD",
+      "price_model": "free",
+      "license_type": "free",
+      "max_activations": 0,
+      "versions": [
+        {
+          "version": "3.7.0",
+          "path": "plugins/qah_ssh/3.7.0/qah_ssh-3.7.0.qplugin.zip",
+          "url": "",
+          "sha256": "01d966a8bc53042261a8f4615f2c919beddde6fc9538dd842023ddb63bfeca9d",
+          "size": 42221,
+          "changelog": "QAH SSH 3.7.0: server-side tar.gz compression for batch downloads, safe local extraction, automatic remote temp cleanup, compressed context-menu action and backup-file exclusion.",
+          "published": "2026-11-07T06:33:54Z",
+          "yanked": false
+        }
+      ],
+      "version": "3.7.0"
     },
     {
       "id": "qah_ws_client",
