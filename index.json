@@ -2,7 +2,7 @@
   "schema": 1,
   "name": "QAH Git Marketplace",
   "description": "Plugins for Quantum Analysis Helper, stored in Git.",
-  "updated": "2026-11-07T14:16:56Z",
+  "updated": "2026-11-07T15:06:17Z",
   "plugins": [
     {
       "id": "git_plugin_marketplace",
@@ -88,7 +88,7 @@
       "id": "qah_ssh",
       "name": "QAH SSH",
       "author": "Acxel Orozco",
-      "description": "Enhanced Cluster Connector with folder upload/download, server-side compressed downloads, command auto-complete, custom icon, temporal files and credential history",
+      "description": "Enhanced Cluster Connector with folder upload/download, queued transfers, server-side compressed downloads, command auto-complete, custom icon, temporal files and credential history",
       "category": "tools",
       "type": "python",
       "dependencies": [
@@ -140,9 +140,19 @@
           "changelog": "QAH SSH 3.8.1: fixes Credential Manager 'Use in Form'. Saved credentials now store the encrypted password token in the credential index, so the form is filled even if shh_info_history.json is missing. Legacy entries fill host/port/user and prompt for the password once.",
           "published": "2026-11-07T06:57:09Z",
           "yanked": false
+        },
+        {
+          "version": "3.9.0",
+          "path": "plugins/qah_ssh/3.9.0/qah_ssh-3.9.0.qplugin.zip",
+          "url": "",
+          "sha256": "8448991c214bf3d9a7363578d8dc5f1d21b990069c14c79ddd33ffb58031ba08",
+          "size": 56064,
+          "changelog": "QAH SSH 3.9.0: adds a sequential transfer queue for uploads, folder uploads, normal downloads and compressed tar.gz downloads, with pause/resume, cancel current, clear finished and per-job status. Existing Upload/Download buttons keep their immediate behaviour.",
+          "published": "2026-11-07T15:06:17Z",
+          "yanked": false
         }
       ],
-      "version": "3.8.1"
+      "version": "3.9.0"
     },
     {
       "id": "qah_ws_client",
