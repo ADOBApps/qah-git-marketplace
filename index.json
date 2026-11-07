@@ -2,7 +2,7 @@
   "schema": 1,
   "name": "QAH Git Marketplace",
   "description": "Plugins for Quantum Analysis Helper, stored in Git.",
-  "updated": "2026-11-07T05:02:28Z",
+  "updated": "2026-11-07T05:19:42Z",
   "plugins": [
     {
       "id": "git_plugin_marketplace",
@@ -83,6 +83,36 @@
         }
       ],
       "version": "2.1.0"
+    },
+    {
+      "id": "secure_share",
+      "name": "Secure Share",
+      "author": "Acxel Orozco",
+      "description": "Encrypted text, file and folder exchange between QAH computers over the LAN or through a private Git relay, with per-device key pairing.",
+      "category": "tools",
+      "type": "python",
+      "dependencies": [],
+      "requires_qah": "",
+      "homepage": "",
+      "tags": [],
+      "price": 0.0,
+      "currency": "USD",
+      "price_model": "free",
+      "license_type": "free",
+      "max_activations": 100,
+      "versions": [
+        {
+          "version": "1.0.0",
+          "path": "plugins/secure_share/1.0.0/secure_share-1.0.0.qplugin.zip",
+          "url": "",
+          "sha256": "d5af14dc58d8a0b80efb7f2f29500d67a0d1a0134413caff093c2a7d269032d6",
+          "size": 253832,
+          "changelog": "Secure Share 1.0.0: encrypted text, file and folder exchange over LAN or a private Git relay, with per-device pairing and a PDF user guide.",
+          "published": "2026-11-07T05:19:42Z",
+          "yanked": false
+        }
+      ],
+      "version": "1.0.0"
     },
     {
       "id": "wheel_plugin_manager",
