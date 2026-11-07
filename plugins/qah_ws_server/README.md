@@ -10,6 +10,16 @@ commands on this computer, and streams stdout, stderr and the exit code back.
 > understand port forwarding, firewalls and the password/arming model. There is
 > no autostart; the server listens only after you click **Start server**.
 
+## Documentation tab
+
+The plugin includes an offline **Documentation** tab with:
+
+- the recommended Tailscale setup for private remote access,
+- same-LAN and public port-forwarding notes,
+- Cloudflare Tunnel requirements and current limitations,
+- the planned relay mode (L4 TCP vs L7 WebSocket),
+- security checklist, troubleshooting table, data paths and invite contents.
+
 ---
 
 ## Install
@@ -50,6 +60,28 @@ the exact command, client and working directory. Choose **Allow once** or
 **Deny**.
 
 ---
+
+## Relay mode (no inbound port)
+
+Relay mode makes the server connect **outbound** to a rendezvous relay. The
+relay copies TLS bytes, so certificate pinning, pairing and application
+encryption stay end-to-end. Direct mode is still the default.
+
+1. Copy `relay_server.py` to a machine with a public TCP port and run:
+
+   ```powershell
+   python relay_server.py --host 0.0.0.0 --port 45901
+   ```
+
+2. Open TCP `45901` in that machine's firewall.
+3. In **QAH WS Server → Relay**, select **Relay**, enter the relay host and
+   port, generate a room and token, and save.
+4. Start the server, create a pairing invite, and send it to the client.
+5. The client imports the relay details from the invite automatically.
+
+The **Waiting slots** setting controls how many clients can be paired at the
+same time. The relay sees only connection metadata; it cannot read commands or
+output.
 
 ## Auto-approve modes
 
@@ -162,9 +194,11 @@ output content.
 ```text
 manifest.json
 __init__.py
-ws_common.py        WSS, TLS certificate, crypto, invite helpers
-server_core.py      pairing, clients, policy, execution, audit
+ws_common.py        WSS, TLS certificate, crypto, invite, relay client helpers
+server_core.py      pairing, clients, policy, execution, audit, relay transport
 server_ui.py        PySide6 UI
+documentation.py    offline Documentation tab
+relay_server.py     standalone outbound rendezvous relay
 icon.svg
 README.md
 LICENSE.md

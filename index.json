@@ -2,7 +2,7 @@
   "schema": 1,
   "name": "QAH Git Marketplace",
   "description": "Plugins for Quantum Analysis Helper, stored in Git.",
-  "updated": "2026-11-07T06:57:09Z",
+  "updated": "2026-11-07T14:15:21Z",
   "plugins": [
     {
       "id": "git_plugin_marketplace",
@@ -220,9 +220,19 @@
           "changelog": "QAH WS Server 1.0.1: fall back to the server user's home when a client sends a missing working directory.",
           "published": "2026-11-07T06:04:00Z",
           "yanked": false
+        },
+        {
+          "version": "1.2.0",
+          "path": "plugins/qah_ws_server/1.2.0/qah_ws_server-1.2.0.qplugin.zip",
+          "url": "",
+          "sha256": "91bb580f7b824196f8489e3cece25575985a0c5d5f6d598607c319d6749267d0",
+          "size": 48186,
+          "changelog": "QAH WS Server 1.2.0: adds outbound relay mode (bundled relay_server.py), a Relay tab, and an offline Documentation tab covering Tailscale, Cloudflare Tunnel, relay mode, security and troubleshooting. Direct mode remains the default and old settings keep working.",
+          "published": "2026-11-07T14:15:21Z",
+          "yanked": false
         }
       ],
-      "version": "1.0.1"
+      "version": "1.2.0"
     },
     {
       "id": "secure_share",
