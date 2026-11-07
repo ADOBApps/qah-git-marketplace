@@ -2,7 +2,7 @@
   "schema": 1,
   "name": "QAH Git Marketplace",
   "description": "Plugins for Quantum Analysis Helper, stored in Git.",
-  "updated": "2026-11-07T17:31:57Z",
+  "updated": "2026-11-07T18:02:36Z",
   "plugins": [
     {
       "id": "git_plugin_marketplace",
@@ -170,9 +170,19 @@
           "changelog": "QAH SSH 3.9.2: places all Transfer Queue buttons on one row and shortens the control labels to Pause, Cancel and Clear. Queue behaviour is unchanged.",
           "published": "2026-11-07T17:31:57Z",
           "yanked": false
+        },
+        {
+          "version": "3.9.3",
+          "path": "plugins/qah_ssh/3.9.3/qah_ssh-3.9.3.qplugin.zip",
+          "url": "",
+          "sha256": "94d59fa4b141a210eddad4a025d11ecf2176d4137603749205a775397c2b117f",
+          "size": 56470,
+          "changelog": "QAH SSH 3.9.3: adds a Queue transfers checkbox. When checked, the main Upload File, Upload Folder and Download buttons add jobs to the Transfer Queue tab; unchecked keeps the original immediate behaviour.",
+          "published": "2026-11-07T18:02:36Z",
+          "yanked": false
         }
       ],
-      "version": "3.9.2"
+      "version": "3.9.3"
     },
     {
       "id": "qah_ws_client",
