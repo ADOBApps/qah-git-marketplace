@@ -46,9 +46,10 @@ flat memory use and progress reporting.
 
 ## Transfer queue
 
-The plugin includes a separate **Transfer Queue** tab, next to **SSH Browser**
-and **Text Editor**. It runs uploads and downloads one at a time, so you can
-select several transfers and let them finish without waiting between dialogs.
+The plugin includes a separate **Transfer Queue** tab as the second tab. It runs
+uploads and downloads one at a time, so you can select several transfers and
+let them finish without waiting between dialogs. Opening a file from the browser
+or Temporary Files switches directly to the **Text Editor** tab.
 
 Queued transfers run in a **background worker with their own SFTP channel**, so
 the SSH Browser stays usable while a transfer is running. You can navigate,
@@ -114,6 +115,6 @@ button in the terminal toolbar to fetch the cluster command list again.
 | `one_click_importer.py` | Simplified plugin installation |
 | `debug_plugin_import.py` | Debug utilities for plugin loading |
 
-Version: 3.11.1
+Version: 3.11.3
 Author: Acxel Orozco
 Created: 2026-02-07
