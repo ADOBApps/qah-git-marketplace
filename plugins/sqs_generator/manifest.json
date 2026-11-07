@@ -1,0 +1,31 @@
+{
+  "name": "SQS Generator",
+  "id": "sqs_generator",
+  "version": "3.2.0",
+  "author": "Acxel Orozco",
+  "description": "Generate Special Quasirandom Structures (SQS) for binary alloys following Zunger (1990) and van de Walle (2013) methods",
+  "type": "python",
+  "category": "tools",
+  "main": "__init__.py",
+  "dependencies": [
+    "numpy",
+    "matplotlib",
+    "ctypes",
+    "multiprocessing",
+    "typing",
+    "dataclasses",
+    "collections",
+    "itertools",
+    "icet"
+  ],
+  "marketplace": {
+    "price": 0.0,
+    "currency": "USD",
+    "price_model": "free",
+    "payment_required": false
+  },
+  "license": {
+    "type": "free",
+    "max_activations": 3
+  }
+}

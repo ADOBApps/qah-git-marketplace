@@ -2,7 +2,7 @@
   "schema": 1,
   "name": "QAH Git Marketplace",
   "description": "Plugins for Quantum Analysis Helper, stored in Git.",
-  "updated": "2026-11-07T05:19:42Z",
+  "updated": "2026-11-07T05:48:36Z",
   "plugins": [
     {
       "id": "git_plugin_marketplace",
@@ -113,6 +113,46 @@
         }
       ],
       "version": "1.0.0"
+    },
+    {
+      "id": "sqs_generator",
+      "name": "SQS Generator",
+      "author": "Acxel Orozco",
+      "description": "Generate Special Quasirandom Structures (SQS) for binary alloys following Zunger (1990) and van de Walle (2013) methods",
+      "category": "tools",
+      "type": "python",
+      "dependencies": [
+        "numpy",
+        "matplotlib",
+        "ctypes",
+        "multiprocessing",
+        "typing",
+        "dataclasses",
+        "collections",
+        "itertools",
+        "icet"
+      ],
+      "requires_qah": "",
+      "homepage": "",
+      "tags": [],
+      "price": 0.0,
+      "currency": "USD",
+      "price_model": "free",
+      "license_type": "free",
+      "max_activations": 3,
+      "versions": [
+        {
+          "version": "3.2.0",
+          "path": "plugins/sqs_generator/3.2.0/sqs_generator-3.2.0.qplugin.zip",
+          "url": "",
+          "sha256": "53def2525a7b78a90846cfbd89839536ad702a1657653dc1b1ac9714bfa88388",
+          "size": 1069938,
+          "changelog": "",
+          "published": "2026-11-07T05:48:36Z",
+          "yanked": false
+        }
+      ],
+      "version": "3.2.0"
     },
     {
       "id": "wheel_plugin_manager",
