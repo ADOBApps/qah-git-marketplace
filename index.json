@@ -2,7 +2,7 @@
   "schema": 1,
   "name": "QAH Git Marketplace",
   "description": "Plugins for Quantum Analysis Helper, stored in Git.",
-  "updated": "2026-11-07T05:48:36Z",
+  "updated": "2026-11-07T05:53:17Z",
   "plugins": [
     {
       "id": "git_plugin_marketplace",
@@ -83,6 +83,36 @@
         }
       ],
       "version": "2.1.0"
+    },
+    {
+      "id": "qah_ws_server",
+      "name": "QAH WS Server",
+      "author": "Acxel Orozco",
+      "description": "Encrypted WSS remote command console for QAH: paired clients run commands and receive streamed stdout/stderr, with timed or password-protected permanent auto-approve.",
+      "category": "development",
+      "type": "python",
+      "dependencies": [],
+      "requires_qah": "",
+      "homepage": "",
+      "tags": [],
+      "price": 0.0,
+      "currency": "USD",
+      "price_model": "free",
+      "license_type": "free",
+      "max_activations": 100,
+      "versions": [
+        {
+          "version": "1.0.0",
+          "path": "plugins/qah_ws_server/1.0.0/qah_ws_server-1.0.0.qplugin.zip",
+          "url": "",
+          "sha256": "9abc81826a70345b8d9f635544ae17cfb22e7e76c92e2dcc3c6c3f41fdfbedb1",
+          "size": 34175,
+          "changelog": "QAH WS Server 1.0.0: encrypted WSS remote command console with pairing, timed and password-protected permanent auto-approve, destructive-command guard and audit log.",
+          "published": "2026-11-07T05:53:17Z",
+          "yanked": false
+        }
+      ],
+      "version": "1.0.0"
     },
     {
       "id": "secure_share",
