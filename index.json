@@ -2,7 +2,7 @@
   "schema": 1,
   "name": "QAH Git Marketplace",
   "description": "Plugins for Quantum Analysis Helper, stored in Git.",
-  "updated": "2026-11-07T05:53:17Z",
+  "updated": "2026-11-07T05:54:04Z",
   "plugins": [
     {
       "id": "git_plugin_marketplace",
@@ -83,6 +83,36 @@
         }
       ],
       "version": "2.1.0"
+    },
+    {
+      "id": "qah_ws_client",
+      "name": "QAH WS Client",
+      "author": "Acxel Orozco",
+      "description": "Encrypted WSS remote command console for QAH: connect to a paired QAH WS Server, run commands and receive live stdout/stderr and exit codes.",
+      "category": "development",
+      "type": "python",
+      "dependencies": [],
+      "requires_qah": "",
+      "homepage": "",
+      "tags": [],
+      "price": 0.0,
+      "currency": "USD",
+      "price_model": "free",
+      "license_type": "free",
+      "max_activations": 100,
+      "versions": [
+        {
+          "version": "1.0.0",
+          "path": "plugins/qah_ws_client/1.0.0/qah_ws_client-1.0.0.qplugin.zip",
+          "url": "",
+          "sha256": "f94efd4fabac221e4037c6db14db364b10532474ac521a58fa0acb6e33b87aea",
+          "size": 27793,
+          "changelog": "QAH WS Client 1.0.0: encrypted WSS connection, one-time invite pairing, password unlock for permanent auto-approve, live stdout/stderr and cancel.",
+          "published": "2026-11-07T05:54:04Z",
+          "yanked": false
+        }
+      ],
+      "version": "1.0.0"
     },
     {
       "id": "qah_ws_server",
