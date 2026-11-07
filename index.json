@@ -2,7 +2,7 @@
   "schema": 1,
   "name": "QAH Git Marketplace",
   "description": "Plugins for Quantum Analysis Helper, stored in Git.",
-  "updated": "2026-11-07T18:41:42Z",
+  "updated": "2026-11-07T19:19:49Z",
   "plugins": [
     {
       "id": "git_plugin_marketplace",
@@ -200,9 +200,19 @@
           "changelog": "QAH SSH 3.11.0: Transfer Queue is now control-only: Pause/Resume, Stop current, Stop all, Retry selected and Clear finished. Add jobs from SSH Browser with the Queue transfers checkbox.",
           "published": "2026-11-07T18:41:42Z",
           "yanked": false
+        },
+        {
+          "version": "3.11.1",
+          "path": "plugins/qah_ssh/3.11.1/qah_ssh-3.11.1.qplugin.zip",
+          "url": "",
+          "sha256": "197eb599956cc94b972c0089a9a33907c3b1b3025c9a81f244c52c8e1aab8345",
+          "size": 60660,
+          "changelog": "QAH SSH 3.11.1: Queue transfers is now checked by default, so uploads and downloads run in the background queue. Compressed downloads always use the background queue even when the checkbox is off.",
+          "published": "2026-11-07T19:19:49Z",
+          "yanked": false
         }
       ],
-      "version": "3.11.0"
+      "version": "3.11.1"
     },
     {
       "id": "qah_ws_client",
