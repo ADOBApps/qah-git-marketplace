@@ -4,6 +4,10 @@ Uploads to the QAH Git Marketplace are **pull requests**. Direct pushes to
 `master` are blocked for everyone except the owner; merges and deletions are
 owner-only.
 
+A printable guide is available as
+[docs/contributor-guide.pdf](docs/contributor-guide.pdf) (LaTeX source:
+`docs/contributor-guide.tex`).
+
 ## Rules
 
 1. Only submit plugins you own or have permission to redistribute.

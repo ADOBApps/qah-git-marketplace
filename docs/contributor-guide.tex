@@ -1,0 +1,537 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[margin=2.4cm]{geometry}
+\usepackage{microtype}
+\usepackage{parskip}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{amssymb}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage{listings}
+\usepackage{hyperref}
+\usepackage{titlesec}
+\usepackage{fancyhdr}
+
+\definecolor{qahblue}{HTML}{1F4E79}
+\definecolor{qahgreen}{HTML}{1E7B45}
+\definecolor{qahgray}{HTML}{4A4A4A}
+\definecolor{codebg}{HTML}{F4F6F8}
+\definecolor{codecomment}{HTML}{2E7D32}
+\definecolor{codestring}{HTML}{A31515}
+
+\hypersetup{
+  colorlinks=true,
+  linkcolor=qahblue,
+  urlcolor=qahblue,
+  citecolor=qahblue,
+  pdftitle={Contributing a Plugin to the QAH Git Marketplace},
+  pdfauthor={Acxel Orozco}
+}
+
+\titleformat{\section}{\Large\bfseries\color{qahblue}}{\thesection}{0.7em}{}
+\titleformat{\subsection}{\large\bfseries\color{qahblue}}{\thesubsection}{0.6em}{}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small QAH Git Marketplace}
+\fancyhead[R]{\small Contributor guide}
+\fancyfoot[C]{\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+
+\lstdefinestyle{qah}{
+  backgroundcolor=\color{codebg},
+  basicstyle=\ttfamily\small,
+  breaklines=true,
+  breakatwhitespace=false,
+  commentstyle=\color{codecomment},
+  keywordstyle=\color{qahblue}\bfseries,
+  stringstyle=\color{codestring},
+  frame=single,
+  rulecolor=\color{qahgray!40},
+  columns=fullflexible,
+  keepspaces=true,
+  showstringspaces=false,
+  numbers=left,
+  numberstyle=\tiny\color{qahgray},
+  numbersep=8pt,
+  captionpos=b
+}
+\lstset{style=qah}
+
+\newcommand{\code}[1]{\texttt{#1}}
+\newcommand{\repo}{\href{https://github.com/ADOBApps/qah-git-marketplace}{ADOBApps/qah-git-marketplace}}
+\newcommand{\pluginrepo}{\href{https://github.com/ADOBApps/qah-git-marketplace/releases/latest}{Git Plugin Marketplace}}
+
+\title{\textbf{Contributing a Plugin to the\\QAH Git Marketplace}\\[0.4em]
+\large A practical guide for external users: from a plugin folder to a merged pull request}
+\author{Acxel Orozco\\Quantum Analysis Helper}
+\date{November 2026 \quad -- \quad Git Plugin Marketplace 1.1.1}
+
+\begin{document}
+\maketitle
+\thispagestyle{fancy}
+
+\begin{abstract}
+This document explains how any GitHub user (a ``custom user'') can ask to upload
+a plugin to the public QAH Git Marketplace. Uploads are **pull requests**: a
+contributor publishes the plugin to their own fork, opens a pull request, the
+validation workflow checks the catalog and archives, and the repository owner
+reviews and merges. Deletion is owner-only. No contributor ever receives the
+owner's token.
+\end{abstract}
+
+\tableofcontents
+\newpage
+
+% ---------------------------------------------------------------------------
+\section{Purpose and audience}
+
+The QAH Git Marketplace is a public Git repository that stores a catalog
+(\code{index.json}) and plugin archives (\code{.qplugin.zip}) for Quantum
+Analysis Helper (QAH). It is read by the \emph{Git Plugin Marketplace} plugin.
+
+\begin{description}[leftmargin=1.5em,style=nextline]
+  \item[Upstream] \repo, branch \code{master}. Public read; protected branch.
+  \item[Fork] your own copy, \code{https://github.com/<you>/qah-git-marketplace}.
+  \item[Pull request (PR)] your proposed change, reviewed and merged by the owner.
+  \item[Token] a personal access token created in \emph{your} GitHub account.
+  \item[CI] the \code{validate} GitHub Actions check that must pass before merging.
+\end{description}
+
+There are two supported workflows:
+
+\begin{enumerate}[leftmargin=1.5em]
+  \item \textbf{Automatic} (recommended): the plugin or CLI forks the repository,
+        commits to a branch and opens the PR for you.
+  \item \textbf{Manual}: you fork and publish to your fork yourself, then open
+        the PR on GitHub.
+\end{enumerate}
+
+Both produce the same result. The owner merges; the plugin becomes available to
+everyone after users refresh the marketplace.
+
+% ---------------------------------------------------------------------------
+\section{Before you start}
+
+\subsection{What you need}
+
+\begin{itemize}[leftmargin=1.5em]
+  \item A GitHub account.
+  \item A completed QAH plugin folder (at minimum \code{manifest.json} and
+        \code{\_\_init\_\_.py}).
+  \item A \emph{new} version number for this submission.
+  \item Your own GitHub token (Section~\ref{sec:token}).
+  \item Git Plugin Marketplace 1.1.1 or newer, or the standalone
+        \code{git\_marketplace\_cli.py}.
+\end{itemize}
+
+\subsection{Public source warning}
+
+Everything committed to the public marketplace is publicly downloadable. A QAH
+Python plugin archive normally contains its \code{.py} source files. Do not
+submit private, paid, NDA-covered or secret code to the public repository. Use a
+separate private staging repository for such plugins.
+
+\subsection{Plugins must be distributable by you}
+
+Submit only plugins you own or are allowed to redistribute. The owner may reject
+a submission that appears to violate licensing or ownership.
+
+% ---------------------------------------------------------------------------
+\section{Plugin folder requirements}
+
+The publisher accepts the classic QAH plugin layout:
+
+\begin{lstlisting}[caption={Minimal plugin folder}]
+my_plugin/
+  manifest.json      required
+  __init__.py        required (Plugin class)
+  README.md          optional, copied to the catalog
+  icon.svg           optional
+  ...                any other runtime files
+\end{lstlisting}
+
+Required manifest fields:
+
+\begin{center}
+\begin{tabular}{@{}llp{7.2cm}@{}}
+\toprule
+Field & Example & Notes \\
+\midrule
+\code{id} & \code{my\_plugin} & letters, digits, \code{.}, \code{\_} or \code{-} \\
+\code{name} & My Plugin & display name \\
+\code{version} & \code{1.2.0} & new version; semantic versioning recommended \\
+\code{author} & Your Name & non-empty \\
+\code{description} & Short text & non-empty \\
+\code{category} & \code{tools} & \code{analysis}, \code{development}, \code{tools}, \code{visualization} \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+Example:
+
+\begin{lstlisting}[language=Java,caption={manifest.json}]
+{
+  "name": "My Plugin",
+  "id": "my_plugin",
+  "version": "1.2.0",
+  "author": "Your Name",
+  "description": "What the plugin does",
+  "type": "python",
+  "category": "tools",
+  "main": "__init__.py",
+  "dependencies": [],
+  "license": { "type": "free", "max_activations": 3 }
+}
+\end{lstlisting}
+
+The publisher builds the archive with \code{manifest.json} at the root. Do not
+ship a wrapper folder, \code{.git}, \code{\_\_pycache\_\_}, \code{dist},
+\code{target}, virtual environments or old \code{.qplugin.zip} files; they are
+excluded automatically.
+
+% ---------------------------------------------------------------------------
+\section{Create your own GitHub token}\label{sec:token}
+
+A token is a personal credential. It is created in \emph{your} GitHub account;
+the owner cannot create one for you and must never share theirs.
+
+\subsection{Option 1: GitHub CLI (easiest)}
+
+\begin{lstlisting}[language=bash,caption={Terminal}]
+gh auth login
+\end{lstlisting}
+
+After that the plugin can read the token with \code{gh auth token}; no manual
+copying is needed as long as \code{gh} is on \code{PATH}.
+
+\subsection{Option 2: classic personal access token (recommended for PRs)}
+
+\begin{enumerate}[leftmargin=1.5em]
+  \item Sign in to your GitHub account.
+  \item Open \url{https://github.com/settings/tokens/new}.
+  \item Note: \code{QAH Git Marketplace contributor}.
+  \item Expiration: 30, 60 or 90 days.
+  \item Scope: \code{public\_repo}.
+  \item Generate the token and copy it once.
+\end{enumerate}
+
+\code{public\_repo} can fork the public marketplace, write to your fork and open
+pull requests. This is the simplest option for the automatic submission.
+
+\subsection{Option 3: fine-grained token}
+
+\begin{enumerate}[leftmargin=1.5em]
+  \item Open \url{https://github.com/settings/personal-access-tokens/new}.
+  \item Resource owner: your account (or the organisation that owns your fork).
+  \item Repository access:
+    \begin{itemize}
+      \item upstream \code{ADOBApps/qah-git-marketplace}:
+            \textbf{Contents: Read}, \textbf{Pull requests: Read and write};
+      \item your fork \code{<you>/qah-git-marketplace}:
+            \textbf{Contents: Read and write}.
+    \end{itemize}
+  \item Metadata: Read (mandatory).
+  \item Generate and copy the token.
+\end{enumerate}
+
+\textbf{Fork caveat.} A fine-grained token can only grant access to repositories
+that exist when the token is created. If you have not forked yet, either:
+\begin{itemize}[leftmargin=1.5em]
+  \item create the fork manually first, then create the token; or
+  \item use a classic \code{public\_repo} token; or
+  \item grant the token access to ``All repositories'' (not recommended).
+\end{itemize}
+
+\subsection{Token security}
+
+\begin{itemize}[leftmargin=1.5em]
+  \item Never send your token to the owner or paste it into a public issue.
+  \item Never commit it. The plugin stores it in
+        \code{\textasciitilde/.qah/git\_marketplace.json} (mode 0600 on
+        Linux/macOS; user-profile ACL on Windows).
+  \item Use the minimum scope and a short expiration; revoke it when done.
+  \item A read-only token can browse and install but cannot publish or delete.
+\end{itemize}
+
+% ---------------------------------------------------------------------------
+\section{Configure the plugin}
+
+Open \textbf{QAH $\rightarrow$ Plugins $\rightarrow$ Git Plugin Marketplace
+$\rightarrow$ Settings} and fill in:
+
+\begin{center}
+\begin{tabular}{@{}ll@{}}
+\toprule
+Field & Value \\
+\midrule
+Owner & \code{ADOBApps} \\
+Repository & \code{qah-git-marketplace} \\
+Branch & \code{master} \\
+Token & your token (Section~\ref{sec:token}) \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+Click \textbf{Test connection}. A read-only token reports \code{write: no}; that
+is expected for contributors. The public catalog remains readable without any
+token.
+
+The same settings can be written from the CLI:
+
+\begin{lstlisting}[language=bash,caption={CLI configuration}]
+py -3 git_marketplace_cli.py config --owner ADOBApps \
+    --repo-name qah-git-marketplace --branch master
+py -3 git_marketplace_cli.py doctor
+\end{lstlisting}
+
+% ---------------------------------------------------------------------------
+\section{Option A: automatic pull request (recommended)}
+
+\subsection{GUI}
+
+\begin{enumerate}[leftmargin=1.5em]
+  \item Open \textbf{Git Plugin Marketplace}.
+  \item Click \textbf{Publish Plugin...}.
+  \item Select your plugin folder. The dialog reads \code{manifest.json}.
+  \item Review/edit name, author, category, description and changelog.
+  \item Tick \textbf{Submit as a pull request (fork + PR)}.
+        It is pre-selected automatically when your token is read-only.
+  \item Click \textbf{Submit pull request}.
+\end{enumerate}
+
+The plugin creates or reuses your fork, commits the catalog entry and archive to
+a temporary branch, opens the PR and shows the URL.
+
+\subsection{CLI}
+
+\begin{lstlisting}[language=bash,caption={Automatic submission}]
+py -3 git_marketplace_cli.py submit "C:\path\to\my_plugin" \
+    --changelog "Initial release: what it does"
+\end{lstlisting}
+
+Useful flags: \code{--version 1.2.0}, \code{--draft}, \code{--title "..."},
+\code{--homepage "..."}. Without \code{--version} the manifest version is used.
+
+\subsection{What happens behind the scenes}
+
+\begin{enumerate}[leftmargin=1.5em]
+  \item The folder is validated and archived as a \code{.qplugin.zip}.
+  \item The current upstream \code{index.json} is read and a new entry is added.
+  \item Your GitHub login is identified from the token.
+  \item Your fork is created (if missing) and synced with upstream.
+  \item A branch \code{marketplace/<id>-<version>-<timestamp>} is created from
+        the upstream head.
+  \item \code{index.json}, \code{plugins/<id>/manifest.json}, optional README and
+        the ZIP are committed to that branch in \textbf{one commit}.
+  \item A pull request is opened against \code{ADOBApps:master}.
+  \item If the PR cannot be opened, the temporary branch is deleted.
+\end{enumerate}
+
+For the repository owner, the same action uses a branch in the upstream
+repository instead of a fork (owner same-repository PR).
+
+% ---------------------------------------------------------------------------
+\section{Option B: manual fork and pull request}
+
+Use this if you prefer Git over the automatic action.
+
+\begin{enumerate}[leftmargin=1.5em]
+  \item On GitHub, open \repo{} and click \textbf{Fork}.
+  \item Configure the plugin to point at your fork:
+        Owner \code{<you>}, Repository \code{qah-git-marketplace},
+        Branch \code{master}, your token.
+  \item Publish to your fork:
+\begin{lstlisting}[language=bash,caption={Publish to your fork}]
+py -3 git_marketplace_cli.py --repo <you>/qah-git-marketplace \
+    --branch master publish "C:\path\to\my_plugin" \
+    --changelog "What changed"
+\end{lstlisting}
+  \item On GitHub, open a pull request from \code{<you>:master} to
+        \code{ADOBApps:master}.
+  \item Switch your plugin settings back to \code{ADOBApps} if you want to read
+        the upstream catalog again.
+\end{enumerate}
+
+If the upstream moved while you were working, sync your fork (GitHub's
+\textbf{Sync fork} button or the automatic action) and publish again. The PR
+updates automatically.
+
+% ---------------------------------------------------------------------------
+\section{Validation: the \code{validate} check}
+
+Every PR runs \code{.github/workflows/validate-marketplace.yml}. The job checks:
+
+\begin{itemize}[leftmargin=1.5em]
+  \item \code{index.json} is valid JSON with schema 1;
+  \item plugin ids and versions are unique and safe;
+  \item every local ZIP exists and its size and SHA256 match the catalog;
+  \item the ZIP contains \code{manifest.json} at its root;
+  \item the manifest \code{id} and \code{version} match the catalog entry;
+  \item required manifest fields are non-empty;
+  \item there are no absolute paths, \code{..} entries or symlinks;
+  \item the catalog \code{version} equals the highest non-yanked version.
+\end{itemize}
+
+A green check means the data is consistent. It does not mean the plugin has been
+reviewed; the owner still reviews and merges.
+
+\subsection{Common validation failures}
+
+\begin{center}
+\begin{longtable}{@{}p{6.2cm}p{9.2cm}@{}}
+\toprule
+Message & Fix \\
+\midrule
+\code{sha256 mismatch} & Publish again; do not edit the ZIP by hand. \\
+\code{size ... != catalog ...} & Rebuild and republish the same version. \\
+\code{manifest.json is not at the archive root} & The publisher does this for you; do not repack with a wrapper folder. \\
+\code{manifest id ... != ...} & The folder manifest and the catalog entry disagree; republish from the correct folder. \\
+\code{manifest version ... != ...} & Use the same version in the manifest and \code{--version}. \\
+\code{missing ...} & The catalog references a file that is not in the PR. \\
+\code{catalog version ... != latest ...} & Publish a higher version or fix \code{index.json}. \\
+\bottomrule
+\end{longtable}
+\end{center}
+
+% ---------------------------------------------------------------------------
+\section{Review, merge and publication}
+
+\begin{itemize}[leftmargin=1.5em]
+  \item \code{master} is protected: PR required, one approval, Code Owner
+        review, required \code{validate} check, no force pushes, no deletions.
+  \item Only the owner (\code{@ADOBApps}) can merge. Contributors cannot push to
+        \code{master}.
+  \item The owner may request changes; update your fork/PR and republish.
+  \item After the merge, the catalog is live immediately. Users click
+        \textbf{Refresh} in Git Plugin Marketplace and see the new version.
+\end{itemize}
+
+Please keep one plugin/version per PR and do not modify other plugins in the same
+change.
+
+% ---------------------------------------------------------------------------
+\section{Updating an existing plugin}
+
+Publish a new version with the same \code{id}. Older versions remain in the
+catalog, so users can still install them.
+
+\begin{lstlisting}[language=bash,caption={Publishing an update}]
+py -3 git_marketplace_cli.py submit "C:\path\to\my_plugin" \
+    --version 1.3.0 --changelog "Fix ..., add ..."
+\end{lstlisting}
+
+Never reuse a version number for different bytes. The catalog replaced the
+entry if the version already exists, but this breaks reproducibility for users.
+
+% ---------------------------------------------------------------------------
+\section{Deletion and ownership}
+
+\begin{itemize}[leftmargin=1.5em]
+  \item Only the owner has a write token and can delete via the plugin
+        (\textbf{Delete from marketplace}) or by merging a deletion PR.
+  \item A contributor may open a PR that removes an entry, but it cannot be
+        merged without the owner.
+  \item Deletion removes the entry from the branch tip. Git history still
+        contains the old objects; this is not a secure erase.
+\end{itemize}
+
+% ---------------------------------------------------------------------------
+\section{Troubleshooting}
+
+\begin{center}
+\begin{longtable}{@{}p{6.0cm}p{9.4cm}@{}}
+\toprule
+Symptom & Cause and fix \\
+\midrule
+\code{401} / bad credentials & Token expired or mistyped. Create a new one and update Settings. \\
+\code{403} on publish & Token lacks Contents write on the target repo, or the organisation requires SSO authorisation. \\
+\code{403} on submit & Token cannot fork or open PRs. Use \code{public\_repo}, or grant Pull requests write on upstream. \\
+\code{404} & Private repository without access, or the fork is not ready yet. Wait and retry; check the owner/repo spelling. \\
+\code{422} on branch & Branch already exists (rare timestamp collision) or the branch moved. Retry. \\
+\code{422} on PR & A PR for this branch may already exist, or the base branch changed. Check GitHub. \\
+Fork creation timeout & GitHub is slow. Retry after a minute; the fork may already exist. \\
+\code{writable: false} & Your token is read-only; use \textbf{Submit as a pull request}, not direct publish. \\
+CI failed & Read the job log; usually a SHA/size mismatch, missing file, or version not highest. Republish the same version. \\
+Plugin missing after merge & Click \textbf{Refresh}; restart QAH if the menu does not update. \\
+\bottomrule
+\end{longtable}
+\end{center}
+
+If the problem persists, open an issue at \repo{} with the command, the exact
+error text and the plugin id/version. Never paste your token.
+
+% ---------------------------------------------------------------------------
+\appendix
+\section{Catalog structure}
+
+\begin{lstlisting}[language=Java,caption={index.json (abridged)}]
+{
+  "schema": 1,
+  "name": "QAH Git Marketplace",
+  "updated": "2026-11-06T22:31:00Z",
+  "plugins": [
+    {
+      "id": "my_plugin",
+      "name": "My Plugin",
+      "version": "1.2.0",
+      "author": "Your Name",
+      "description": "What it does",
+      "category": "tools",
+      "dependencies": [],
+      "versions": [
+        {
+          "version": "1.2.0",
+          "path": "plugins/my_plugin/1.2.0/my_plugin-1.2.0.qplugin.zip",
+          "sha256": "...64 hex characters...",
+          "size": 12345,
+          "changelog": "Initial release",
+          "published": "2026-11-06T22:31:00Z",
+          "yanked": false
+        }
+      ]
+    }
+  ]
+}
+\end{lstlisting}
+
+\section{PR checklist}
+
+\begin{itemize}[leftmargin=1.5em]
+  \item[$\square$] I own or may redistribute this plugin.
+  \item[$\square$] The folder has \code{manifest.json} and \code{\_\_init\_\_.py}.
+  \item[$\square$] The version is new and matches the manifest.
+  \item[$\square$] \code{validate} passes.
+  \item[$\square$] No tokens, credentials or private data are included.
+  \item[$\square$] I understand the public repository exposes the archive contents.
+\end{itemize}
+
+\section{Command reference}
+
+\begin{lstlisting}[language=bash,caption={Git Plugin Marketplace CLI}]
+# settings / diagnosis
+git_marketplace_cli.py config --owner ADOBApps \
+    --repo-name qah-git-marketplace --branch master --token <TOKEN>
+git_marketplace_cli.py doctor
+
+# automatic pull request
+git_marketplace_cli.py submit <folder> --changelog "..." [--draft]
+
+# manual fork workflow
+git_marketplace_cli.py --repo <you>/qah-git-marketplace --branch master \
+    publish <folder> --changelog "..."
+
+# local validation / build
+git_marketplace_cli.py validate <folder>
+git_marketplace_cli.py build <folder> --out dist
+
+# after the owner merges (public read, no token)
+git_marketplace_cli.py list --refresh
+git_marketplace_cli.py install <plugin-id>
+\end{lstlisting}
+
+\end{document}
