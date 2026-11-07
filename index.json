@@ -2,7 +2,7 @@
   "schema": 1,
   "name": "QAH Git Marketplace",
   "description": "Plugins for Quantum Analysis Helper, stored in Git.",
-  "updated": "2026-11-07T05:54:04Z",
+  "updated": "2026-11-07T06:04:00Z",
   "plugins": [
     {
       "id": "git_plugin_marketplace",
@@ -140,9 +140,19 @@
           "changelog": "QAH WS Server 1.0.0: encrypted WSS remote command console with pairing, timed and password-protected permanent auto-approve, destructive-command guard and audit log.",
           "published": "2026-11-07T05:53:17Z",
           "yanked": false
+        },
+        {
+          "version": "1.0.1",
+          "path": "plugins/qah_ws_server/1.0.1/qah_ws_server-1.0.1.qplugin.zip",
+          "url": "",
+          "sha256": "4e27a16db6134cb026673f2eeed8922f4f0f148280f8d1174b15849bf9a66862",
+          "size": 34236,
+          "changelog": "QAH WS Server 1.0.1: fall back to the server user's home when a client sends a missing working directory.",
+          "published": "2026-11-07T06:04:00Z",
+          "yanked": false
         }
       ],
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "secure_share",
