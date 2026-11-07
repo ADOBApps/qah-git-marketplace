@@ -2,7 +2,7 @@
   "schema": 1,
   "name": "QAH Git Marketplace",
   "description": "Plugins for Quantum Analysis Helper, stored in Git.",
-  "updated": "2026-11-07T15:06:17Z",
+  "updated": "2026-11-07T17:17:34Z",
   "plugins": [
     {
       "id": "git_plugin_marketplace",
@@ -150,9 +150,19 @@
           "changelog": "QAH SSH 3.9.0: adds a sequential transfer queue for uploads, folder uploads, normal downloads and compressed tar.gz downloads, with pause/resume, cancel current, clear finished and per-job status. Existing Upload/Download buttons keep their immediate behaviour.",
           "published": "2026-11-07T15:06:17Z",
           "yanked": false
+        },
+        {
+          "version": "3.9.1",
+          "path": "plugins/qah_ssh/3.9.1/qah_ssh-3.9.1.qplugin.zip",
+          "url": "",
+          "sha256": "08719a726126213ebb16e8fd9544bebc5abef65c4d4d3d358e6b568323c35b30",
+          "size": 56279,
+          "changelog": "QAH SSH 3.9.1: moves the Transfer Queue out of the file browser into its own main tab, next to SSH Browser, Text Editor and Temporary Files. Queue behaviour and existing immediate upload/download buttons are unchanged.",
+          "published": "2026-11-07T17:17:34Z",
+          "yanked": false
         }
       ],
-      "version": "3.9.0"
+      "version": "3.9.1"
     },
     {
       "id": "qah_ws_client",
