@@ -2,7 +2,7 @@
   "schema": 1,
   "name": "QAH Git Marketplace",
   "description": "Plugins for Quantum Analysis Helper, stored in Git.",
-  "updated": "2026-11-07T18:10:52Z",
+  "updated": "2026-11-07T18:41:42Z",
   "plugins": [
     {
       "id": "git_plugin_marketplace",
@@ -190,9 +190,19 @@
           "changelog": "QAH SSH 3.10.0: queued transfers now run in a background worker with their own SFTP channel, so SSH Browser navigation, refresh and other tabs stay responsive during an upload or download. Queue remains sequential; immediate transfers are unchanged.",
           "published": "2026-11-07T18:10:52Z",
           "yanked": false
+        },
+        {
+          "version": "3.11.0",
+          "path": "plugins/qah_ssh/3.11.0/qah_ssh-3.11.0.qplugin.zip",
+          "url": "",
+          "sha256": "20c3a84d765cd9e182743db0f790836e20b49f51073e1d82060c160e39a58a2b",
+          "size": 60574,
+          "changelog": "QAH SSH 3.11.0: Transfer Queue is now control-only: Pause/Resume, Stop current, Stop all, Retry selected and Clear finished. Add jobs from SSH Browser with the Queue transfers checkbox.",
+          "published": "2026-11-07T18:41:42Z",
+          "yanked": false
         }
       ],
-      "version": "3.10.0"
+      "version": "3.11.0"
     },
     {
       "id": "qah_ws_client",
