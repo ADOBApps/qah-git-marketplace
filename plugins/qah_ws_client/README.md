@@ -7,6 +7,16 @@ code.
 > **Warning.** This client can execute commands on the paired server with that
 > server's user account. Connect only to servers you own or administer.
 
+## Documentation tab
+
+The plugin includes an offline **Documentation** tab with:
+
+- the recommended Tailscale setup for private remote access,
+- same-LAN and public port-forwarding notes,
+- Cloudflare Tunnel requirements and current limitations,
+- the planned relay mode (L4 TCP vs L7 WebSocket),
+- security checklist, troubleshooting table, data paths and invite contents.
+
 ---
 
 ## Install
@@ -35,6 +45,16 @@ server password. Entering it unlocks auto-approval for that session. Without it,
 the server still asks the operator to approve each command.
 
 ---
+
+## Relay mode
+
+If the invite was created by a server in relay mode, it contains the relay
+address, room and room token. The client connects outbound to the relay; no
+inbound port is needed on either side. The **Relay** tab shows the imported
+values. Certificate pinning and the existing pairing flow are unchanged.
+
+Direct invites and old `client.json` files without relay fields still work and
+default to direct WSS.
 
 ## Console
 
@@ -101,9 +121,10 @@ Data file:
 ```text
 manifest.json
 __init__.py
-ws_common.py        WSS, TLS certificate, crypto, invite helpers
+ws_common.py        WSS, TLS, crypto, invite, relay client helpers
 client_core.py      pairing, authentication, execute/cancel, output
 client_ui.py        PySide6 UI
+documentation.py    offline Documentation tab
 icon.svg
 README.md
 LICENSE.md
