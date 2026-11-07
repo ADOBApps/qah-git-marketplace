@@ -50,6 +50,12 @@ The plugin includes a separate **Transfer Queue** tab, next to **SSH Browser**
 and **Text Editor**. It runs uploads and downloads one at a time, so you can
 select several transfers and let them finish without waiting between dialogs.
 
+Queued transfers run in a **background worker with their own SFTP channel**, so
+the SSH Browser stays usable while a transfer is running. You can navigate,
+refresh, and open other tabs. The queue is still sequential: one transfer runs
+at a time. Immediate transfers launched from the SSH Browser without the queue
+checkbox remain foreground operations.
+
 - **Upload Files** / **Upload Folder**: choose local items and add them to the
   queue. The destination is the remote folder shown when you add the job.
 - **Download**: queue the currently selected remote files/folders. If
@@ -106,6 +112,6 @@ button in the terminal toolbar to fetch the cluster command list again.
 | `one_click_importer.py` | Simplified plugin installation |
 | `debug_plugin_import.py` | Debug utilities for plugin loading |
 
-Version: 3.9.3
+Version: 3.10.0
 Author: Acxel Orozco
 Created: 2026-02-07
