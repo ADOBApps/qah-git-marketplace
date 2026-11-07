@@ -2,7 +2,7 @@
   "schema": 1,
   "name": "QAH Git Marketplace",
   "description": "Plugins for Quantum Analysis Helper, stored in Git.",
-  "updated": "2026-11-07T06:46:06Z",
+  "updated": "2026-11-07T06:57:09Z",
   "plugins": [
     {
       "id": "git_plugin_marketplace",
@@ -130,9 +130,19 @@
           "changelog": "QAH SSH 3.8.0: custom SSH terminal icon plus command auto-complete from history, built-in HPC commands and remote compgen suggestions.",
           "published": "2026-11-07T06:46:06Z",
           "yanked": false
+        },
+        {
+          "version": "3.8.1",
+          "path": "plugins/qah_ssh/3.8.1/qah_ssh-3.8.1.qplugin.zip",
+          "url": "",
+          "sha256": "89fde35f886da878ccdcd8f03e44995caa129ba3ffdfd330843991730c4ab13b",
+          "size": 51913,
+          "changelog": "QAH SSH 3.8.1: fixes Credential Manager 'Use in Form'. Saved credentials now store the encrypted password token in the credential index, so the form is filled even if shh_info_history.json is missing. Legacy entries fill host/port/user and prompt for the password once.",
+          "published": "2026-11-07T06:57:09Z",
+          "yanked": false
         }
       ],
-      "version": "3.8.0"
+      "version": "3.8.1"
     },
     {
       "id": "qah_ws_client",

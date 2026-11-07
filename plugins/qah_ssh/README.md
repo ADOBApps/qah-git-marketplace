@@ -44,6 +44,17 @@ files individually.
 Large archives still use the chunked transfer path, so multi-GB downloads keep
 flat memory use and progress reporting.
 
+## Credential manager
+
+**Use in Form** fills the connection fields from a saved credential.
+
+- New credentials store the encrypted token inside the credential index, so the
+  manager works even if `shh_info_history.json` is deleted.
+- If the password token is missing (entries created before 3.8.1, or a lost
+  history file), host, port and user are still filled and a warning asks you to
+  enter the password once. The next successful connection stores it again.
+- Export/import bundles include both the key files and the encrypted tokens.
+
 ## Command auto-complete
 
 The terminal command box has a completion popup powered by:
@@ -72,6 +83,6 @@ button in the terminal toolbar to fetch the cluster command list again.
 | `one_click_importer.py` | Simplified plugin installation |
 | `debug_plugin_import.py` | Debug utilities for plugin loading |
 
-Version: 3.8.0
+Version: 3.8.1
 Author: Acxel Orozco
 Created: 2026-02-07
