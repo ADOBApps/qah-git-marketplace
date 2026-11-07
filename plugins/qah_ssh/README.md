@@ -61,10 +61,11 @@ select several transfers and let them finish without waiting between dialogs.
   list.
 - **Clear finished**: removes completed, failed and canceled rows.
 
-The original **Upload File**, **Upload Folder** and **Download** buttons still
-run immediately for single-transfer use. Queue jobs capture their source and
-destination when added, so navigating to another remote folder does not move an
-already queued upload or download.
+The original **Upload File**, **Upload Folder** and **Download** buttons run
+immediately by default. Check **Queue transfers** next to **Compress on server**
+to make those same buttons add jobs to the Transfer Queue instead. Queue jobs
+capture their source and destination when added, so navigating to another
+remote folder does not move an already queued upload or download.
 
 ## Credential manager
 
@@ -105,6 +106,6 @@ button in the terminal toolbar to fetch the cluster command list again.
 | `one_click_importer.py` | Simplified plugin installation |
 | `debug_plugin_import.py` | Debug utilities for plugin loading |
 
-Version: 3.9.2
+Version: 3.9.3
 Author: Acxel Orozco
 Created: 2026-02-07
