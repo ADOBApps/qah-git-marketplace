@@ -2,7 +2,7 @@
   "schema": 1,
   "name": "QAH Git Marketplace",
   "description": "Plugins for Quantum Analysis Helper, stored in Git.",
-  "updated": "2026-11-07T19:19:49Z",
+  "updated": "2026-11-07T20:17:06Z",
   "plugins": [
     {
       "id": "git_plugin_marketplace",
@@ -210,9 +210,19 @@
           "changelog": "QAH SSH 3.11.1: Queue transfers is now checked by default, so uploads and downloads run in the background queue. Compressed downloads always use the background queue even when the checkbox is off.",
           "published": "2026-11-07T19:19:49Z",
           "yanked": false
+        },
+        {
+          "version": "3.11.3",
+          "path": "plugins/qah_ssh/3.11.3/qah_ssh-3.11.3.qplugin.zip",
+          "url": "",
+          "sha256": "255d5cb5d53880aede388c4aca7df71fc405eb7dc21c289169db8e91a8ca35df",
+          "size": 60679,
+          "changelog": "QAH SSH 3.11.3: keeps Transfer Queue as the second tab and makes Edit in Text Editor / Temporary Files select the Text Editor widget directly, so the correct tab is always focused regardless of tab order.",
+          "published": "2026-11-07T20:17:06Z",
+          "yanked": false
         }
       ],
-      "version": "3.11.1"
+      "version": "3.11.3"
     },
     {
       "id": "qah_ws_client",
