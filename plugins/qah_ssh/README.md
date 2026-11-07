@@ -56,22 +56,22 @@ refresh, and open other tabs. The queue is still sequential: one transfer runs
 at a time. Immediate transfers launched from the SSH Browser without the queue
 checkbox remain foreground operations.
 
-- **Upload Files** / **Upload Folder**: choose local items and add them to the
-  queue. The destination is the remote folder shown when you add the job.
-- **Download**: queue the currently selected remote files/folders. If
-  **Compress on server (tar.gz)** is checked, the queued job also compresses,
-  downloads and extracts the archive.
-- **Pause queue**: lets the current transfer finish, then stops before the next
-  job. Click **Resume queue** to continue.
-- **Cancel current**: cancels the active transfer. Queued jobs remain in the
-  list.
-- **Clear finished**: removes completed, failed and canceled rows.
+Add jobs from **SSH Browser** by checking **Queue transfers** next to
+**Compress on server**, then using **Upload File**, **Upload Folder** or
+**Download**. If **Compress on server (tar.gz)** is checked, the queued download
+also compresses, downloads and extracts the archive.
 
-The original **Upload File**, **Upload Folder** and **Download** buttons run
-immediately by default. Check **Queue transfers** next to **Compress on server**
-to make those same buttons add jobs to the Transfer Queue instead. Queue jobs
-capture their source and destination when added, so navigating to another
-remote folder does not move an already queued upload or download.
+The **Transfer Queue** tab is for control only:
+
+- **Pause / Resume**: let the current transfer finish, then wait before the next
+  job.
+- **Stop current**: cancel the active transfer. Waiting jobs remain queued.
+- **Stop all**: cancel the active transfer and every waiting job.
+- **Retry**: requeue the selected finished, failed or canceled job.
+- **Clear**: remove finished, failed and canceled rows.
+
+Queue jobs capture their source and destination when added, so navigating to
+another remote folder does not move an already queued upload or download.
 
 ## Credential manager
 
@@ -112,6 +112,6 @@ button in the terminal toolbar to fetch the cluster command list again.
 | `one_click_importer.py` | Simplified plugin installation |
 | `debug_plugin_import.py` | Debug utilities for plugin loading |
 
-Version: 3.10.0
+Version: 3.11.0
 Author: Acxel Orozco
 Created: 2026-02-07
