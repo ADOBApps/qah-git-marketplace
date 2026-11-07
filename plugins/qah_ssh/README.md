@@ -44,6 +44,19 @@ files individually.
 Large archives still use the chunked transfer path, so multi-GB downloads keep
 flat memory use and progress reporting.
 
+## Command auto-complete
+
+The terminal command box has a completion popup powered by:
+
+- your saved command history,
+- a built-in list of common Linux/HPC commands (`sbatch`, `squeue`, `module`,
+  `vasp`, `pw.x`, ...),
+- command names fetched from the cluster with `compgen -c` when you connect.
+
+Start typing and pick a suggestion; use Up/Down inside the popup, then Enter/Tab.
+Up/Down outside the popup still navigates command history. Use the refresh
+button in the terminal toolbar to fetch the cluster command list again.
+
 ## Plugin Structure
 
 ### Core Plugin Files in `plugins.libs/`
@@ -59,6 +72,6 @@ flat memory use and progress reporting.
 | `one_click_importer.py` | Simplified plugin installation |
 | `debug_plugin_import.py` | Debug utilities for plugin loading |
 
-Version: 3.7.0
+Version: 3.8.0
 Author: Acxel Orozco
 Created: 2026-02-07
