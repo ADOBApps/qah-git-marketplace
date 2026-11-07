@@ -2,7 +2,7 @@
   "schema": 1,
   "name": "QAH Git Marketplace",
   "description": "Plugins for Quantum Analysis Helper, stored in Git.",
-  "updated": "2026-11-07T06:33:54Z",
+  "updated": "2026-11-07T06:46:06Z",
   "plugins": [
     {
       "id": "git_plugin_marketplace",
@@ -88,7 +88,7 @@
       "id": "qah_ssh",
       "name": "QAH SSH",
       "author": "Acxel Orozco",
-      "description": "Enhanced Cluster Connector with folder upload/download, server-side compressed downloads, temporal files and credential history",
+      "description": "Enhanced Cluster Connector with folder upload/download, server-side compressed downloads, command auto-complete, custom icon, temporal files and credential history",
       "category": "tools",
       "type": "python",
       "dependencies": [
@@ -120,9 +120,19 @@
           "changelog": "QAH SSH 3.7.0: server-side tar.gz compression for batch downloads, safe local extraction, automatic remote temp cleanup, compressed context-menu action and backup-file exclusion.",
           "published": "2026-11-07T06:33:54Z",
           "yanked": false
+        },
+        {
+          "version": "3.8.0",
+          "path": "plugins/qah_ssh/3.8.0/qah_ssh-3.8.0.qplugin.zip",
+          "url": "",
+          "sha256": "233355d60b2beea4ca58590cf92b19cbada95211a71018de925bb945f8da9a7e",
+          "size": 50814,
+          "changelog": "QAH SSH 3.8.0: custom SSH terminal icon plus command auto-complete from history, built-in HPC commands and remote compgen suggestions.",
+          "published": "2026-11-07T06:46:06Z",
+          "yanked": false
         }
       ],
-      "version": "3.7.0"
+      "version": "3.8.0"
     },
     {
       "id": "qah_ws_client",
