@@ -96,7 +96,11 @@ Change it in **Settings → Inbox folder**.
 - Devices must be paired before messages are accepted.
 - Discovery packets contain the device name, random device id and TCP port.
   They do not contain keys or message content.
-- If discovery is blocked, Git relay is the fallback.
+- If discovery is blocked, the Git relay is the fallback.
+- If the peer shows **offline** after a successful pairing, the plugin probes the
+  stored LAN address directly. Use **Peers → Set address...** to enter the peer's
+  `host:port` manually, or switch to the Git relay. Offline only means
+  discovery/probing failed; the pairing itself may be fine.
 
 ---
 

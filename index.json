@@ -2,7 +2,7 @@
   "schema": 1,
   "name": "QAH Git Marketplace",
   "description": "Plugins for Quantum Analysis Helper, stored in Git.",
-  "updated": "2026-11-07T06:04:46Z",
+  "updated": "2026-11-07T06:22:40Z",
   "plugins": [
     {
       "id": "git_plugin_marketplace",
@@ -190,9 +190,19 @@
           "changelog": "Secure Share 1.0.0: encrypted text, file and folder exchange over LAN or a private Git relay, with per-device pairing and a PDF user guide.",
           "published": "2026-11-07T05:19:42Z",
           "yanked": false
+        },
+        {
+          "version": "1.0.1",
+          "path": "plugins/secure_share/1.0.1/secure_share-1.0.1.qplugin.zip",
+          "url": "",
+          "sha256": "66614f3b7f4d7f2e6eb434adf1929da4b15e71d1203e516a48e289f242ae45dc",
+          "size": 256627,
+          "changelog": "Secure Share 1.0.1: store peer LAN addresses, TCP reachability probe for the online indicator, direct-address fallback and manual Set address action; updated PDF guide.",
+          "published": "2026-11-07T06:22:40Z",
+          "yanked": false
         }
       ],
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "sqs_generator",
