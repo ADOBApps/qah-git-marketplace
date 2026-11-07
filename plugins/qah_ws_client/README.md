@@ -45,6 +45,8 @@ exit 0 · 0.12s · 6 bytes
 ```
 
 - **Run** sends the command; output streams live.
+- **Working dir** is optional; leave it blank to use the server user's home.
+  A path typed here must exist on the **server**, not on the client.
 - **Cancel** asks the server to kill the process tree.
 - The exit line shows code, duration, bytes and whether output was truncated.
 - Commands are non-interactive: no PTY, so full-screen programs and prompts do

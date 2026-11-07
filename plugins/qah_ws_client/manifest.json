@@ -1,7 +1,7 @@
 {
   "name": "QAH WS Client",
   "id": "qah_ws_client",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "author": "Acxel Orozco",
   "description": "Encrypted WSS remote command console for QAH: connect to a paired QAH WS Server, run commands and receive live stdout/stderr and exit codes.",
   "type": "python",
