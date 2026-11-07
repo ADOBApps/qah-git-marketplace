@@ -2,7 +2,7 @@
   "schema": 1,
   "name": "QAH Git Marketplace",
   "description": "Plugins for Quantum Analysis Helper, stored in Git.",
-  "updated": "2026-11-07T14:15:21Z",
+  "updated": "2026-11-07T14:16:56Z",
   "plugins": [
     {
       "id": "git_plugin_marketplace",
@@ -180,9 +180,19 @@
           "changelog": "QAH WS Client 1.0.1: default working directory is the server user's home, plus an optional working-dir field.",
           "published": "2026-11-07T06:04:46Z",
           "yanked": false
+        },
+        {
+          "version": "1.2.0",
+          "path": "plugins/qah_ws_client/1.2.0/qah_ws_client-1.2.0.qplugin.zip",
+          "url": "",
+          "sha256": "b8fbd04a5c8601e9dd21e99a38a63f4c97344b6a45d708f21aeccae420fcfd49",
+          "size": 35443,
+          "changelog": "QAH WS Client 1.2.0: adds relay transport support, a Relay tab showing relay/room/token imported from invites, and an offline Documentation tab covering Tailscale, Cloudflare Tunnel, relay mode, security and troubleshooting. Direct invites and old client settings remain compatible.",
+          "published": "2026-11-07T14:16:56Z",
+          "yanked": false
         }
       ],
-      "version": "1.0.1"
+      "version": "1.2.0"
     },
     {
       "id": "qah_ws_server",
