@@ -2,7 +2,7 @@
   "schema": 1,
   "name": "QAH Git Marketplace",
   "description": "Plugins for Quantum Analysis Helper, stored in Git.",
-  "updated": "2026-11-08T07:11:23Z",
+  "updated": "2026-11-08T07:14:18Z",
   "plugins": [
     {
       "id": "git_plugin_marketplace",
@@ -230,9 +230,19 @@
           "changelog": "Plugin Sentinel 1.2.0: adds the Addons tab and sandboxed addon runtime (.qah source packages, addon.json API v1, hash pinning, capability checks, isolated addon_host with audit hooks, timeouts and memory limits), marketplace addon install integration, and Addon Studio test support via run_addon_folder.",
           "published": "2026-11-08T07:09:15Z",
           "yanked": false
+        },
+        {
+          "version": "1.2.1",
+          "path": "plugins/plugin_sentinel/1.2.1/plugin_sentinel-1.2.1.qplugin.zip",
+          "url": "",
+          "sha256": "da5da5aee96c9dbd1972109f30427e860809bf464b7a2a7b656c212f492b542e",
+          "size": 71726,
+          "changelog": "Plugin Sentinel 1.2.1: marketplace addon updates now re-pin automatically from the new verified install record, while a plain local file edit with the same record is still marked modified and blocked. Local .qah imports remain unpinned until trusted.",
+          "published": "2026-11-08T07:14:18Z",
+          "yanked": false
         }
       ],
-      "version": "1.2.0"
+      "version": "1.2.1"
     },
     {
       "id": "qah_ssh",
@@ -757,7 +767,13 @@
           "yanked": false
         }
       ],
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "dependencies": [],
+      "price": 0.0,
+      "currency": "USD",
+      "price_model": "free",
+      "license_type": "free",
+      "max_activations": 0
     }
   ]
 }

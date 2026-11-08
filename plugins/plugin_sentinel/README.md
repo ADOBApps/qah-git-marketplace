@@ -160,7 +160,8 @@ Capabilities: `read-files`, `write-files`, `network`, `findings`, `report`,
 `policy`, `watchdog`. Subprocesses, native libraries, registry access and
 undeclared network access are blocked. Addon hashes are pinned in
 `addon_pins.json`; a changed addon is marked **modified** until re-pinned.
-Marketplace-installed addons are pinned automatically.
+Marketplace-installed addons are pinned automatically, and a marketplace update
+with a new install record is re-pinned automatically.
 
 ```text
 %USERPROFILE%\QAH\plugin_sentinel\addons\<id>\
@@ -360,5 +361,5 @@ README.md
 
 ---
 
-Version: 1.2.0  
+Version: 1.2.1  
 Author: Acxel Orozco
