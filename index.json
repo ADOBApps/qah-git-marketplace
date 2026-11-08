@@ -2,7 +2,7 @@
   "schema": 1,
   "name": "QAH Git Marketplace",
   "description": "Plugins for Quantum Analysis Helper, stored in Git.",
-  "updated": "2026-11-08T13:51:16Z",
+  "updated": "2026-11-08T16:26:54Z",
   "plugins": [
     {
       "id": "git_plugin_marketplace",
@@ -320,9 +320,19 @@
           "changelog": "Plugin Sentinel 1.2.6: fixes Inventory layout with compact fixed-width columns and horizontal scrolling; Dependencies now rescans actual dist-info folders so stale manifests cannot hide installed packages; keeps whole-plugin/per-tab scroll areas.",
           "published": "2026-11-08T13:51:16Z",
           "yanked": false
+        },
+        {
+          "version": "1.2.7",
+          "path": "plugins/plugin_sentinel/1.2.7/plugin_sentinel-1.2.7.qplugin.zip",
+          "url": "",
+          "sha256": "b41ef234060d7da2e7a67e45553746565524986425e79a9e7d388c62e3967051",
+          "size": 78195,
+          "changelog": "Plugin Sentinel 1.2.7: Runtime sampling is visible-only and user-configurable. Adds 0.5/1/2/5/10 s refresh interval, Pause checkbox, persisted runtime_settings.json, live source/status labels, and stops process polling whenever the Runtime tab is hidden.",
+          "published": "2026-11-08T16:26:54Z",
+          "yanked": false
         }
       ],
-      "version": "1.2.6"
+      "version": "1.2.7"
     },
     {
       "id": "pydft_workbench",
