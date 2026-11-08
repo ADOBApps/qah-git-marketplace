@@ -2,7 +2,7 @@
   "schema": 1,
   "name": "QAH Git Marketplace",
   "description": "Plugins for Quantum Analysis Helper, stored in Git.",
-  "updated": "2026-11-08T19:34:04Z",
+  "updated": "2026-11-08T19:34:16Z",
   "plugins": [
     {
       "id": "git_plugin_marketplace",
@@ -1447,7 +1447,13 @@
           "yanked": false
         }
       ],
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "dependencies": [],
+      "price": 0.0,
+      "currency": "USD",
+      "price_model": "free",
+      "license_type": "free",
+      "max_activations": 0
     },
     {
       "id": "sentinel_file_audit",
@@ -1520,6 +1526,36 @@
       "price_model": "free",
       "license_type": "free",
       "max_activations": 0
+    },
+    {
+      "id": "sentinel_license_audit",
+      "name": "Sentinel License Audit",
+      "author": "Acxel Orozco",
+      "description": "Report-only metadata and license audit: required manifest fields, semver-like version, author/license presence, icon/README presence, id/folder consistency, description quality and README/manifest version agreement.",
+      "category": "addon",
+      "type": "addon",
+      "kind": "addon",
+      "api_version": 1,
+      "capabilities": [
+        "read-files",
+        "findings",
+        "report"
+      ],
+      "homepage": "",
+      "tags": [],
+      "versions": [
+        {
+          "version": "1.0.0",
+          "path": "addons/sentinel_license_audit/1.0.0/sentinel_license_audit-1.0.0.qah",
+          "url": "",
+          "sha256": "5ea271aa30b14c22f31aa7d1ff7df243a4289bf196a2dd81817e7668c148f18b",
+          "size": 2580,
+          "changelog": "Sentinel License Audit 1.0.0: required manifest fields, semver, author/license, icon/README, id/folder consistency and README version. Report-only.",
+          "published": "2026-11-08T19:34:16Z",
+          "yanked": false
+        }
+      ],
+      "version": "1.0.0"
     },
     {
       "id": "sentinel_lifecycle_audit",

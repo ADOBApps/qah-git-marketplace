@@ -1,0 +1,17 @@
+{
+  "format": "qah-sentinel-addon",
+  "id": "sentinel_license_audit",
+  "name": "Sentinel License Audit",
+  "version": "1.0.0",
+  "api_version": 1,
+  "author": "Acxel Orozco",
+  "description": "Report-only metadata and license audit: required manifest fields, semver-like version, author/license presence, icon/README presence, id/folder consistency, description quality and README/manifest version agreement.",
+  "main": "main.py",
+  "entry": "run",
+  "timeout": 60,
+  "capabilities": [
+    "read-files",
+    "findings",
+    "report"
+  ]
+}
