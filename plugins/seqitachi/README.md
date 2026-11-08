@@ -99,3 +99,18 @@ QM-input/output, spectra and thermochemistry workflows with QAH-native code.
 
 GPL-3.0 or later. SEQCROW is GPL-3.0; see
 `https://github.com/QChASM/SEQCROW` and the 2021 J. Comput. Chem. citation.
+
+
+## External toolchain (1.1.0)
+
+SEQItachi never bundles ORCA, xtb, CREST, Gaussian, Psi4 or Q-Chem. The **Tools**
+tab detects executables from:
+
+1. a custom path saved in `%USERPROFILE%\QAH\seqitachi\toolchain.json`;
+2. `QAH_ORCA`/`ORCA`, `QAH_XTB`/`XTB`, `QAH_CREST`/`CREST`, etc.;
+3. `PATH`;
+4. common install locations.
+
+Missing tool = actionable `ToolNotFoundError`; no job starts. CREST is not
+installed on this machine, so conformer search remains unavailable until the
+user supplies it or uses a WSL/Linux installation.
