@@ -2,7 +2,7 @@
   "schema": 1,
   "name": "QAH Git Marketplace",
   "description": "Plugins for Quantum Analysis Helper, stored in Git.",
-  "updated": "2026-11-08T08:27:52Z",
+  "updated": "2026-11-08T08:51:48Z",
   "plugins": [
     {
       "id": "git_plugin_marketplace",
@@ -553,6 +553,36 @@
         }
       ],
       "version": "1.2.0"
+    },
+    {
+      "id": "qahtop",
+      "name": "QAHtop",
+      "author": "Acxel Orozco",
+      "description": "Lightweight htop-style read-only process and system monitor for QAH. Uses an injected psutil when available and falls back to tasklist/ps, with a Detect dependencies probe for Wheel Plugin Manager vendor paths.",
+      "category": "tools",
+      "type": "python",
+      "dependencies": [],
+      "requires_qah": "2.0.8",
+      "homepage": "",
+      "tags": [],
+      "price": 0.0,
+      "currency": "USD",
+      "price_model": "free",
+      "license_type": "free",
+      "max_activations": 100,
+      "versions": [
+        {
+          "version": "1.0.0",
+          "path": "plugins/qahtop/1.0.0/qahtop-1.0.0.qplugin.zip",
+          "url": "",
+          "sha256": "34c3eb2ede1c3b549ac9f9eb821d484805d8e717982563be73f0e256e74c3f5b",
+          "size": 8671,
+          "changelog": "QAHtop 1.0.0: htop-style read-only process and system monitor for QAH. Uses injected psutil when available, falls back to tasklist/ps, includes Detect dependencies to probe Wheel Plugin Manager vendor paths, sortable/filterable process table, and preserves selection across refresh.",
+          "published": "2026-11-08T08:51:48Z",
+          "yanked": false
+        }
+      ],
+      "version": "1.0.0"
     },
     {
       "id": "runtime_forge",
