@@ -1,0 +1,17 @@
+{
+  "format": "qah-sentinel-addon",
+  "id": "sentinel_secret_scan",
+  "name": "Sentinel Secret Scan",
+  "version": "1.0.0",
+  "api_version": 1,
+  "author": "Acxel Orozco",
+  "description": "Read-only text scan for private keys, cloud/API tokens, bearer tokens and generic secret assignments. Every reported value is masked.",
+  "main": "main.py",
+  "entry": "run",
+  "timeout": 60,
+  "capabilities": [
+    "read-files",
+    "findings",
+    "report"
+  ]
+}
