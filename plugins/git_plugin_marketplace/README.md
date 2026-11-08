@@ -11,6 +11,21 @@ plugin ZIPs live in a Git repository (GitHub) instead of Firebase.
 - One Git commit per publish/delete, so the history is the audit log
 - Linux / macOS / Windows
 
+## 1.1.4
+
+- Added first-class **theme assets**: `themes` catalog section, `.qtheme.zip`
+  install/update/uninstall, `themes/<id>/<version>/` repository layout.
+- Themes install flat into the user theme directory (`theme.json` + CSS) so the
+  existing Theme Manager sees them without a QAH restart; Theme Manager is
+  refreshed after install.
+- Added theme publishing CLI: `list-themes`, `install-theme`,
+  `uninstall-theme`, `publish-theme`.
+- After installing/updating a loaded user plugin, the marketplace offers
+  **Reload now** (via QAH PluginManager) or **Restart later**. System/wheel
+  plugins and the marketplace itself are never auto-reloaded.
+- Old catalogs without `themes` remain valid; old marketplace clients ignore the
+  new section.
+
 ## 1.1.3
 
 - Added **Install version** selection: choose any published version, including
