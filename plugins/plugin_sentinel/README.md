@@ -88,8 +88,12 @@ A live htop-style view:
 - top processes by CPU or memory
 - QAH process-tree filter
 - process PID, name, CPU, RSS, threads, status and user
+- **Plugin Executions** subtab with QAH plugin source, loaded state and QAH PID
+- **Stop selected user plugin** asks QAH's PluginManager to unload it
 
 Uses `psutil` when available and falls back to native task/ps listings.
+System and wheel plugins are protected from the stop action. This is an unload,
+not a hard process kill; background threads that ignore cleanup may keep running.
 
 ### Watchdog
 
@@ -115,7 +119,10 @@ Runs plugin code in a separate process with:
 - Python audit hooks blocking network, subprocess, ctypes and writes outside the
   sandbox
 - a temporary working directory and scrubbed environment
-- POSIX rlimits or a Windows Job Object memory limit
+- sensitive credential-path reads blocked (`.ssh`, `.aws`, `.gnupg`, `.kube`,
+  `.docker`, QAH credential files)
+- registry and process creation blocked
+- POSIX rlimits or a Windows Job Object memory/CPU limit
 - a hard timeout and process-tree kill
 - captured stdout/stderr and violation list
 
@@ -158,10 +165,20 @@ risk score of 25 or more. `PASS` means clean under the current policy.
 Preview and export JSON, Markdown, HTML or CSV reports. The HTML report is
 self-contained and suitable for review or CI artifacts.
 
+### Health
+
+Reads the JSON report from the headless **Plugin Health Guard** plugin:
+
+- plugin count and issue counts
+- manifest, duplicate-id, backup and bytecode issues
+- **Run Health Guard check** when that plugin is loaded
+- open the raw `health.json`
+
 ### Documentation
 
 Offline guide for the native scanner, runtime monitor, watchdog, sandbox,
-external API, system-plugin protection and Linux/macOS notes.
+external API, Health Guard integration, plugin executions, system-plugin
+protection and Linux/macOS notes.
 
 ---
 
@@ -286,5 +303,5 @@ README.md
 
 ---
 
-Version: 1.1.0  
+Version: 1.1.1  
 Author: Acxel Orozco
