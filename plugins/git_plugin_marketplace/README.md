@@ -11,6 +11,12 @@ plugin ZIPs live in a Git repository (GitHub) instead of Firebase.
 - One Git commit per publish/delete, so the history is the audit log
 - Linux / macOS / Windows
 
+## 1.2.1
+
+- The UI now also blocks deleting `git_plugin_marketplace` from its own catalog,
+  in addition to blocking install/update/uninstall of its running folder.
+- Core install/uninstall still refuses to touch the running marketplace folder.
+
 ## 1.2.0
 
 - Added **Sentinel addons** as a first-class asset: `addons` catalog section,

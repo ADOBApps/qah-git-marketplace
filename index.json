@@ -2,7 +2,7 @@
   "schema": 1,
   "name": "QAH Git Marketplace",
   "description": "Plugins for Quantum Analysis Helper, stored in Git.",
-  "updated": "2026-11-08T07:14:18Z",
+  "updated": "2026-11-08T07:15:42Z",
   "plugins": [
     {
       "id": "git_plugin_marketplace",
@@ -90,9 +90,19 @@
           "changelog": "Git Plugin Marketplace 1.2.0: adds Sentinel addon assets (catalog, Addons filter, .qah install/update/uninstall/publish), addon hash pinning integration, Update all for plugins/themes/addons, and a hard self-update guard that blocks the marketplace from replacing or removing itself while running.",
           "published": "2026-11-08T07:08:21Z",
           "yanked": false
+        },
+        {
+          "version": "1.2.1",
+          "path": "plugins/git_plugin_marketplace/1.2.1/git_plugin_marketplace-1.2.1.qplugin.zip",
+          "url": "",
+          "sha256": "ecebeed5a6c1cd4ad3ce8ff1a607c418efd2ee2e157b11d1c7074ef6addf3e75",
+          "size": 63331,
+          "changelog": "Git Plugin Marketplace 1.2.1: extends the self-protection guard to block deleting the running marketplace's own catalog entry from its UI. Install/update/uninstall self-protection remains in both UI and core.",
+          "published": "2026-11-08T07:15:42Z",
+          "yanked": false
         }
       ],
-      "version": "1.2.0"
+      "version": "1.2.1"
     },
     {
       "id": "luaqah_studio",
