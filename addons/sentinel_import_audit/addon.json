@@ -1,0 +1,17 @@
+{
+  "format": "qah-sentinel-addon",
+  "id": "sentinel_import_audit",
+  "name": "Sentinel Import Audit",
+  "version": "1.0.0",
+  "api_version": 1,
+  "author": "Acxel Orozco",
+  "description": "Report-only static import audit. Flags third-party imports not declared in manifest dependencies, wildcard imports, absolute imports of local modules and heavy imports. Uses the addon host standard-library list.",
+  "main": "main.py",
+  "entry": "run",
+  "timeout": 60,
+  "capabilities": [
+    "read-files",
+    "findings",
+    "report"
+  ]
+}
