@@ -182,13 +182,21 @@ QAH is a frozen launcher, so inside QAH `sys.executable` is the QAH executable,
 not `python.exe`. Sentinel addons and the sandbox run in a separate real Python
 process. Sentinel resolves it from:
 
-1. `QAH_SENTINEL_PYTHON` or `QAH_PYTHON`;
-2. `python3` / `python` on `PATH`;
-3. the Windows `py -3` launcher.
+1. the path saved in **Sandbox → Python interpreter** (`python.json`);
+2. `QAH_SENTINEL_PYTHON` or `QAH_PYTHON`;
+3. `python3` / `python` on `PATH`;
+4. the Windows `py -3` launcher.
+
+**Browse…** selects an interpreter, **Test** validates Python plus QAH's
+PySide6, and **Auto** clears the override. This is the recommended fix when a
+Linux conda environment cannot load QAH's Qt libraries. The same interpreter is
+used for addons and the sandbox. The PySide6 probe is cross-platform: it only
+calls `os.add_dll_directory` on Windows, so Linux/macOS interpreters are not
+rejected by a Windows-only call.
 
 If no interpreter is found, the result is an immediate error with instructions
-instead of a 60 s timeout. Install Python 3.8+ or point
-`QAH_SENTINEL_PYTHON` at an interpreter.
+and probe details instead of a 60 s timeout. Install Python 3.8+ or choose an
+interpreter in the GUI (or set `QAH_SENTINEL_PYTHON`).
 
 Plugin Sentinel 1.2.11 also adds QAH's `app/` directory to the sandbox import
 path. Plugins that use host APIs such as
