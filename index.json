@@ -2,7 +2,7 @@
   "schema": 1,
   "name": "QAH Git Marketplace",
   "description": "Plugins for Quantum Analysis Helper, stored in Git.",
-  "updated": "2026-11-08T05:58:46Z",
+  "updated": "2026-11-08T05:59:34Z",
   "plugins": [
     {
       "id": "git_plugin_marketplace",
@@ -108,7 +108,7 @@
       "id": "plugin_sentinel",
       "name": "Plugin Sentinel",
       "author": "Acxel Orozco",
-      "description": "Advanced plugin security audit: risk scoring, capability mapping, native DLL/SO/dylib inspection, trusted baselines, hash watchdog, process sandbox, runtime monitor, policy gates, reports and CI-friendly CLI.",
+      "description": "Advanced plugin security audit: risk scoring, capability mapping, native DLL/SO/dylib inspection, trusted baselines, hash watchdog, public watchdog API, process sandbox, runtime monitor, policy gates, reports and CI-friendly CLI.",
       "category": "development",
       "type": "python",
       "dependencies": [],
@@ -130,9 +130,19 @@
           "changelog": "Initial Plugin Sentinel release: advanced plugin security audit with risk scoring, capability mapping, native PE/ELF/Mach-O inspection, recursive user-plugin discovery, trusted baselines, hash watchdog, process sandbox, live runtime monitor, policy gates, reports and CLI.",
           "published": "2026-11-08T05:38:21Z",
           "yanked": false
+        },
+        {
+          "version": "1.1.0",
+          "path": "plugins/plugin_sentinel/1.1.0/plugin_sentinel-1.1.0.qplugin.zip",
+          "url": "",
+          "sha256": "c4a12e699e002bed4d56bba5138f87f7cbeed7e1fbcb76eaa959f776de24ed4e",
+          "size": 50021,
+          "changelog": "Plugin Sentinel 1.1.0: adds public watchdog API for other plugins (watch plugin/library/execution paths, callbacks, poll), a Documentation tab, recursive user-plugin discovery, native inspection, runtime monitor, hash watchdog and process sandbox.",
+          "published": "2026-11-08T05:59:34Z",
+          "yanked": false
         }
       ],
-      "version": "1.0.0"
+      "version": "1.1.0"
     },
     {
       "id": "qah_ssh",
