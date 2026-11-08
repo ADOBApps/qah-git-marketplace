@@ -1,0 +1,23 @@
+{
+  "name": "Theme Studio",
+  "id": "theme_studio",
+  "version": "1.0.0",
+  "author": "Acxel Orozco",
+  "description": "Advanced theme builder for QAH: live preview, token editor, generated QSS, legacy theme.json + CSS export, .qtheme.zip packages and Git Marketplace publishing.",
+  "type": "python",
+  "category": "tools",
+  "main": "__init__.py",
+  "dependencies": [],
+  "icon": "icon.svg",
+  "requires_qah": "2.0.8",
+  "marketplace": {
+    "price": 0.0,
+    "currency": "USD",
+    "price_model": "free",
+    "payment_required": false
+  },
+  "license": {
+    "type": "free",
+    "max_activations": 100
+  }
+}
