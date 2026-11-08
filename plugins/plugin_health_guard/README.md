@@ -90,5 +90,5 @@ falls back to `~/QAH/plugins/python_plugins`.
 
 ---
 
-Version: 1.0.1  
+Version: 1.0.2  
 Author: Acxel Orozco

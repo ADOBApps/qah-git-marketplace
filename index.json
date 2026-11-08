@@ -2,7 +2,7 @@
   "schema": 1,
   "name": "QAH Git Marketplace",
   "description": "Plugins for Quantum Analysis Helper, stored in Git.",
-  "updated": "2026-11-08T13:17:54Z",
+  "updated": "2026-11-08T13:18:54Z",
   "plugins": [
     {
       "id": "git_plugin_marketplace",
@@ -149,7 +149,7 @@
       "name": "Plugin Health Guard",
       "author": "Acxel Orozco",
       "description": "Headless startup health check for QAH plugins: manifest integrity, missing entry points, duplicate ids, backup files and stale bytecode, with a JSON report, read-only API and menu actions.",
-      "category": "development",
+      "category": "tools",
       "type": "python",
       "dependencies": [],
       "requires_qah": "2.0.8",
@@ -180,9 +180,19 @@
           "changelog": "Plugin Health Guard 1.0.1: adds a read-only health_api for other plugins and reports consumed by Plugin Sentinel's Health tab.",
           "published": "2026-11-08T06:30:39Z",
           "yanked": false
+        },
+        {
+          "version": "1.0.2",
+          "path": "plugins/plugin_health_guard/1.0.2/plugin_health_guard-1.0.2.qplugin.zip",
+          "url": "",
+          "sha256": "a5c4f9fcc8fae6562796818ba3cd92b51dc5474fca6455b1c7d22fd7f4693d36",
+          "size": 6324,
+          "changelog": "Plugin Health Guard 1.0.2: category changed from development to tools. No functional changes.",
+          "published": "2026-11-08T13:18:54Z",
+          "yanked": false
         }
       ],
-      "version": "1.0.1"
+      "version": "1.0.2"
     },
     {
       "id": "plugin_sentinel",
