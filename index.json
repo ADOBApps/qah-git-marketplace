@@ -2,7 +2,7 @@
   "schema": 1,
   "name": "QAH Git Marketplace",
   "description": "Plugins for Quantum Analysis Helper, stored in Git.",
-  "updated": "2026-11-08T07:38:37Z",
+  "updated": "2026-11-08T07:38:49Z",
   "plugins": [
     {
       "id": "git_plugin_marketplace",
@@ -780,6 +780,36 @@
   ],
   "addons": [
     {
+      "id": "sentinel_checksum_verify",
+      "name": "Sentinel Checksum Verify",
+      "author": "Acxel Orozco",
+      "description": "Verifies SHA256SUMS, checksums.sha256 and BSD-style SHA256 manifests against the files they reference, reporting matches, mismatches, missing files and unreadable entries.",
+      "category": "addon",
+      "type": "addon",
+      "kind": "addon",
+      "api_version": 1,
+      "capabilities": [
+        "read-files",
+        "findings",
+        "report"
+      ],
+      "homepage": "",
+      "tags": [],
+      "versions": [
+        {
+          "version": "1.0.0",
+          "path": "addons/sentinel_checksum_verify/1.0.0/sentinel_checksum_verify-1.0.0.qah",
+          "url": "",
+          "sha256": "7eb99686cbcbc9bd6d9e6c17165a1dbd76be69442963bd2d6e28242dc59309eb",
+          "size": 2985,
+          "changelog": "Sentinel Checksum Verify 1.0.0: verifies SHA256SUMS/checksums.sha256 manifests with match, mismatch and missing-file reporting.",
+          "published": "2026-11-08T07:38:49Z",
+          "yanked": false
+        }
+      ],
+      "version": "1.0.0"
+    },
+    {
       "id": "sentinel_file_audit",
       "name": "Sentinel File Audit",
       "author": "Acxel Orozco",
@@ -915,7 +945,13 @@
           "yanked": false
         }
       ],
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "dependencies": [],
+      "price": 0.0,
+      "currency": "USD",
+      "price_model": "free",
+      "license_type": "free",
+      "max_activations": 0
     }
   ]
 }

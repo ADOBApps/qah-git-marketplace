@@ -1,0 +1,17 @@
+{
+  "format": "qah-sentinel-addon",
+  "id": "sentinel_checksum_verify",
+  "name": "Sentinel Checksum Verify",
+  "version": "1.0.0",
+  "api_version": 1,
+  "author": "Acxel Orozco",
+  "description": "Verifies SHA256SUMS, checksums.sha256 and BSD-style SHA256 manifests against the files they reference, reporting matches, mismatches, missing files and unreadable entries.",
+  "main": "main.py",
+  "entry": "run",
+  "timeout": 120,
+  "capabilities": [
+    "read-files",
+    "findings",
+    "report"
+  ]
+}
