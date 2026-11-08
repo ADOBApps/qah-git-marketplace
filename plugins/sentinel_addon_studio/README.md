@@ -1,5 +1,23 @@
 # Sentinel Addon Studio
 
+## 1.0.2
+
+- Added a **line-number gutter** and **Python syntax highlighting** to the
+  `main.py` editor.
+- Added a current **Ln / Col** indicator.
+- Added **Validate** to the toolbar.
+- Added a **Deploy** panel showing the configured Git Marketplace repository,
+  branch and token state without exposing the token.
+- `Publish to Marketplace` now preflights the marketplace configuration and
+  clearly delegates publishing to Git Plugin Marketplace.
+- Added **Check Marketplace**, **Open packages**, **Copy .qah path** and the
+  built package path field.
+- Added shortcuts: `Ctrl+S` save, `Ctrl+B` build, `Ctrl+T` test, `Ctrl+I`
+  install in Sentinel, `Ctrl+Shift+P` publish.
+- The editor remains inside the scrollable responsive workbench.
+
+## 1.0.1
+
 A separate developer plugin for building **Plugin Sentinel addons** without
 putting authoring tools inside Sentinel's runtime.
 
