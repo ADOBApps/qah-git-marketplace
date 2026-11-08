@@ -2,7 +2,7 @@
   "schema": 1,
   "name": "QAH Git Marketplace",
   "description": "Plugins for Quantum Analysis Helper, stored in Git.",
-  "updated": "2026-11-08T13:18:54Z",
+  "updated": "2026-11-08T13:19:55Z",
   "plugins": [
     {
       "id": "git_plugin_marketplace",
@@ -571,7 +571,7 @@
       "name": "QAH WS Server",
       "author": "Acxel Orozco",
       "description": "Encrypted WSS remote command console for QAH: paired clients run commands and receive streamed stdout/stderr, with timed or password-protected permanent auto-approve.",
-      "category": "development",
+      "category": "tools",
       "type": "python",
       "dependencies": [],
       "requires_qah": "",
@@ -612,9 +612,19 @@
           "changelog": "QAH WS Server 1.2.0: adds outbound relay mode (bundled relay_server.py), a Relay tab, and an offline Documentation tab covering Tailscale, Cloudflare Tunnel, relay mode, security and troubleshooting. Direct mode remains the default and old settings keep working.",
           "published": "2026-11-07T14:15:21Z",
           "yanked": false
+        },
+        {
+          "version": "1.2.1",
+          "path": "plugins/qah_ws_server/1.2.1/qah_ws_server-1.2.1.qplugin.zip",
+          "url": "",
+          "sha256": "fadf93cc8c15615220ebcd6c833cea004aef5aca5766f1719418030e6b276b7b",
+          "size": 48184,
+          "changelog": "QAH WS Server 1.2.1: category changed from development to tools. No functional changes.",
+          "published": "2026-11-08T13:19:55Z",
+          "yanked": false
         }
       ],
-      "version": "1.2.0"
+      "version": "1.2.1"
     },
     {
       "id": "qahtop",
