@@ -2,7 +2,7 @@
   "schema": 1,
   "name": "QAH Git Marketplace",
   "description": "Plugins for Quantum Analysis Helper, stored in Git.",
-  "updated": "2026-11-08T08:00:31Z",
+  "updated": "2026-11-08T08:00:45Z",
   "plugins": [
     {
       "id": "git_plugin_marketplace",
@@ -851,7 +851,13 @@
           "yanked": false
         }
       ],
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "dependencies": [],
+      "price": 0.0,
+      "currency": "USD",
+      "price_model": "free",
+      "license_type": "free",
+      "max_activations": 0
     },
     {
       "id": "studio_ocean",
@@ -883,6 +889,31 @@
       "price_model": "free",
       "license_type": "free",
       "max_activations": 0
+    },
+    {
+      "id": "studio_paper",
+      "name": "Studio Paper Light",
+      "author": "Acxel Orozco",
+      "description": "Light paper theme: warm white surfaces, blue accent and high-contrast dark text.",
+      "category": "theme",
+      "type": "theme",
+      "kind": "theme",
+      "homepage": "",
+      "tags": [],
+      "preview_color": "#f7f5ef",
+      "versions": [
+        {
+          "version": "1.0.0",
+          "path": "themes/studio_paper/1.0.0/studio_paper-1.0.0.qtheme.zip",
+          "url": "",
+          "sha256": "3a9a63b25af17e8515ecc57e2fd8bcd542c3851837116f477750537f4330e2bc",
+          "size": 2302,
+          "changelog": "Studio Paper Light 1.0.0: warm white light theme with blue accent and high-contrast dark text.",
+          "published": "2026-11-08T08:00:45Z",
+          "yanked": false
+        }
+      ],
+      "version": "1.0.0"
     }
   ],
   "addons": [

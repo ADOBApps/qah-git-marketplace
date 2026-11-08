@@ -1,0 +1,31 @@
+{
+  "id": "studio_paper",
+  "name": "Studio Paper Light",
+  "author": "Acxel Orozco",
+  "version": "1.0.0",
+  "description": "Light paper theme: warm white surfaces, blue accent and high-contrast dark text.",
+  "css_file": "theme.css",
+  "preview_color": "#f7f5ef",
+  "tokens": {
+    "background": "#f7f5ef",
+    "surface": "#ffffff",
+    "surface_alt": "#eee9df",
+    "text": "#1f2937",
+    "text_muted": "#6b7280",
+    "accent": "#2563eb",
+    "accent_text": "#ffffff",
+    "border": "#d6d3c8",
+    "hover": "#e8e3d8",
+    "selection": "#bfdbfe",
+    "error": "#dc2626",
+    "warning": "#d97706",
+    "success": "#16a34a",
+    "code_bg": "#f1f5f9"
+  },
+  "font_family": "Segoe UI, Arial, sans-serif",
+  "font_size": 10,
+  "radius": 4,
+  "category": "theme",
+  "type": "theme",
+  "kind": "theme"
+}
