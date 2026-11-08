@@ -158,6 +158,37 @@ risk score of 25 or more. `PASS` means clean under the current policy.
 Preview and export JSON, Markdown, HTML or CSV reports. The HTML report is
 self-contained and suitable for review or CI artifacts.
 
+### Documentation
+
+Offline guide for the native scanner, runtime monitor, watchdog, sandbox,
+external API, system-plugin protection and Linux/macOS notes.
+
+---
+
+## External watchdog API
+
+Other QAH plugins can register watches while Plugin Sentinel is installed:
+
+```python
+from plugin_sentinel import sentinel_api
+
+sentinel_api.watch_plugin("my_plugin")
+sentinel_api.watch_library(r"C:\path\native.dll")
+sentinel_api.watch_execution("simulation output", r"C:\path\out.log")
+
+sentinel_api.subscribe(lambda event: print("changed:", event))
+sentinel_api.poll()
+```
+
+Watches are shared with the Watchdog tab through `watches.json`. Callbacks are
+in-process and fire while both plugins are loaded; cross-process consumers can
+read `events.jsonl`. An execution watch is a path watchdog for an output/log/
+script/executable, not a process supervisor.
+
+**System-plugin protection:** Sentinel is report-only and never unloads,
+disables or blocks a plugin. The Git Marketplace also disables update/version
+install for system and wheel plugins.
+
 ---
 
 ## What Sentinel adds to Plugin Auditor
@@ -255,5 +286,5 @@ README.md
 
 ---
 
-Version: 1.0.0  
+Version: 1.1.0  
 Author: Acxel Orozco
