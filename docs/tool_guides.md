@@ -372,6 +372,7 @@ py -3 $wcli tags
 ## Related files
 
 - Marketplace catalog: [`../index.json`](../index.json)
+- GUI dependency injection guide: [`gui_dependency_injection.md`](gui_dependency_injection.md)
 - Plugin entries: [`../plugins/`](../plugins/)
 - Theme entries: [`../themes/`](../themes/)
 - Addon entries: [`../addons/`](../addons/)

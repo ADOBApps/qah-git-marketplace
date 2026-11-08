@@ -23,6 +23,10 @@ See [`docs/tool_guides.md`](docs/tool_guides.md) for practical usage notes for
 **Theme Studio**, **Sentinel Addon Studio**, **Plugin Sentinel** and
 **Wheel Plugin Manager**, including publishing and dependency injection.
 
+See [`docs/gui_dependency_injection.md`](docs/gui_dependency_injection.md) for
+the graphical step-by-step pydft/psutil injection, no-deps mode, verification
+and deletion guide.
+
 ## Layout
 
 ```text
