@@ -1,0 +1,31 @@
+{
+  "id": "studio_ember",
+  "name": "Studio Ember",
+  "author": "Acxel Orozco",
+  "version": "1.0.0",
+  "description": "Warm ember theme: charcoal brown surfaces, orange accent and soft cream text.",
+  "css_file": "theme.css",
+  "preview_color": "#1a0f0c",
+  "tokens": {
+    "background": "#1a0f0c",
+    "surface": "#2a1712",
+    "surface_alt": "#3a2119",
+    "text": "#ffe9df",
+    "text_muted": "#c9a79a",
+    "accent": "#f97316",
+    "accent_text": "#1a0f0c",
+    "border": "#5a2e22",
+    "hover": "#45261d",
+    "selection": "#7c2d12",
+    "error": "#ef4444",
+    "warning": "#fbbf24",
+    "success": "#84cc16",
+    "code_bg": "#120a08"
+  },
+  "font_family": "Segoe UI, Arial, sans-serif",
+  "font_size": 10,
+  "radius": 8,
+  "category": "theme",
+  "type": "theme",
+  "kind": "theme"
+}

@@ -2,7 +2,7 @@
   "schema": 1,
   "name": "QAH Git Marketplace",
   "description": "Plugins for Quantum Analysis Helper, stored in Git.",
-  "updated": "2026-11-08T07:54:19Z",
+  "updated": "2026-11-08T08:00:03Z",
   "plugins": [
     {
       "id": "git_plugin_marketplace",
@@ -796,6 +796,31 @@
       "price_model": "free",
       "license_type": "free",
       "max_activations": 0
+    },
+    {
+      "id": "studio_ember",
+      "name": "Studio Ember",
+      "author": "Acxel Orozco",
+      "description": "Warm ember theme: charcoal brown surfaces, orange accent and soft cream text.",
+      "category": "theme",
+      "type": "theme",
+      "kind": "theme",
+      "homepage": "",
+      "tags": [],
+      "preview_color": "#1a0f0c",
+      "versions": [
+        {
+          "version": "1.0.0",
+          "path": "themes/studio_ember/1.0.0/studio_ember-1.0.0.qtheme.zip",
+          "url": "",
+          "sha256": "a6fbaedf7a12b33ea3c45661e7b35b9ca2d24578d5aa388551e8a3b73da638c3",
+          "size": 2295,
+          "changelog": "Studio Ember 1.0.0: warm charcoal-brown dark theme with orange accent and cream text.",
+          "published": "2026-11-08T08:00:03Z",
+          "yanked": false
+        }
+      ],
+      "version": "1.0.0"
     }
   ],
   "addons": [
