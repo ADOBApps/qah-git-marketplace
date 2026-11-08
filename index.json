@@ -2,7 +2,7 @@
   "schema": 1,
   "name": "QAH Git Marketplace",
   "description": "Plugins for Quantum Analysis Helper, stored in Git.",
-  "updated": "2026-11-08T19:10:01Z",
+  "updated": "2026-11-08T19:28:11Z",
   "plugins": [
     {
       "id": "git_plugin_marketplace",
@@ -1274,6 +1274,36 @@
       "price_model": "free",
       "license_type": "free",
       "max_activations": 0
+    },
+    {
+      "id": "sentinel_dependency_audit",
+      "name": "Sentinel Dependency Audit",
+      "author": "Acxel Orozco",
+      "description": "Report-only audit of QAH vendor dependency sets and plugin dependency metadata. Detects stale qah_dependencies.json package lists, missing or orphan dist-info entries, duplicate packages, private/global shadowing and manifest target mismatches.",
+      "category": "addon",
+      "type": "addon",
+      "kind": "addon",
+      "api_version": 1,
+      "capabilities": [
+        "read-files",
+        "findings",
+        "report"
+      ],
+      "homepage": "",
+      "tags": [],
+      "versions": [
+        {
+          "version": "1.0.0",
+          "path": "addons/sentinel_dependency_audit/1.0.0/sentinel_dependency_audit-1.0.0.qah",
+          "url": "",
+          "sha256": "105dda93daea303622ec8f74233b29d3d9bbe072c6dfdcb308fc5691d50847b7",
+          "size": 4117,
+          "changelog": "Sentinel Dependency Audit 1.0.0: report-only audit of vendor qah_dependencies.json and dist-info sets. Finds stale manifest packages, undocumented packages, duplicates, missing versions, no_deps conflicts, target mismatches, loose folders and private/global shadowing. No pip, imports, changes or process control.",
+          "published": "2026-11-08T19:28:11Z",
+          "yanked": false
+        }
+      ],
+      "version": "1.0.0"
     },
     {
       "id": "sentinel_file_audit",

@@ -1,0 +1,17 @@
+{
+  "format": "qah-sentinel-addon",
+  "id": "sentinel_dependency_audit",
+  "name": "Sentinel Dependency Audit",
+  "version": "1.0.0",
+  "api_version": 1,
+  "author": "Acxel Orozco",
+  "description": "Report-only audit of QAH vendor dependency sets and plugin dependency metadata. Detects stale qah_dependencies.json package lists, missing or orphan dist-info entries, duplicate packages, private/global shadowing and manifest target mismatches.",
+  "main": "main.py",
+  "entry": "run",
+  "timeout": 60,
+  "capabilities": [
+    "read-files",
+    "findings",
+    "report"
+  ]
+}
