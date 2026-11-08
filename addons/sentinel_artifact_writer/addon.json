@@ -1,0 +1,18 @@
+{
+  "format": "qah-sentinel-addon",
+  "id": "sentinel_artifact_writer",
+  "name": "Sentinel Artifact Writer",
+  "version": "1.0.0",
+  "api_version": 1,
+  "author": "Acxel Orozco",
+  "description": "Exports a tamper-evident audit artifact for the selected targets into the addon data directory: manifest, file sizes, SHA-256 hashes and an aggregate digest, as JSON plus Markdown. It demonstrates the write-files capability, never executes target code and never changes a plugin.",
+  "main": "main.py",
+  "entry": "run",
+  "timeout": 90,
+  "capabilities": [
+    "read-files",
+    "write-files",
+    "findings",
+    "report"
+  ]
+}

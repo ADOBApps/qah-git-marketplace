@@ -2,7 +2,7 @@
   "schema": 1,
   "name": "QAH Git Marketplace",
   "description": "Plugins for Quantum Analysis Helper, stored in Git.",
-  "updated": "2026-11-08T20:41:22Z",
+  "updated": "2026-11-08T20:53:13Z",
   "plugins": [
     {
       "id": "git_plugin_marketplace",
@@ -1324,6 +1324,37 @@
       "price_model": "free",
       "license_type": "free",
       "max_activations": 0
+    },
+    {
+      "id": "sentinel_artifact_writer",
+      "name": "Sentinel Artifact Writer",
+      "author": "Acxel Orozco",
+      "description": "Exports a tamper-evident audit artifact for the selected targets into the addon data directory: manifest, file sizes, SHA-256 hashes and an aggregate digest, as JSON plus Markdown. It demonstrates the write-files capability, never executes target code and never changes a plugin.",
+      "category": "addon",
+      "type": "addon",
+      "kind": "addon",
+      "api_version": 1,
+      "capabilities": [
+        "read-files",
+        "write-files",
+        "findings",
+        "report"
+      ],
+      "homepage": "",
+      "tags": [],
+      "versions": [
+        {
+          "version": "1.0.0",
+          "path": "addons/sentinel_artifact_writer/1.0.0/sentinel_artifact_writer-1.0.0.qah",
+          "url": "",
+          "sha256": "378b5aa68166e6e2156d096c9fb1a94c87a0828ac8b0238449307d619b778859",
+          "size": 3901,
+          "changelog": "Initial release: writes a point-in-time JSON/Markdown audit artifact with manifests, sizes, per-file SHA-256 and an aggregate digest into the addon data directory. Reference example for the write-files capability.",
+          "published": "2026-11-08T20:53:13Z",
+          "yanked": false
+        }
+      ],
+      "version": "1.0.0"
     },
     {
       "id": "sentinel_capability_audit",
