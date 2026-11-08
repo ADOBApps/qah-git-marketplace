@@ -2,7 +2,7 @@
   "schema": 1,
   "name": "QAH Git Marketplace",
   "description": "Plugins for Quantum Analysis Helper, stored in Git.",
-  "updated": "2026-11-08T06:43:25Z",
+  "updated": "2026-11-08T06:47:08Z",
   "plugins": [
     {
       "id": "git_plugin_marketplace",
@@ -158,7 +158,7 @@
       "id": "plugin_sentinel",
       "name": "Plugin Sentinel",
       "author": "Acxel Orozco",
-      "description": "Advanced plugin security audit: risk scoring, capability mapping, native DLL/SO/dylib inspection, trusted baselines, hash watchdog, public watchdog API, process sandbox, runtime monitor with plugin-execution control, policy gates, Health Guard integration, reports and CI-friendly CLI.",
+      "description": "Advanced plugin security audit: risk scoring, capability mapping, native DLL/SO/dylib inspection, trusted baselines, hash watchdog, public watchdog API, installable watchdog builder, process sandbox, runtime monitor with plugin-execution control, policy gates, Health Guard integration, reports and CI-friendly CLI.",
       "category": "development",
       "type": "python",
       "dependencies": [],
@@ -200,9 +200,19 @@
           "changelog": "Plugin Sentinel 1.1.1: Runtime Plugin Executions subtab can unload selected user plugins (system/wheel protected), Health tab reads Plugin Health Guard reports, sandbox blocks sensitive credential reads/registry/process creation and adds Windows CPU limits.",
           "published": "2026-11-08T06:29:48Z",
           "yanked": false
+        },
+        {
+          "version": "1.1.2",
+          "path": "plugins/plugin_sentinel/1.1.2/plugin_sentinel-1.1.2.qplugin.zip",
+          "url": "",
+          "sha256": "d339d6aad67c7f11a3dd80d16f22c301e1b4dd47d082e01ff9d1c8ca2e84dcae",
+          "size": 57937,
+          "changelog": "Plugin Sentinel 1.1.2: fixes Plugin Executions manager discovery, adds Watchdog Builder that generates installable headless watchdog plugins, and keeps Health Guard integration and sandbox improvements.",
+          "published": "2026-11-08T06:47:08Z",
+          "yanked": false
         }
       ],
-      "version": "1.1.1"
+      "version": "1.1.2"
     },
     {
       "id": "qah_ssh",
@@ -659,7 +669,13 @@
           "yanked": false
         }
       ],
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "dependencies": [],
+      "price": 0.0,
+      "currency": "USD",
+      "price_model": "free",
+      "license_type": "free",
+      "max_activations": 0
     }
   ]
 }

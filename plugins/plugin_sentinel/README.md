@@ -112,6 +112,17 @@ Watch definitions are stored in:
 %USERPROFILE%\QAH\plugin_sentinel\watches.json
 ```
 
+### Watchdog Builder
+
+Generates an installable headless watchdog plugin for a plugin folder, native
+library, log or execution output. The generated plugin:
+
+- pins the target SHA256 on first run,
+- checks on its own timer,
+- writes `%USERPROFILE%\QAH\<id>\report.json`,
+- provides **Check watchdog now** and **Open watchdog report** menu actions,
+- needs only PySide6 and the standard library.
+
 ### Sandbox
 
 Runs plugin code in a separate process with:
@@ -303,5 +314,5 @@ README.md
 
 ---
 
-Version: 1.1.1  
+Version: 1.1.2  
 Author: Acxel Orozco
