@@ -2,7 +2,7 @@
   "schema": 1,
   "name": "QAH Git Marketplace",
   "description": "Plugins for Quantum Analysis Helper, stored in Git.",
-  "updated": "2026-11-08T16:26:54Z",
+  "updated": "2026-11-08T16:48:01Z",
   "plugins": [
     {
       "id": "git_plugin_marketplace",
@@ -330,9 +330,19 @@
           "changelog": "Plugin Sentinel 1.2.7: Runtime sampling is visible-only and user-configurable. Adds 0.5/1/2/5/10 s refresh interval, Pause checkbox, persisted runtime_settings.json, live source/status labels, and stops process polling whenever the Runtime tab is hidden.",
           "published": "2026-11-08T16:26:54Z",
           "yanked": false
+        },
+        {
+          "version": "1.2.8",
+          "path": "plugins/plugin_sentinel/1.2.8/plugin_sentinel-1.2.8.qplugin.zip",
+          "url": "",
+          "sha256": "f192f0313808bf0cb717f2df1f4b68eecba0f26c6b60df24ddef416e82fb41d6",
+          "size": 80874,
+          "changelog": "Plugin Sentinel 1.2.8: fixes Sentinel addon and sandbox runs inside frozen QAH. Child harnesses now use a real Python interpreter discovered from QAH_SENTINEL_PYTHON/QAH_PYTHON, PATH (python3/python) or the py -3 launcher instead of sys.executable, which launched a second QAH instance and ended as a 60 s timeout. Missing-interpreter now returns a clear error instead of waiting for the timeout; addon read roots include the selected interpreter standard library.",
+          "published": "2026-11-08T16:48:01Z",
+          "yanked": false
         }
       ],
-      "version": "1.2.7"
+      "version": "1.2.8"
     },
     {
       "id": "pydft_workbench",

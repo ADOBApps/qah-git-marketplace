@@ -181,6 +181,24 @@ with a new install record is re-pinned automatically.
 %USERPROFILE%\QAH\plugin_sentinel\addon_settings.json
 ```
 
+#### Addon Python interpreter
+
+QAH ships as a frozen launcher: inside QAH, `sys.executable` is the QAH
+executable, not `python.exe`. Sentinel therefore must not launch addons with
+`sys.executable` (that starts another QAH instance and ends as a 60 s timeout).
+
+Sentinel probes for a real interpreter in this order:
+
+1. `QAH_SENTINEL_PYTHON` or `QAH_PYTHON` environment variable;
+2. `python3` or `python` on `PATH`;
+3. the Windows `py -3` launcher.
+
+If none is found, the Addons tab reports a clear error instead of waiting for the
+timeout. Install any Python 3.8+ or set `QAH_SENTINEL_PYTHON` to the interpreter
+path. The addon host reads only the addon folder, its data folder, the run
+workdir, the selected targets, the chosen Python standard library and the QAH
+Python paths.
+
 ### Sandbox
 
 Runs plugin code in a separate process with:
@@ -194,6 +212,7 @@ Runs plugin code in a separate process with:
 - POSIX rlimits or a Windows Job Object memory/CPU limit
 - a hard timeout and process-tree kill
 - captured stdout/stderr and violation list
+- real Python interpreter discovery, so the sandbox also works from frozen QAH
 
 This is a strong containment harness for Python code. It is **not** a
 hypervisor or an OS security boundary against kernel-level native code.
@@ -380,6 +399,7 @@ __init__.py
 sentinel_core.py      Qt-free engine: checks, risk, capabilities, baseline, policy
 native_scan.py        PE / ELF / Mach-O header and import inspection
 sandbox_runner.py     process sandbox harness and resource limits
+sentinel_python.py    real Python interpreter discovery for child harnesses
 runtime_monitor.py    htop-style live runtime tab
 watchdog_monitor.py   hash watchdog tab
 sentinel_widget.py    PySide6 multi-tab dashboard
@@ -390,5 +410,5 @@ README.md
 
 ---
 
-Version: 1.2.7  
+Version: 1.2.8  
 Author: Acxel Orozco
