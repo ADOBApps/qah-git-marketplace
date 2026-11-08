@@ -309,14 +309,16 @@ conformers; custom XYZ files can be imported.
 pydft Kohn–Sham is the primary engine; PyQInt Hartree–Fock is available as a
 fallback when DFT does not converge.
 
-### Thermal safety
+### CPU limits
 
-pydft/pyqint are CPU-only. The plugin defaults to one native thread, a
-low-power grid, a bounded SCF iteration cap, a pause between SCF steps and a
-**Stop after current SCF step** button. It never starts a calculation on load.
-Heavy hormones (E2/EE2/E3/testosterone/progesterone) require confirmation and
-can run for minutes; use the low-power preset and an external temperature
-watchdog. Start with water or benzene.
+pydft/pyqint are CPU-only. The header reports the number of logical CPU threads
+detected by the OS, and the selector can use any value from 1 to that total. The
+plugin defaults to one native thread, a low-power grid, a bounded SCF iteration
+cap, a pause between SCF steps and a **Stop after current SCF step** button. It
+never starts a calculation on load. Heavy hormones
+(E2/EE2/E3/testosterone/progesterone) require confirmation and can run for
+minutes; use the low-power preset and an external temperature watchdog. Start
+with water or benzene.
 
 ### GPU?
 
