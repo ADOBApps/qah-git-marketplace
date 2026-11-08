@@ -2,7 +2,7 @@
   "schema": 1,
   "name": "QAH Git Marketplace",
   "description": "Plugins for Quantum Analysis Helper, stored in Git.",
-  "updated": "2026-11-08T08:00:16Z",
+  "updated": "2026-11-08T08:00:31Z",
   "plugins": [
     {
       "id": "git_plugin_marketplace",
@@ -829,6 +829,31 @@
       "max_activations": 0
     },
     {
+      "id": "studio_forest",
+      "name": "Studio Forest",
+      "author": "Acxel Orozco",
+      "description": "Forest theme: deep green surfaces, fresh green accent and calm neutral text.",
+      "category": "theme",
+      "type": "theme",
+      "kind": "theme",
+      "homepage": "",
+      "tags": [],
+      "preview_color": "#0b1710",
+      "versions": [
+        {
+          "version": "1.0.0",
+          "path": "themes/studio_forest/1.0.0/studio_forest-1.0.0.qtheme.zip",
+          "url": "",
+          "sha256": "01e73d03fe8da2d75ebc7425e618e17b5178ac211f08d473affc9a63b2ac8cd7",
+          "size": 2291,
+          "changelog": "Studio Forest 1.0.0: deep green dark theme with fresh green accent and calm neutral text.",
+          "published": "2026-11-08T08:00:31Z",
+          "yanked": false
+        }
+      ],
+      "version": "1.0.0"
+    },
+    {
       "id": "studio_ocean",
       "name": "Studio Ocean",
       "author": "Acxel Orozco",
@@ -851,7 +876,13 @@
           "yanked": false
         }
       ],
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "dependencies": [],
+      "price": 0.0,
+      "currency": "USD",
+      "price_model": "free",
+      "license_type": "free",
+      "max_activations": 0
     }
   ],
   "addons": [

@@ -1,0 +1,31 @@
+{
+  "id": "studio_forest",
+  "name": "Studio Forest",
+  "author": "Acxel Orozco",
+  "version": "1.0.0",
+  "description": "Forest theme: deep green surfaces, fresh green accent and calm neutral text.",
+  "css_file": "theme.css",
+  "preview_color": "#0b1710",
+  "tokens": {
+    "background": "#0b1710",
+    "surface": "#12251a",
+    "surface_alt": "#1a3325",
+    "text": "#e6f7eb",
+    "text_muted": "#94b8a1",
+    "accent": "#22c55e",
+    "accent_text": "#06140b",
+    "border": "#2b5238",
+    "hover": "#1f3f2c",
+    "selection": "#166534",
+    "error": "#f87171",
+    "warning": "#fbbf24",
+    "success": "#4ade80",
+    "code_bg": "#07110b"
+  },
+  "font_family": "Segoe UI, Arial, sans-serif",
+  "font_size": 10,
+  "radius": 7,
+  "category": "theme",
+  "type": "theme",
+  "kind": "theme"
+}
