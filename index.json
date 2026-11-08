@@ -2,7 +2,7 @@
   "schema": 1,
   "name": "QAH Git Marketplace",
   "description": "Plugins for Quantum Analysis Helper, stored in Git.",
-  "updated": "2026-11-08T19:34:28Z",
+  "updated": "2026-11-08T19:34:39Z",
   "plugins": [
     {
       "id": "git_plugin_marketplace",
@@ -1348,6 +1348,36 @@
       "max_activations": 0
     },
     {
+      "id": "sentinel_crypto_audit",
+      "name": "Sentinel Crypto Audit",
+      "author": "Acxel Orozco",
+      "description": "Report-only crypto hygiene audit: MD5/SHA1, DES/3DES/RC4/Blowfish, ECB mode, disabled TLS verification, unverified contexts, hard-coded keys/IVs and non-cryptographic randomness for secrets.",
+      "category": "addon",
+      "type": "addon",
+      "kind": "addon",
+      "api_version": 1,
+      "capabilities": [
+        "read-files",
+        "findings",
+        "report"
+      ],
+      "homepage": "",
+      "tags": [],
+      "versions": [
+        {
+          "version": "1.0.0",
+          "path": "addons/sentinel_crypto_audit/1.0.0/sentinel_crypto_audit-1.0.0.qah",
+          "url": "",
+          "sha256": "815037d7f52f2b163c1c1ac0f240b5433b243c69eb215d36daa6a67b09821a6f",
+          "size": 2327,
+          "changelog": "Sentinel Crypto Audit 1.0.0: MD5/SHA1, DES/3DES/RC4/Blowfish, ECB, disabled TLS verification, hard-coded keys/IVs and weak randomness. Report-only.",
+          "published": "2026-11-08T19:34:39Z",
+          "yanked": false
+        }
+      ],
+      "version": "1.0.0"
+    },
+    {
       "id": "sentinel_dangerous_api_audit",
       "name": "Sentinel Dangerous API Audit",
       "author": "Acxel Orozco",
@@ -1915,7 +1945,13 @@
           "yanked": false
         }
       ],
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "dependencies": [],
+      "price": 0.0,
+      "currency": "USD",
+      "price_model": "free",
+      "license_type": "free",
+      "max_activations": 0
     }
   ]
 }

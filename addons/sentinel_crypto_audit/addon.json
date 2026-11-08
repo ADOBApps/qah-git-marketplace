@@ -1,0 +1,17 @@
+{
+  "format": "qah-sentinel-addon",
+  "id": "sentinel_crypto_audit",
+  "name": "Sentinel Crypto Audit",
+  "version": "1.0.0",
+  "api_version": 1,
+  "author": "Acxel Orozco",
+  "description": "Report-only crypto hygiene audit: MD5/SHA1, DES/3DES/RC4/Blowfish, ECB mode, disabled TLS verification, unverified contexts, hard-coded keys/IVs and non-cryptographic randomness for secrets.",
+  "main": "main.py",
+  "entry": "run",
+  "timeout": 60,
+  "capabilities": [
+    "read-files",
+    "findings",
+    "report"
+  ]
+}
