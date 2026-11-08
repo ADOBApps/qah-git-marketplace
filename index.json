@@ -2,7 +2,7 @@
   "schema": 1,
   "name": "QAH Git Marketplace",
   "description": "Plugins for Quantum Analysis Helper, stored in Git.",
-  "updated": "2026-11-08T20:53:38Z",
+  "updated": "2026-11-08T20:53:50Z",
   "plugins": [
     {
       "id": "git_plugin_marketplace",
@@ -1967,7 +1967,13 @@
           "yanked": false
         }
       ],
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "dependencies": [],
+      "price": 0.0,
+      "currency": "USD",
+      "price_model": "free",
+      "license_type": "free",
+      "max_activations": 0
     },
     {
       "id": "sentinel_privacy_audit",
@@ -2112,6 +2118,38 @@
       "price_model": "free",
       "license_type": "free",
       "max_activations": 0
+    },
+    {
+      "id": "sentinel_watchdog_planner",
+      "name": "Sentinel Watchdog Planner",
+      "author": "Acxel Orozco",
+      "description": "Computes SHA-256 baselines for selected plugins or libraries and writes a watches.json-compatible plan plus a Markdown summary to the addon data directory. It proposes hash-drift watches and never installs, changes or removes a live watch.",
+      "category": "addon",
+      "type": "addon",
+      "kind": "addon",
+      "api_version": 1,
+      "capabilities": [
+        "read-files",
+        "write-files",
+        "watchdog",
+        "findings",
+        "report"
+      ],
+      "homepage": "",
+      "tags": [],
+      "versions": [
+        {
+          "version": "1.0.0",
+          "path": "addons/sentinel_watchdog_planner/1.0.0/sentinel_watchdog_planner-1.0.0.qah",
+          "url": "",
+          "sha256": "0bcf4388dde017a5d761d9cbbd4c7ab7f2f41a5fcd733f074ff434f9dccb1c7f",
+          "size": 3526,
+          "changelog": "Initial release: computes SHA-256 baselines and writes a watches.json-compatible plan for selected plugins or libraries. Reference example for the watchdog capability.",
+          "published": "2026-11-08T20:53:50Z",
+          "yanked": false
+        }
+      ],
+      "version": "1.0.0"
     }
   ]
 }

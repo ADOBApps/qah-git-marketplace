@@ -1,0 +1,19 @@
+{
+  "format": "qah-sentinel-addon",
+  "id": "sentinel_watchdog_planner",
+  "name": "Sentinel Watchdog Planner",
+  "version": "1.0.0",
+  "api_version": 1,
+  "author": "Acxel Orozco",
+  "description": "Computes SHA-256 baselines for selected plugins or libraries and writes a watches.json-compatible plan plus a Markdown summary to the addon data directory. It proposes hash-drift watches and never installs, changes or removes a live watch.",
+  "main": "main.py",
+  "entry": "run",
+  "timeout": 120,
+  "capabilities": [
+    "read-files",
+    "write-files",
+    "watchdog",
+    "findings",
+    "report"
+  ]
+}
