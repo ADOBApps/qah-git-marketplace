@@ -84,4 +84,14 @@ Projects are plain folders; you can also open an existing addon folder.
 - Plugin Sentinel 1.2.0 or newer (for testing/installing).
 - Git Plugin Marketplace 1.2.0 or newer (for publishing).
 
-Version: 1.0.0
+Version: 1.0.1
+
+## 1.0.1
+
+- Added a vertical scrollbar to the project form so the full workbench fits on
+  small screens.
+- The action toolbar now collapses overflow into its extension menu instead of
+  forcing a wide window.
+- The header text wraps and can shrink.
+
+## 1.0.0
