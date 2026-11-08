@@ -1,5 +1,13 @@
 # Sentinel Addon Studio
 
+## 1.0.3
+
+- Added a scroll area around the **whole workbench** for small screens.
+- Added a scroll area around **each right-side tab**: `main.py`, `README.md`,
+  `addon.json` and `Activity`.
+- The left project form remains independently scrollable.
+- The header/toolbar stay compact; scrolling appears only when needed.
+
 ## 1.0.2
 
 - Added a **line-number gutter** and **Python syntax highlighting** to the
