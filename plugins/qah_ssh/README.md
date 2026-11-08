@@ -57,12 +57,16 @@ refresh, and open other tabs. The queue is still sequential: one transfer runs
 at a time. Immediate transfers launched from the SSH Browser without the queue
 checkbox remain foreground operations.
 
-Add jobs from **SSH Browser** using **Upload File**, **Upload Folder** or
-**Download**. **Queue transfers** is checked by default, so transfers run in the
-background queue. Uncheck it only when you deliberately want a foreground
-transfer. If **Compress on server (tar.gz)** is checked, the queued download
-also compresses, downloads and extracts the archive. Compressed downloads
-always use the background queue, even if **Queue transfers** is unchecked.
+Add jobs from **SSH Browser** using **Upload File**, **Upload Folder**,
+**Download** or **Delete**. **Queue transfers** is checked by default, so those
+operations run in the background queue. Uncheck it only when you deliberately
+want a foreground operation. If **Compress on server (tar.gz)** is checked, the
+queued download also compresses, downloads and extracts the archive. Compressed
+downloads always use the background queue, even if **Queue transfers** is
+unchecked.
+
+The redundant **Edit in Text Editor** toolbar button was removed; edit from the
+file-browser context menu or press **Ctrl+E**.
 
 **Queue transfers** and **Compress on server** are on a separate options row
 below the file-action buttons, so they do not squeeze the terminal on small
@@ -121,6 +125,6 @@ button in the terminal toolbar to fetch the cluster command list again.
 | `one_click_importer.py` | Simplified plugin installation |
 | `debug_plugin_import.py` | Debug utilities for plugin loading |
 
-Version: 3.11.4
+Version: 3.12.0
 Author: Acxel Orozco
 Created: 2026-02-07
