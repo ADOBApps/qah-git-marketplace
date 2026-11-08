@@ -9,10 +9,20 @@ modifies a process.
 
 QAHtop does **not** require psutil. It prefers it:
 
-- **With psutil:** CPU, memory, per-process CPU, RSS, thread count, user and
-  status come from psutil.
+- **With psutil>=5.9.0:** CPU, memory, per-process CPU, RSS, thread count, user
+  and status come from psutil.
 - **Without psutil:** it falls back to Windows `tasklist` or POSIX `ps`, and
   shows the metrics those tools provide.
+
+The manifest marks this explicitly:
+
+```json
+"dependencies": ["psutil>=5.9.0"],
+"optional_dependencies": ["psutil>=5.9.0"],
+"dependency_mode": "optional"
+```
+
+That distinguishes QAHtop from plugins where psutil is mandatory.
 
 This makes QAHtop a useful **injection probe**:
 

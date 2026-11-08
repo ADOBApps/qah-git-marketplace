@@ -2,7 +2,7 @@
   "schema": 1,
   "name": "QAH Git Marketplace",
   "description": "Plugins for Quantum Analysis Helper, stored in Git.",
-  "updated": "2026-11-08T08:51:48Z",
+  "updated": "2026-11-08T08:59:45Z",
   "plugins": [
     {
       "id": "git_plugin_marketplace",
@@ -558,10 +558,12 @@
       "id": "qahtop",
       "name": "QAHtop",
       "author": "Acxel Orozco",
-      "description": "Lightweight htop-style read-only process and system monitor for QAH. Uses an injected psutil when available and falls back to tasklist/ps, with a Detect dependencies probe for Wheel Plugin Manager vendor paths.",
+      "description": "Lightweight htop-style read-only process and system monitor for QAH. Uses an injected psutil>=5.9.0 when available and falls back to tasklist/ps, with a Detect dependencies probe for Wheel Plugin Manager vendor paths.",
       "category": "tools",
       "type": "python",
-      "dependencies": [],
+      "dependencies": [
+        "psutil>=5.9.0"
+      ],
       "requires_qah": "2.0.8",
       "homepage": "",
       "tags": [],
@@ -580,9 +582,19 @@
           "changelog": "QAHtop 1.0.0: htop-style read-only process and system monitor for QAH. Uses injected psutil when available, falls back to tasklist/ps, includes Detect dependencies to probe Wheel Plugin Manager vendor paths, sortable/filterable process table, and preserves selection across refresh.",
           "published": "2026-11-08T08:51:48Z",
           "yanked": false
+        },
+        {
+          "version": "1.0.1",
+          "path": "plugins/qahtop/1.0.1/qahtop-1.0.1.qplugin.zip",
+          "url": "",
+          "sha256": "6a6100283848d074e21c227840f2124359c08a8447d9ee66788829a12748838e",
+          "size": 8854,
+          "changelog": "QAHtop 1.0.1: declares psutil>=5.9.0 and marks it explicitly optional with dependency_mode=optional and optional_dependencies, while keeping the tasklist/ps fallback and Detect dependencies probe.",
+          "published": "2026-11-08T08:59:45Z",
+          "yanked": false
         }
       ],
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "runtime_forge",
