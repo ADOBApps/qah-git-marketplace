@@ -2,7 +2,7 @@
   "schema": 1,
   "name": "QAH Git Marketplace",
   "description": "Plugins for Quantum Analysis Helper, stored in Git.",
-  "updated": "2026-11-07T20:17:06Z",
+  "updated": "2026-11-08T00:18:57Z",
   "plugins": [
     {
       "id": "git_plugin_marketplace",
@@ -220,9 +220,19 @@
           "changelog": "QAH SSH 3.11.3: keeps Transfer Queue as the second tab and makes Edit in Text Editor / Temporary Files select the Text Editor widget directly, so the correct tab is always focused regardless of tab order.",
           "published": "2026-11-07T20:17:06Z",
           "yanked": false
+        },
+        {
+          "version": "3.11.4",
+          "path": "plugins/qah_ssh/3.11.4/qah_ssh-3.11.4.qplugin.zip",
+          "url": "",
+          "sha256": "a9f716e2aa8e1ce22baf419487da18522514422c82aff7b15fb1de9799ad5d7c",
+          "size": 60948,
+          "changelog": "QAH SSH 3.11.4: moves Queue transfers and Compress on server to a second options row so the terminal is not squeezed, and wraps the whole plugin UI in a scroll area for small screens.",
+          "published": "2026-11-08T00:18:57Z",
+          "yanked": false
         }
       ],
-      "version": "3.11.3"
+      "version": "3.11.4"
     },
     {
       "id": "qah_ws_client",
