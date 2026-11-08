@@ -2,7 +2,7 @@
   "schema": 1,
   "name": "QAH Git Marketplace",
   "description": "Plugins for Quantum Analysis Helper, stored in Git.",
-  "updated": "2026-11-08T20:53:50Z",
+  "updated": "2026-11-08T20:54:01Z",
   "plugins": [
     {
       "id": "git_plugin_marketplace",
@@ -1579,6 +1579,39 @@
       "max_activations": 0
     },
     {
+      "id": "sentinel_evidence_bundle",
+      "name": "Sentinel Evidence Bundle",
+      "author": "Acxel Orozco",
+      "description": "Combines the policy, watchdog and write-files capabilities in one run: it evaluates selected plugins against a policy, computes hash baselines and proposes watch entries, then writes a single JSON plus Markdown evidence bundle to the addon data directory for review, tickets or release records.",
+      "category": "addon",
+      "type": "addon",
+      "kind": "addon",
+      "api_version": 1,
+      "capabilities": [
+        "read-files",
+        "write-files",
+        "policy",
+        "watchdog",
+        "findings",
+        "report"
+      ],
+      "homepage": "",
+      "tags": [],
+      "versions": [
+        {
+          "version": "1.0.0",
+          "path": "addons/sentinel_evidence_bundle/1.0.0/sentinel_evidence_bundle-1.0.0.qah",
+          "url": "",
+          "sha256": "2e4437b3de0b22880725550d4d6ca1715e9958bcfc02e21b10dfc042c6a498b9",
+          "size": 5320,
+          "changelog": "Initial release: combined policy, watchdog and write-files run that emits one JSON plus Markdown evidence bundle with decisions, baselines and proposed watches.",
+          "published": "2026-11-08T20:54:01Z",
+          "yanked": false
+        }
+      ],
+      "version": "1.0.0"
+    },
+    {
       "id": "sentinel_file_audit",
       "name": "Sentinel File Audit",
       "author": "Acxel Orozco",
@@ -2149,7 +2182,13 @@
           "yanked": false
         }
       ],
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "dependencies": [],
+      "price": 0.0,
+      "currency": "USD",
+      "price_model": "free",
+      "license_type": "free",
+      "max_activations": 0
     }
   ]
 }

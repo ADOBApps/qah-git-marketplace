@@ -1,0 +1,20 @@
+{
+  "format": "qah-sentinel-addon",
+  "id": "sentinel_evidence_bundle",
+  "name": "Sentinel Evidence Bundle",
+  "version": "1.0.0",
+  "api_version": 1,
+  "author": "Acxel Orozco",
+  "description": "Combines the policy, watchdog and write-files capabilities in one run: it evaluates selected plugins against a policy, computes hash baselines and proposes watch entries, then writes a single JSON plus Markdown evidence bundle to the addon data directory for review, tickets or release records.",
+  "main": "main.py",
+  "entry": "run",
+  "timeout": 150,
+  "capabilities": [
+    "read-files",
+    "write-files",
+    "policy",
+    "watchdog",
+    "findings",
+    "report"
+  ]
+}
