@@ -97,7 +97,9 @@ Uses `psutil` when available and falls back to native task/ps listings.
 System and wheel plugins are protected from the stop action. This is an unload,
 not a hard process kill; background threads that ignore cleanup may keep running.
 
-### Watchdog
+### Watchdog (Watchdog / Builder subtabs)
+
+#### Watchdog subtab
 
 Pin a plugin folder or a native library and let Sentinel recompute its hash on
 an interval. Status becomes **changed** when the content drifts, **missing**
@@ -114,7 +116,7 @@ Watch definitions are stored in:
 %USERPROFILE%\QAH\plugin_sentinel\watches.json
 ```
 
-### Watchdog Builder
+#### Builder subtab
 
 Generates an installable headless watchdog plugin for a plugin folder, native
 library, log or execution output. The generated plugin:
@@ -125,7 +127,9 @@ library, log or execution output. The generated plugin:
 - provides **Check watchdog now** and **Open watchdog report** menu actions,
 - needs only PySide6 and the standard library.
 
-### Addons
+### Addons (Addons / Health subtabs)
+
+#### Addons subtab
 
 Sentinel can run **addons** that extend audits without becoming QAH plugins.
 They are source packages (`.qah`, a ZIP) with `addon.json` and a Python entry
@@ -225,7 +229,7 @@ risk score of 25 or more. `PASS` means clean under the current policy.
 Preview and export JSON, Markdown, HTML or CSV reports. The HTML report is
 self-contained and suitable for review or CI artifacts.
 
-### Health
+#### Health subtab
 
 Reads the JSON report from the headless **Plugin Health Guard** plugin:
 
@@ -233,6 +237,14 @@ Reads the JSON report from the headless **Plugin Health Guard** plugin:
 - manifest, duplicate-id, backup and bytecode issues
 - **Run Health Guard check** when that plugin is loaded
 - open the raw `health.json`
+
+### Runtime psutil note
+
+`psutil` is optional. Sentinel prefers a private vendor target
+`plugins/vendor/plugin_sentinel`, then falls back to `global`, then to
+`tasklist`/`ps`. There is no warning banner; inject psutil into target
+`plugin_sentinel` if you want richer Runtime metrics without charging the
+global dependency set.
 
 ### Dependencies
 
@@ -371,5 +383,5 @@ README.md
 
 ---
 
-Version: 1.2.4  
+Version: 1.2.5  
 Author: Acxel Orozco
