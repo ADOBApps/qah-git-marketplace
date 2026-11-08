@@ -1,7 +1,7 @@
 {
   "name": "SEQItachi",
   "id": "seqitachi",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "author": "Acxel Orozco",
   "description": "QAH-native structure and quantum-chemistry workbench inspired by SEQCROW. Imports XYZ and Gaussian/ORCA/Psi4/Q-Chem outputs, edits structures, builds QM inputs, parses energies/orbitals/frequencies/excitations, plots IR and UV/Vis spectra, computes RRHO thermochemistry, approximates Sterimol/cone angle/buried volume, and slices Gaussian cube files.",
   "type": "python",
