@@ -1,9 +1,9 @@
 {
   "name": "Wheel Plugin Manager",
   "id": "wheel_plugin_manager",
-  "version": "1.1.1",
+  "version": "1.2.0",
   "author": "Acxel Orozco",
-  "description": "Install, validate, repair, test, build and remove QAH wheel plugins without python.exe. Windows-safe: unpacks wheels directly and rejects malformed builds whose entry point could never be imported.",
+  "description": "Install, validate, repair, test, build and remove QAH wheel plugins without python.exe. Windows-safe unpacking, malformed-build rejection, and system-pip dependency injection for QAH's frozen Python (e.g. psutil) without rebuilding QAH.",
   "type": "python",
   "category": "development",
   "main": "__init__.py",
