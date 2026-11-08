@@ -394,7 +394,11 @@ neither SEQCROW nor AaronTools.
   HOMO/LUMO, frequencies and excited states;
 - broadened IR and UV/Vis plots;
 - RRHO thermochemistry: ZPE, thermal correction, entropy and Gibbs correction;
-- Gaussian cube import and 2D X/Y/Z slices.
+- Gaussian cube import and 2D X/Y/Z slices;
+- optional external-tool detection for ORCA, xtb, CREST, Gaussian, Psi4 and
+  Q-Chem. Paths are stored in `%USERPROFILE%\QAH\seqitachi\toolchain.json`;
+  missing tools raise an actionable error and no job is started. SEQItachi never
+  bundles or auto-installs these executables.
 
 ### Roadmap, not yet implemented
 
