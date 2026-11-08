@@ -123,6 +123,52 @@ library, log or execution output. The generated plugin:
 - provides **Check watchdog now** and **Open watchdog report** menu actions,
 - needs only PySide6 and the standard library.
 
+### Addons
+
+Sentinel can run **addons** that extend audits without becoming QAH plugins.
+They are source packages (`.qah`, a ZIP) with `addon.json` and a Python entry
+point. They run only in the **Addons** tab, in a separate process with audit
+hooks, a timeout, a memory limit and read-only targets by default.
+
+```json
+{
+  "format": "qah-sentinel-addon",
+  "id": "dft_output_checks",
+  "name": "DFT Output Checks",
+  "version": "1.0.0",
+  "api_version": 1,
+  "author": "You",
+  "description": "Checks DFT output files",
+  "main": "main.py",
+  "entry": "run",
+  "capabilities": ["read-files", "findings", "report"]
+}
+```
+
+```python
+def run(context):
+    return {
+        "status": "ok",
+        "summary": "checked",
+        "findings": [],
+        "report": "optional markdown",
+        "data": {},
+    }
+```
+
+Capabilities: `read-files`, `write-files`, `network`, `findings`, `report`,
+`policy`, `watchdog`. Subprocesses, native libraries, registry access and
+undeclared network access are blocked. Addon hashes are pinned in
+`addon_pins.json`; a changed addon is marked **modified** until re-pinned.
+Marketplace-installed addons are pinned automatically.
+
+```text
+%USERPROFILE%\QAH\plugin_sentinel\addons\<id>\
+%USERPROFILE%\QAH\plugin_sentinel\addon_data\<id>\
+%USERPROFILE%\QAH\plugin_sentinel\addon_pins.json
+%USERPROFILE%\QAH\plugin_sentinel\addon_settings.json
+```
+
 ### Sandbox
 
 Runs plugin code in a separate process with:
@@ -314,5 +360,5 @@ README.md
 
 ---
 
-Version: 1.1.2  
+Version: 1.2.0  
 Author: Acxel Orozco
