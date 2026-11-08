@@ -2,13 +2,13 @@
   "schema": 1,
   "name": "QAH Git Marketplace",
   "description": "Plugins for Quantum Analysis Helper, stored in Git.",
-  "updated": "2026-11-08T06:47:08Z",
+  "updated": "2026-11-08T07:08:21Z",
   "plugins": [
     {
       "id": "git_plugin_marketplace",
       "name": "Git Plugin Marketplace",
       "author": "Acxel Orozco",
-      "description": "Discover, install, update, publish and delete QAH plugins and themes using a Git repository (GitHub) instead of Firebase.",
+      "description": "Discover, install, update, publish and delete QAH plugins, themes and sandboxed Sentinel addons using a Git repository (GitHub) instead of Firebase. Includes a hard self-update guard.",
       "category": "development",
       "type": "python",
       "dependencies": [],
@@ -80,9 +80,19 @@
           "changelog": "Git Plugin Marketplace 1.1.4: first-class theme assets (catalog themes section, .qtheme.zip install/update/uninstall, Theme Manager refresh), theme CLI commands, and safe Reload now / Restart later after plugin install. Old catalogs without themes remain compatible.",
           "published": "2026-11-08T06:41:26Z",
           "yanked": false
+        },
+        {
+          "version": "1.2.0",
+          "path": "plugins/git_plugin_marketplace/1.2.0/git_plugin_marketplace-1.2.0.qplugin.zip",
+          "url": "",
+          "sha256": "4540d3a8190d06b1f22453d2e85d6ff3af54362b50172b628ac5bf6c0fe8937a",
+          "size": 63111,
+          "changelog": "Git Plugin Marketplace 1.2.0: adds Sentinel addon assets (catalog, Addons filter, .qah install/update/uninstall/publish), addon hash pinning integration, Update all for plugins/themes/addons, and a hard self-update guard that blocks the marketplace from replacing or removing itself while running.",
+          "published": "2026-11-08T07:08:21Z",
+          "yanked": false
         }
       ],
-      "version": "1.1.4"
+      "version": "1.2.0"
     },
     {
       "id": "luaqah_studio",
@@ -677,5 +687,6 @@
       "license_type": "free",
       "max_activations": 0
     }
-  ]
+  ],
+  "addons": []
 }
