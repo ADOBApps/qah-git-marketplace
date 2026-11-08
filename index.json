@@ -2,7 +2,7 @@
   "schema": 1,
   "name": "QAH Git Marketplace",
   "description": "Plugins for Quantum Analysis Helper, stored in Git.",
-  "updated": "2026-11-08T05:59:34Z",
+  "updated": "2026-11-08T06:00:25Z",
   "plugins": [
     {
       "id": "git_plugin_marketplace",
@@ -103,6 +103,36 @@
         }
       ],
       "version": "2.1.0"
+    },
+    {
+      "id": "plugin_health_guard",
+      "name": "Plugin Health Guard",
+      "author": "Acxel Orozco",
+      "description": "Headless startup health check for QAH plugins: manifest integrity, missing entry points, duplicate ids, backup files and stale bytecode, with a JSON report and menu actions.",
+      "category": "development",
+      "type": "python",
+      "dependencies": [],
+      "requires_qah": "2.0.8",
+      "homepage": "",
+      "tags": [],
+      "price": 0.0,
+      "currency": "USD",
+      "price_model": "free",
+      "license_type": "free",
+      "max_activations": 100,
+      "versions": [
+        {
+          "version": "1.0.0",
+          "path": "plugins/plugin_health_guard/1.0.0/plugin_health_guard-1.0.0.qplugin.zip",
+          "url": "",
+          "sha256": "a3e81c7c0b43c6de8af7c26096054aa9d11f493805bed0c28c7cdaecf9fa7a8a",
+          "size": 5618,
+          "changelog": "Initial Plugin Health Guard release: a headless startup plugin health check. No widget; writes a JSON report and provides Run health check / Open report menu actions. Checks manifests, missing entry points, duplicate ids, backup files and stale bytecode.",
+          "published": "2026-11-08T06:00:25Z",
+          "yanked": false
+        }
+      ],
+      "version": "1.0.0"
     },
     {
       "id": "plugin_sentinel",
