@@ -1,0 +1,30 @@
+{
+  "name": "PyDFT Molecule Lab",
+  "id": "pydft_molecule_lab",
+  "version": "1.0.0",
+  "author": "Acxel Orozco",
+  "description": "pydft-based electronic-structure lab for small organic molecules and hormones. Runs bounded single-point Kohn-Sham calculations, reports HOMO/LUMO, gap, chemical descriptors, Mulliken charges and dipole moment, and draws molecular-orbital slices and energy diagrams. Includes E2, EE2, E1, E3, testosterone, progesterone, caffeine and reference molecules.",
+  "type": "python",
+  "category": "analysis",
+  "main": "__init__.py",
+  "dependencies": [
+    "pydft>=1.2.0"
+  ],
+  "optional_dependencies": [
+    "matplotlib>=3.7"
+  ],
+  "dependency_mode": "injected",
+  "dependency_note": "Inject pydft with Wheel Plugin Manager into target global (shared) or pydft_molecule_lab (private). pydft brings pyqint, pylebedev, numpy, scipy and numba. matplotlib is optional for plots; QAH usually bundles it. The plugin detects vendor/global and vendor/pydft_molecule_lab and does not run anything on load.",
+  "icon": "icon.svg",
+  "requires_qah": "2.0.8",
+  "marketplace": {
+    "price": 0.0,
+    "currency": "USD",
+    "price_model": "free",
+    "payment_required": false
+  },
+  "license": {
+    "type": "free",
+    "max_activations": 100
+  }
+}

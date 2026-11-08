@@ -2,7 +2,7 @@
   "schema": 1,
   "name": "QAH Git Marketplace",
   "description": "Plugins for Quantum Analysis Helper, stored in Git.",
-  "updated": "2026-11-08T16:48:01Z",
+  "updated": "2026-11-08T17:46:41Z",
   "plugins": [
     {
       "id": "git_plugin_marketplace",
@@ -343,6 +343,38 @@
         }
       ],
       "version": "1.2.8"
+    },
+    {
+      "id": "pydft_molecule_lab",
+      "name": "PyDFT Molecule Lab",
+      "author": "Acxel Orozco",
+      "description": "pydft-based electronic-structure lab for small organic molecules and hormones. Runs bounded single-point Kohn-Sham calculations, reports HOMO/LUMO, gap, chemical descriptors, Mulliken charges and dipole moment, and draws molecular-orbital slices and energy diagrams. Includes E2, EE2, E1, E3, testosterone, progesterone, caffeine and reference molecules.",
+      "category": "analysis",
+      "type": "python",
+      "dependencies": [
+        "pydft>=1.2.0"
+      ],
+      "requires_qah": "2.0.8",
+      "homepage": "",
+      "tags": [],
+      "price": 0.0,
+      "currency": "USD",
+      "price_model": "free",
+      "license_type": "free",
+      "max_activations": 100,
+      "versions": [
+        {
+          "version": "1.0.0",
+          "path": "plugins/pydft_molecule_lab/1.0.0/pydft_molecule_lab-1.0.0.qplugin.zip",
+          "url": "",
+          "sha256": "b5223fa21e046ef3b57dc9b457fcea38a4f94a320f7c5ff69c552f372f3183cb",
+          "size": 28981,
+          "changelog": "PyDFT Molecule Lab 1.0.0: new Analysis-category plugin for pydft single-point electronic structure of small organic molecules and hormones (water, benzene, caffeine, E1, E2, EE2, E3, testosterone, progesterone). Reports energy, HOMO/LUMO, gap, hardness, softness, electronegativity, electrophilicity, Mulliken charges and dipole; plots orbital slices and energy diagrams; exports Markdown/JSON/PNG. Thermal-safe defaults: one thread, low-power grid, iteration cap, stop between SCF steps, no automatic runs. Includes PyQInt HF fallback and PubChem 3D conformers.",
+          "published": "2026-11-08T17:46:41Z",
+          "yanked": false
+        }
+      ],
+      "version": "1.0.0"
     },
     {
       "id": "pydft_workbench",
