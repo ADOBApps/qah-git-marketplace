@@ -1,7 +1,7 @@
 {
   "name": "Sentinel Addon Studio",
   "id": "sentinel_addon_studio",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "author": "Acxel Orozco",
   "description": "Developer workbench for Plugin Sentinel addons: scaffold .qah projects, edit addon.json and main.py, test in Sentinel's isolated addon host, build hash-verifiable packages, install them in Sentinel and publish them to the Git Plugin Marketplace.",
   "type": "python",

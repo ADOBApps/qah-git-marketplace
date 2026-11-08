@@ -2,7 +2,7 @@
   "schema": 1,
   "name": "QAH Git Marketplace",
   "description": "Plugins for Quantum Analysis Helper, stored in Git.",
-  "updated": "2026-11-08T13:27:53Z",
+  "updated": "2026-11-08T13:37:46Z",
   "plugins": [
     {
       "id": "git_plugin_marketplace",
@@ -804,9 +804,19 @@
           "changelog": "Sentinel Addon Studio 1.0.2: line-number gutter, Python syntax highlighting, Ln/Col indicator, Validate button, marketplace config preflight/status, package path field, open/copy package actions, and save/build/test/install/publish shortcuts. Publishing still delegates to Git Plugin Marketplace config.",
           "published": "2026-11-08T13:27:53Z",
           "yanked": false
+        },
+        {
+          "version": "1.0.3",
+          "path": "plugins/sentinel_addon_studio/1.0.3/sentinel_addon_studio-1.0.3.qplugin.zip",
+          "url": "",
+          "sha256": "8fe5703f379f53b3221399f61967d2aaef77af717ba02079bf088fe0c8157a98",
+          "size": 16483,
+          "changelog": "Sentinel Addon Studio 1.0.3: adds a scroll area around the whole workbench and around every right-side tab (main.py, README.md, addon.json, Activity), matching Plugin Sentinel's small-screen scrolling behavior.",
+          "published": "2026-11-08T13:37:46Z",
+          "yanked": false
         }
       ],
-      "version": "1.0.2"
+      "version": "1.0.3"
     },
     {
       "id": "sqs_generator",
