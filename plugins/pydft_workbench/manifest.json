@@ -1,11 +1,11 @@
 {
   "name": "PyDFT Workbench",
   "id": "pydft_workbench",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "author": "Acxel Orozco",
   "description": "Educational pydft workbench for QAH. Detects pydft from a Wheel Plugin Manager vendor set, runs a CO/STO-3G Kohn-Sham demo and reports energy, HOMO/LUMO, gap, SCF iterations and timing.",
   "type": "python",
-  "category": "science",
+  "category": "tools",
   "main": "__init__.py",
   "dependencies": [
     "pydft>=1.2.0"

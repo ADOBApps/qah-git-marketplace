@@ -1,5 +1,13 @@
 # PyDFT Workbench
 
+## 1.0.1
+
+- Category changed from `science` to `tools` so it appears with the other
+  utility plugins in the marketplace filter.
+- No functional changes to the pydft demo.
+
+## 1.0.0
+
 An educational **pydft** demo for QAH.
 
 It detects a pydft installation from an injected Wheel Plugin Manager vendor set,
