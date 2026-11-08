@@ -176,6 +176,20 @@ py -3 $cli install-addon my_addon
 Marketplace installs are pinned automatically. Marketplace updates re-pin from
 the new install record; plain local edits remain `modified`.
 
+### Addon interpreter
+
+QAH is a frozen launcher, so inside QAH `sys.executable` is the QAH executable,
+not `python.exe`. Sentinel addons and the sandbox run in a separate real Python
+process. Sentinel resolves it from:
+
+1. `QAH_SENTINEL_PYTHON` or `QAH_PYTHON`;
+2. `python3` / `python` on `PATH`;
+3. the Windows `py -3` launcher.
+
+If no interpreter is found, the result is an immediate error with instructions
+instead of a 60 s timeout. Install Python 3.8+ or point
+`QAH_SENTINEL_PYTHON` at an interpreter.
+
 ### Injected dependencies in Sentinel
 
 Wheel Plugin Manager can inject pre-built wheels for QAH's frozen Python under
