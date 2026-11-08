@@ -2,7 +2,7 @@
   "schema": 1,
   "name": "QAH Git Marketplace",
   "description": "Plugins for Quantum Analysis Helper, stored in Git.",
-  "updated": "2026-11-08T18:02:36Z",
+  "updated": "2026-11-08T19:02:57Z",
   "plugins": [
     {
       "id": "git_plugin_marketplace",
@@ -340,9 +340,19 @@
           "changelog": "Plugin Sentinel 1.2.8: fixes Sentinel addon and sandbox runs inside frozen QAH. Child harnesses now use a real Python interpreter discovered from QAH_SENTINEL_PYTHON/QAH_PYTHON, PATH (python3/python) or the py -3 launcher instead of sys.executable, which launched a second QAH instance and ended as a 60 s timeout. Missing-interpreter now returns a clear error instead of waiting for the timeout; addon read roots include the selected interpreter standard library.",
           "published": "2026-11-08T16:48:01Z",
           "yanked": false
+        },
+        {
+          "version": "1.2.9",
+          "path": "plugins/plugin_sentinel/1.2.9/plugin_sentinel-1.2.9.qplugin.zip",
+          "url": "",
+          "sha256": "bba556df840169cef8be84a3bb2b8a2e6ebfc7a0f93ef982443f4eaf7f01a39b",
+          "size": 81851,
+          "changelog": "Plugin Sentinel 1.2.9: fixes the Sandbox ModuleNotFoundError for PySide6. The sandbox now adds QAH app_packages and DLL search directories to the child, and chooses an interpreter that can actually import PySide6 with the sandbox audit hook. Anaconda/MSYS Pythons that cannot load QAH's Qt DLLs are skipped. Also adds the same app_packages support for sandboxed plugins that need QAH modules.",
+          "published": "2026-11-08T19:02:57Z",
+          "yanked": false
         }
       ],
-      "version": "1.2.8"
+      "version": "1.2.9"
     },
     {
       "id": "pydft_molecule_lab",
