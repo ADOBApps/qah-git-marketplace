@@ -1,0 +1,17 @@
+{
+  "format": "qah-sentinel-addon",
+  "id": "sentinel_capability_audit",
+  "name": "Sentinel Capability Audit",
+  "version": "1.0.0",
+  "api_version": 1,
+  "author": "Acxel Orozco",
+  "description": "Report-only comparison of declared QAH capabilities against static source evidence for network, subprocess, native loading, registry, filesystem, credentials, persistence, dynamic code, GUI and database use.",
+  "main": "main.py",
+  "entry": "run",
+  "timeout": 60,
+  "capabilities": [
+    "read-files",
+    "findings",
+    "report"
+  ]
+}

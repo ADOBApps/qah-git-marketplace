@@ -2,7 +2,7 @@
   "schema": 1,
   "name": "QAH Git Marketplace",
   "description": "Plugins for Quantum Analysis Helper, stored in Git.",
-  "updated": "2026-11-08T19:33:02Z",
+  "updated": "2026-11-08T19:33:14Z",
   "plugins": [
     {
       "id": "git_plugin_marketplace",
@@ -1276,6 +1276,36 @@
       "max_activations": 0
     },
     {
+      "id": "sentinel_capability_audit",
+      "name": "Sentinel Capability Audit",
+      "author": "Acxel Orozco",
+      "description": "Report-only comparison of declared QAH capabilities against static source evidence for network, subprocess, native loading, registry, filesystem, credentials, persistence, dynamic code, GUI and database use.",
+      "category": "addon",
+      "type": "addon",
+      "kind": "addon",
+      "api_version": 1,
+      "capabilities": [
+        "read-files",
+        "findings",
+        "report"
+      ],
+      "homepage": "",
+      "tags": [],
+      "versions": [
+        {
+          "version": "1.0.0",
+          "path": "addons/sentinel_capability_audit/1.0.0/sentinel_capability_audit-1.0.0.qah",
+          "url": "",
+          "sha256": "96ad3a30c4ad6d03ec87bababc8abf7614df0c2b2f1a628d74f3243cdf134b68",
+          "size": 3103,
+          "changelog": "Sentinel Capability Audit 1.0.0: compares manifest capabilities with static evidence for network, subprocess, native, registry, filesystem, credentials, persistence, dynamic code, GUI and database. Report-only.",
+          "published": "2026-11-08T19:33:14Z",
+          "yanked": false
+        }
+      ],
+      "version": "1.0.0"
+    },
+    {
       "id": "sentinel_checksum_verify",
       "name": "Sentinel Checksum Verify",
       "author": "Acxel Orozco",
@@ -1339,7 +1369,13 @@
           "yanked": false
         }
       ],
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "dependencies": [],
+      "price": 0.0,
+      "currency": "USD",
+      "price_model": "free",
+      "license_type": "free",
+      "max_activations": 0
     },
     {
       "id": "sentinel_dependency_audit",
