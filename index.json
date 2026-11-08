@@ -2,7 +2,7 @@
   "schema": 1,
   "name": "QAH Git Marketplace",
   "description": "Plugins for Quantum Analysis Helper, stored in Git.",
-  "updated": "2026-11-08T20:54:01Z",
+  "updated": "2026-11-08T20:56:03Z",
   "plugins": [
     {
       "id": "git_plugin_marketplace",
@@ -370,9 +370,19 @@
           "changelog": "1.2.11: sandbox adds QAH's app directory to the child import path, fixing ModuleNotFoundError: No module named 'plugins' for plugins that import host APIs such as plugins.libs.plugin_manager. Verified against adobmd_gui, Plugin Health Guard, Theme Studio, QAHtop and Git Plugin Marketplace; network/write violations remain blocked.",
           "published": "2026-11-08T20:41:22Z",
           "yanked": false
+        },
+        {
+          "version": "1.2.12",
+          "path": "plugins/plugin_sentinel/1.2.12/plugin_sentinel-1.2.12.qplugin.zip",
+          "url": "",
+          "sha256": "3e5fa2b6791131e636be0e9df59f88aedd287b4c37e736d43cfca05c4936dd6a",
+          "size": 84953,
+          "changelog": "1.2.12: documentation for the 25-addon catalog (20 audit + 5 capability addons), capability enforcement notes (write-files and network enforced, policy/watchdog advisory) and templates for artifact, network, policy, watchdog and evidence addons.",
+          "published": "2026-11-08T20:56:03Z",
+          "yanked": false
         }
       ],
-      "version": "1.2.11"
+      "version": "1.2.12"
     },
     {
       "id": "pydft_molecule_lab",
@@ -1609,7 +1619,13 @@
           "yanked": false
         }
       ],
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "dependencies": [],
+      "price": 0.0,
+      "currency": "USD",
+      "price_model": "free",
+      "license_type": "free",
+      "max_activations": 0
     },
     {
       "id": "sentinel_file_audit",

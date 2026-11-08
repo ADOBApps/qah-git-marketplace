@@ -1,7 +1,7 @@
 {
   "name": "Plugin Sentinel",
   "id": "plugin_sentinel",
-  "version": "1.2.11",
+  "version": "1.2.12",
   "author": "Acxel Orozco",
   "description": "Advanced plugin security audit: risk scoring, capability mapping, native DLL/SO/dylib inspection, trusted baselines, hash watchdog, public watchdog API, installable watchdog builder, sandboxed Sentinel addons with hash pinning, process sandbox, runtime monitor with plugin-execution control, policy gates, Health Guard integration, reports and CI-friendly CLI.",
   "type": "python",

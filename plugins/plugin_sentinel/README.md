@@ -175,10 +175,23 @@ def run(context):
 
 Capabilities: `read-files`, `write-files`, `network`, `findings`, `report`,
 `policy`, `watchdog`. Subprocesses, native libraries, registry access and
-undeclared network access are blocked. Addon hashes are pinned in
-`addon_pins.json`; a changed addon is marked **modified** until re-pinned.
+undeclared network access are blocked. `write-files` is limited to the addon
+data directory; `policy` and `watchdog` are advisory intent markers. Addon
+hashes are pinned in `addon_pins.json`; a changed addon is marked **modified**
+until re-pinned.
 Marketplace-installed addons are pinned automatically, and a marketplace update
 with a new install record is re-pinned automatically.
+
+The catalog ships **25 addons**: 20 report-only audit addons plus 5 capability
+addons. Use the capability addons as templates:
+
+| Addon | Capabilities | Purpose |
+|---|---|---|
+| `sentinel_artifact_writer` | `write-files` | JSON/Markdown artifact with hashes |
+| `sentinel_network_diagnostics` | `network` | HTTPS reachability and latency |
+| `sentinel_policy_gate` | `policy` | allow/review/deny policy decisions |
+| `sentinel_watchdog_planner` | `watchdog` | hash baselines and watch plan |
+| `sentinel_evidence_bundle` | `policy`, `watchdog`, `write-files` | combined evidence bundle |
 
 ```text
 %USERPROFILE%\QAH\plugin_sentinel\addons\<id>\
@@ -422,5 +435,5 @@ README.md
 
 ---
 
-Version: 1.2.11  
+Version: 1.2.12  
 Author: Acxel Orozco
