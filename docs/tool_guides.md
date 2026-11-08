@@ -372,6 +372,39 @@ numba. matplotlib is optional for plots and is normally bundled with QAH.
 
 ---
 
+## SEQItachi
+
+Category: **Analysis**. A QAH-native structure and quantum-chemistry workbench
+inspired by **SEQCROW** for ChimeraX.
+
+SEQCROW is **GPL-3.0** open source (`QChASM/SEQCROW`). SEQItachi is an
+independent GPL-3.0 implementation; no SEQCROW code is copied and it bundles
+neither SEQCROW nor AaronTools.
+
+### Implemented
+
+- XYZ import, 3D ball-and-stick view, atom/bond tables;
+- add/delete atoms, change element, add/remove bonds, bond order and length,
+  rotate/translate/center;
+- formula, molecular weight, center of mass, radius of gyration;
+- distance, angle, dihedral;
+- approximate Sterimol L/B1–B5, cone angle and buried-volume voxels;
+- QM input builders for Gaussian, ORCA, Psi4, Q-Chem, xTB and sqm;
+- output parsing for Gaussian, ORCA, Psi4 and Q-Chem: energy, geometry,
+  HOMO/LUMO, frequencies and excited states;
+- broadened IR and UV/Vis plots;
+- RRHO thermochemistry: ZPE, thermal correction, entropy and Gibbs correction;
+- Gaussian cube import and 2D X/Y/Z slices.
+
+### Roadmap, not yet implemented
+
+ChimeraX mouse modes and commands, 2D sketcher, AaronTools fragment library,
+CREST conformer search, transition-state interpolation, normal-mode animation,
+full 3D orbital isosurfaces, point groups, and the complete ligand Sterimol
+library. SEQItachi is **core-equivalent**, not a drop-in SEQCROW clone.
+
+---
+
 ## Resource Watchdog
 
 Category: **Tools**. A read-only runtime monitor for QAH.
