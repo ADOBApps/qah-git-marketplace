@@ -208,15 +208,27 @@ executable, not `python.exe`. Sentinel therefore must not launch addons with
 
 Sentinel probes for a real interpreter in this order:
 
-1. `QAH_SENTINEL_PYTHON` or `QAH_PYTHON` environment variable;
-2. `python3` or `python` on `PATH`;
-3. the Windows `py -3` launcher.
+1. the path saved from **Sandbox → Python interpreter** (`python.json`);
+2. `QAH_SENTINEL_PYTHON` or `QAH_PYTHON` environment variable;
+3. `python3` or `python` on `PATH`;
+4. the Windows `py -3` launcher.
 
-If none is found, the Addons tab reports a clear error instead of waiting for the
-timeout. Install any Python 3.8+ or set `QAH_SENTINEL_PYTHON` to the interpreter
-path. The addon host reads only the addon folder, its data folder, the run
-workdir, the selected targets, the chosen Python standard library and the QAH
-Python paths.
+The GUI field is the recommended choice on Linux/macOS, where a conda
+environment may have the right Python version but incompatible Qt libraries.
+**Browse…** selects an interpreter, **Test** validates both Python and
+PySide6, and **Auto** clears the override. The shared setting applies to the
+sandbox and to addons, and is stored in:
+
+```text
+%USERPROFILE%/QAH/plugin_sentinel/python.json
+```
+
+The PySide6 probe is cross-platform: it only calls `os.add_dll_directory` on
+Windows, so Linux and macOS interpreters are not rejected by a Windows-only
+call. If no compatible interpreter is found, the Sandbox/Addons tab reports the
+configured path and the probe errors instead of waiting for the timeout. The
+addon host reads only the addon folder, its data folder, the run workdir, the
+selected targets, the chosen Python standard library and the QAH Python paths.
 
 ### Sandbox
 
@@ -435,5 +447,5 @@ README.md
 
 ---
 
-Version: 1.2.12  
+Version: 1.2.13  
 Author: Acxel Orozco
