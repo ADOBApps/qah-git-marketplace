@@ -1,0 +1,28 @@
+{
+  "name": "Resource Watchdog",
+  "id": "resource_watchdog",
+  "version": "1.0.0",
+  "author": "Acxel Orozco",
+  "description": "Read-only runtime resource monitor for QAH. Reports QAH CPU, RSS, thread count, child processes and loaded heavy scientific modules (pydft, pyqint, numba, scipy, matplotlib, torch, tensorflow, jax, cupy). It warns on thresholds and writes a JSON report, but never kills or unloads anything.",
+  "type": "python",
+  "category": "tools",
+  "main": "__init__.py",
+  "dependencies": [],
+  "optional_dependencies": [
+    "psutil>=5.9.0"
+  ],
+  "dependency_mode": "optional",
+  "dependency_note": "psutil is optional and improves metrics. Inject it into resource_watchdog or global with Wheel Plugin Manager. Without psutil the plugin still lists loaded heavy modules but cannot report live CPU/RSS.",
+  "icon": "icon.svg",
+  "requires_qah": "2.0.8",
+  "marketplace": {
+    "price": 0.0,
+    "currency": "USD",
+    "price_model": "free",
+    "payment_required": false
+  },
+  "license": {
+    "type": "free",
+    "max_activations": 100
+  }
+}
