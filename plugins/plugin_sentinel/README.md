@@ -92,6 +92,11 @@ A live htop-style view:
 - **Stop selected user plugin** asks QAH's PluginManager to unload it
 - selection is preserved across the live refresh; the table only refreshes while
   the Plugin Executions tab is visible
+- a refresh interval selector (**0.5 s, 1 s, 2 s, 5 s, 10 s**, default 2 s)
+- a **Pause** checkbox that stops sampling without closing the tab
+- interval and pause state persist in `plugin_sentinel/runtime_settings.json`
+- sampling is **visible-only**: the timer starts when the Runtime tab is shown and
+  stops when it is hidden, so a background Sentinel costs no process polling
 
 Uses `psutil` when available and falls back to native task/ps listings.
 System and wheel plugins are protected from the stop action. This is an unload,
@@ -248,11 +253,13 @@ global dependency set.
 
 ### Dependencies
 
-Read-only list of pre-built wheels injected for QAH's frozen Python by Wheel
-Plugin Manager. These packages live under `plugins/vendor/<target>` and are not
-QAH plugins, so they do not appear in Inventory or Plugin Executions. The tab
-shows target, package, version, Python/platform and path, and can open or copy
-the set folder.
+Lists pre-built wheels injected for QAH's frozen Python by Wheel Plugin Manager.
+These packages live under `plugins/vendor/<target>` and are not QAH plugins, so
+they do not appear in Inventory or Plugin Executions. The tab rescans the real
+`*.dist-info` folders on every refresh, so a stale `qah_dependencies.json`
+cannot hide installed packages. Shows target, package, version, Python/platform
+and path; can open or copy the set folder, remove one package, or remove a whole
+set.
 
 ### Documentation
 
@@ -383,5 +390,5 @@ README.md
 
 ---
 
-Version: 1.2.6  
+Version: 1.2.7  
 Author: Acxel Orozco
