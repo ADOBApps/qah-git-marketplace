@@ -2,7 +2,7 @@
   "schema": 1,
   "name": "QAH Git Marketplace",
   "description": "Plugins for Quantum Analysis Helper, stored in Git.",
-  "updated": "2026-11-08T20:53:13Z",
+  "updated": "2026-11-08T20:53:26Z",
   "plugins": [
     {
       "id": "git_plugin_marketplace",
@@ -1354,7 +1354,13 @@
           "yanked": false
         }
       ],
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "dependencies": [],
+      "price": 0.0,
+      "currency": "USD",
+      "price_model": "free",
+      "license_type": "free",
+      "max_activations": 0
     },
     {
       "id": "sentinel_capability_audit",
@@ -1823,6 +1829,36 @@
       "price_model": "free",
       "license_type": "free",
       "max_activations": 0
+    },
+    {
+      "id": "sentinel_network_diagnostics",
+      "name": "Sentinel Network Diagnostics",
+      "author": "Acxel Orozco",
+      "description": "Checks reachability and latency for an explicit HTTPS allowlist used by QAH (GitHub API, GitHub, PyPI). It declares the network capability, sends no credentials or payloads, performs HEAD requests only and reports DNS/TLS/HTTP failures as findings.",
+      "category": "addon",
+      "type": "addon",
+      "kind": "addon",
+      "api_version": 1,
+      "capabilities": [
+        "network",
+        "findings",
+        "report"
+      ],
+      "homepage": "",
+      "tags": [],
+      "versions": [
+        {
+          "version": "1.0.0",
+          "path": "addons/sentinel_network_diagnostics/1.0.0/sentinel_network_diagnostics-1.0.0.qah",
+          "url": "",
+          "sha256": "b2d13384c95f8567cbaef62d38ec3460344b72892cda8ac83845028989430f96",
+          "size": 3284,
+          "changelog": "Initial release: bounded HEAD-only HTTPS reachability and latency checks for the GitHub API, GitHub and PyPI endpoints. Reference example for the network capability.",
+          "published": "2026-11-08T20:53:26Z",
+          "yanked": false
+        }
+      ],
+      "version": "1.0.0"
     },
     {
       "id": "sentinel_output_inventory",

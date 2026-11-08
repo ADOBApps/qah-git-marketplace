@@ -1,0 +1,17 @@
+{
+  "format": "qah-sentinel-addon",
+  "id": "sentinel_network_diagnostics",
+  "name": "Sentinel Network Diagnostics",
+  "version": "1.0.0",
+  "api_version": 1,
+  "author": "Acxel Orozco",
+  "description": "Checks reachability and latency for an explicit HTTPS allowlist used by QAH (GitHub API, GitHub, PyPI). It declares the network capability, sends no credentials or payloads, performs HEAD requests only and reports DNS/TLS/HTTP failures as findings.",
+  "main": "main.py",
+  "entry": "run",
+  "timeout": 90,
+  "capabilities": [
+    "network",
+    "findings",
+    "report"
+  ]
+}
