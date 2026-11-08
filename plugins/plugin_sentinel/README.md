@@ -132,6 +132,12 @@ library, log or execution output. The generated plugin:
 - provides **Check watchdog now** and **Open watchdog report** menu actions,
 - needs only PySide6 and the standard library.
 
+The generated template and examples are documented in
+`WATCHDOG_BUILDER.md`. The builder is **hash-based**; it does not monitor CPU,
+RAM or process counts. For runtime resources use the separate
+`resource_watchdog` plugin; for a static heavy-import audit use the
+`sentinel_resource_audit` addon.
+
 ### Addons (Addons / Health subtabs)
 
 #### Addons subtab
@@ -414,5 +420,5 @@ README.md
 
 ---
 
-Version: 1.2.9  
+Version: 1.2.10  
 Author: Acxel Orozco
