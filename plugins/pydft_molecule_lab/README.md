@@ -1,6 +1,6 @@
 # PyDFT Molecule Lab
 
-Category: **Analysis** · Version 1.0.0
+Category: **Analysis** · Version 1.0.1
 
 A pydft-based electronic-structure workbench for small organic molecules and
 hormones. It runs **single-point** Kohn–Sham calculations, reports electronic
@@ -38,12 +38,13 @@ imported from the Library tab.
 The **pydft DFT** engine is primary. A **PyQInt Hartree–Fock fallback** is
 available when DFT does not converge or when a wavefunction method is wanted.
 
-## Thermal safety
+## CPU limits and temperature
 
-pydft and pyqint are CPU-only. The plugin is designed for a tight temperature
-budget:
+pydft and pyqint are CPU-only. The header reports the number of logical CPU
+threads detected by the OS, and the thread selector can use any value from 1 up
+to that total. The plugin defaults to:
 
-- one native thread by default (`OMP_NUM_THREADS=1`, Numba/BLAS capped);
+- one native thread (`OMP_NUM_THREADS=1`, Numba/BLAS capped);
 - low-power grid by default;
 - bounded SCF iteration cap (30 by default);
 - a **Stop after current SCF step** button;

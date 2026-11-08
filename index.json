@@ -2,7 +2,7 @@
   "schema": 1,
   "name": "QAH Git Marketplace",
   "description": "Plugins for Quantum Analysis Helper, stored in Git.",
-  "updated": "2026-11-08T17:46:41Z",
+  "updated": "2026-11-08T18:02:36Z",
   "plugins": [
     {
       "id": "git_plugin_marketplace",
@@ -372,9 +372,19 @@
           "changelog": "PyDFT Molecule Lab 1.0.0: new Analysis-category plugin for pydft single-point electronic structure of small organic molecules and hormones (water, benzene, caffeine, E1, E2, EE2, E3, testosterone, progesterone). Reports energy, HOMO/LUMO, gap, hardness, softness, electronegativity, electrophilicity, Mulliken charges and dipole; plots orbital slices and energy diagrams; exports Markdown/JSON/PNG. Thermal-safe defaults: one thread, low-power grid, iteration cap, stop between SCF steps, no automatic runs. Includes PyQInt HF fallback and PubChem 3D conformers.",
           "published": "2026-11-08T17:46:41Z",
           "yanked": false
+        },
+        {
+          "version": "1.0.1",
+          "path": "plugins/pydft_molecule_lab/1.0.1/pydft_molecule_lab-1.0.1.qplugin.zip",
+          "url": "",
+          "sha256": "05cb9dc521db8f5867191322252382c417ed96b405d39d168351a2a1df122b29",
+          "size": 29107,
+          "changelog": "PyDFT Molecule Lab 1.0.1: detects and displays the OS logical CPU thread count, populates the CPU thread selector from 1..total, and removes the thermal-safe banner/title. Renames the limits group to CPU and convergence limits. No calculation behavior change; still defaults to one thread and no automatic runs.",
+          "published": "2026-11-08T18:02:36Z",
+          "yanked": false
         }
       ],
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "pydft_workbench",
