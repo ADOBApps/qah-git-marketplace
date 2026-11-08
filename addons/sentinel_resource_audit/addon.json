@@ -1,0 +1,17 @@
+{
+  "format": "qah-sentinel-addon",
+  "id": "sentinel_resource_audit",
+  "name": "Sentinel Resource Audit",
+  "version": "1.0.0",
+  "api_version": 1,
+  "author": "Acxel Orozco",
+  "description": "Report-only audit of QAH plugin folders for heavy scientific imports and dependencies such as pydft, pyqint, numba, scipy, matplotlib, torch, tensorflow, jax and cupy. It never runs the plugin, never kills a process and never changes a plugin.",
+  "main": "main.py",
+  "entry": "run",
+  "timeout": 60,
+  "capabilities": [
+    "read-files",
+    "findings",
+    "report"
+  ]
+}

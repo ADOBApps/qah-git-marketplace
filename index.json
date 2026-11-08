@@ -2,7 +2,7 @@
   "schema": 1,
   "name": "QAH Git Marketplace",
   "description": "Plugins for Quantum Analysis Helper, stored in Git.",
-  "updated": "2026-11-08T19:04:08Z",
+  "updated": "2026-11-08T19:07:23Z",
   "plugins": [
     {
       "id": "git_plugin_marketplace",
@@ -1378,6 +1378,36 @@
       "price_model": "free",
       "license_type": "free",
       "max_activations": 0
+    },
+    {
+      "id": "sentinel_resource_audit",
+      "name": "Sentinel Resource Audit",
+      "author": "Acxel Orozco",
+      "description": "Report-only audit of QAH plugin folders for heavy scientific imports and dependencies such as pydft, pyqint, numba, scipy, matplotlib, torch, tensorflow, jax and cupy. It never runs the plugin, never kills a process and never changes a plugin.",
+      "category": "addon",
+      "type": "addon",
+      "kind": "addon",
+      "api_version": 1,
+      "capabilities": [
+        "read-files",
+        "findings",
+        "report"
+      ],
+      "homepage": "",
+      "tags": [],
+      "versions": [
+        {
+          "version": "1.0.0",
+          "path": "addons/sentinel_resource_audit/1.0.0/sentinel_resource_audit-1.0.0.qah",
+          "url": "",
+          "sha256": "2c8e078a21d712a48be3ba6745a09a7e1e05582e80692f999260394339c115fd",
+          "size": 3655,
+          "changelog": "Sentinel Resource Audit 1.0.0: static report-only audit of plugin folders for heavy imports and dependencies (pydft, pyqint, numba, scipy, matplotlib, torch, tensorflow, jax, cupy). No process control, no kill, no Sentinel API access.",
+          "published": "2026-11-08T19:07:23Z",
+          "yanked": false
+        }
+      ],
+      "version": "1.0.0"
     },
     {
       "id": "sentinel_secret_scan",
