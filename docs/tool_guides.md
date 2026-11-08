@@ -190,6 +190,13 @@ If no interpreter is found, the result is an immediate error with instructions
 instead of a 60 s timeout. Install Python 3.8+ or point
 `QAH_SENTINEL_PYTHON` at an interpreter.
 
+Plugin Sentinel 1.2.11 also adds QAH's `app/` directory to the sandbox import
+path. Plugins that use host APIs such as
+`from plugins.libs.plugin_manager import PluginInfo` now load inside the
+sandbox; older versions failed with `ModuleNotFoundError: No module named
+'plugins'`. The sandbox still blocks network, process creation, native loading
+and writes outside its work directory.
+
 ### Injected dependencies in Sentinel
 
 Wheel Plugin Manager can inject pre-built wheels for QAH's frozen Python under
