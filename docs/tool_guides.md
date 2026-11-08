@@ -205,10 +205,13 @@ not appear in Sentinel Inventory or Plugin Executions. Plugin Sentinel 1.2.4+
 shows them in the **Dependencies** tab with target, package, version,
 Python/platform and path, plus open/copy actions.
 
-### Sentinel addon catalog (20)
+### Sentinel addon catalog (25)
 
-All addons are report-only: `read-files`, `findings`, `report`. They cannot call
-Sentinel internals, spawn processes, unload plugins or kill anything.
+All addons are report-only. Twenty use `read-files`, `findings`, `report`. Five
+capability addons additionally use `write-files`, `network`, `policy` or
+`watchdog`. No addon can call Sentinel internals, spawn processes, unload
+plugins or kill anything. `write-files` is limited to the addon data directory;
+`network` requires the capability; `policy` and `watchdog` are advisory markers.
 
 | Addon | Purpose |
 |---|---|
@@ -232,6 +235,11 @@ Sentinel internals, spawn processes, unload plugins or kill anything.
 | `sentinel_license_audit` | Manifest/license/README/icon/version metadata |
 | `sentinel_supply_chain_audit` | Install record, archive hash, source URL, version agreement, backup hygiene |
 | `sentinel_crypto_audit` | MD5/SHA1, weak ciphers, ECB, disabled TLS verification, hard-coded keys |
+| `sentinel_artifact_writer` | **write-files**: JSON/Markdown artifact with manifests, sizes, SHA-256 and aggregate digest |
+| `sentinel_network_diagnostics` | **network**: bounded HEAD-only HTTPS reachability and latency checks |
+| `sentinel_policy_gate` | **policy**: allow/review/deny decisions for imports, ids, manifest, license, size and native libraries |
+| `sentinel_watchdog_planner` | **watchdog**: SHA-256 baselines and a `watches.json`-compatible plan (not installed) |
+| `sentinel_evidence_bundle` | **policy + watchdog + write-files**: combined JSON/Markdown evidence bundle |
 
 ---
 
