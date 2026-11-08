@@ -2,7 +2,7 @@
   "schema": 1,
   "name": "QAH Git Marketplace",
   "description": "Plugins for Quantum Analysis Helper, stored in Git.",
-  "updated": "2026-11-08T19:28:29Z",
+  "updated": "2026-11-08T19:28:46Z",
   "plugins": [
     {
       "id": "git_plugin_marketplace",
@@ -1240,6 +1240,36 @@
   ],
   "addons": [
     {
+      "id": "sentinel_archive_audit",
+      "name": "Sentinel Archive Audit",
+      "author": "Acxel Orozco",
+      "description": "Report-only audit of QAH plugin/addon archives. Detects path traversal, absolute paths, symlinks, encrypted entries, duplicate names, zip-bomb ratios, nested archives, executables and missing manifests without extracting anything.",
+      "category": "addon",
+      "type": "addon",
+      "kind": "addon",
+      "api_version": 1,
+      "capabilities": [
+        "read-files",
+        "findings",
+        "report"
+      ],
+      "homepage": "",
+      "tags": [],
+      "versions": [
+        {
+          "version": "1.0.0",
+          "path": "addons/sentinel_archive_audit/1.0.0/sentinel_archive_audit-1.0.0.qah",
+          "url": "",
+          "sha256": "da1dac7f75f144d4b6637f626437c9301c857822217859e52544f079b704ec59",
+          "size": 3160,
+          "changelog": "Sentinel Archive Audit 1.0.0: read-only ZIP central-directory audit for path traversal, absolute paths, symlinks, encrypted entries, duplicate names, compression-ratio zip bombs, entry/size limits, nested archives, executables and missing root manifest. No extraction or execution.",
+          "published": "2026-11-08T19:28:46Z",
+          "yanked": false
+        }
+      ],
+      "version": "1.0.0"
+    },
+    {
       "id": "sentinel_checksum_verify",
       "name": "Sentinel Checksum Verify",
       "author": "Acxel Orozco",
@@ -1447,7 +1477,13 @@
           "yanked": false
         }
       ],
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "dependencies": [],
+      "price": 0.0,
+      "currency": "USD",
+      "price_model": "free",
+      "license_type": "free",
+      "max_activations": 0
     },
     {
       "id": "sentinel_output_inventory",

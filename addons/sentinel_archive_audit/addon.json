@@ -1,0 +1,17 @@
+{
+  "format": "qah-sentinel-addon",
+  "id": "sentinel_archive_audit",
+  "name": "Sentinel Archive Audit",
+  "version": "1.0.0",
+  "api_version": 1,
+  "author": "Acxel Orozco",
+  "description": "Report-only audit of QAH plugin/addon archives. Detects path traversal, absolute paths, symlinks, encrypted entries, duplicate names, zip-bomb ratios, nested archives, executables and missing manifests without extracting anything.",
+  "main": "main.py",
+  "entry": "run",
+  "timeout": 60,
+  "capabilities": [
+    "read-files",
+    "findings",
+    "report"
+  ]
+}
