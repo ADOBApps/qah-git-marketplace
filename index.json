@@ -2,7 +2,7 @@
   "schema": 1,
   "name": "QAH Git Marketplace",
   "description": "Plugins for Quantum Analysis Helper, stored in Git.",
-  "updated": "2026-11-08T19:57:46Z",
+  "updated": "2026-11-08T20:41:22Z",
   "plugins": [
     {
       "id": "git_plugin_marketplace",
@@ -360,9 +360,19 @@
           "changelog": "Plugin Sentinel 1.2.10: documents the Watchdog Builder hash template and adds WATCHDOG_BUILDER.md with hash, static-resource-audit and runtime-resource-watchdog examples. Clarifies that the builder does not monitor CPU/RAM and that addons cannot kill or unload processes. Includes the 1.2.9 sandbox PySide6 fix and QAH-compatible interpreter selection.",
           "published": "2026-11-08T19:10:01Z",
           "yanked": false
+        },
+        {
+          "version": "1.2.11",
+          "path": "plugins/plugin_sentinel/1.2.11/plugin_sentinel-1.2.11.qplugin.zip",
+          "url": "",
+          "sha256": "44b3ac73aa5890680945e8a7c56ccac6a0402c4cfa8a2deb0462844fb564e91a",
+          "size": 84507,
+          "changelog": "1.2.11: sandbox adds QAH's app directory to the child import path, fixing ModuleNotFoundError: No module named 'plugins' for plugins that import host APIs such as plugins.libs.plugin_manager. Verified against adobmd_gui, Plugin Health Guard, Theme Studio, QAHtop and Git Plugin Marketplace; network/write violations remain blocked.",
+          "published": "2026-11-08T20:41:22Z",
+          "yanked": false
         }
       ],
-      "version": "1.2.10"
+      "version": "1.2.11"
     },
     {
       "id": "pydft_molecule_lab",

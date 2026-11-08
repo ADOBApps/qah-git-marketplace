@@ -219,8 +219,10 @@ Runs plugin code in a separate process with:
 - a hard timeout and process-tree kill
 - captured stdout/stderr and violation list
 - real Python interpreter discovery, so the sandbox also works from frozen QAH
-- QAH's `app_packages` and DLL directories are added to the child, so plugins
-  that import `PySide6` work inside the sandbox
+- QAH's `app_packages`, `app` and DLL directories are added to the child, so
+  plugins that import `PySide6` work inside the sandbox and plugins that use
+  host APIs such as `from plugins.libs.plugin_manager import PluginInfo`
+  resolve their imports
 - the sandbox prefers an interpreter that can load QAH's PySide6; an
   Anaconda/MSYS Python can be rejected if its Qt DLLs are incompatible
 
@@ -420,5 +422,5 @@ README.md
 
 ---
 
-Version: 1.2.10  
+Version: 1.2.11  
 Author: Acxel Orozco
