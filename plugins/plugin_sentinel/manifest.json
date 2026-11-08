@@ -1,0 +1,23 @@
+{
+  "name": "Plugin Sentinel",
+  "id": "plugin_sentinel",
+  "version": "1.0.0",
+  "author": "Acxel Orozco",
+  "description": "Advanced plugin security audit: risk scoring, capability mapping, native DLL/SO/dylib inspection, trusted baselines, hash watchdog, process sandbox, runtime monitor, policy gates, reports and CI-friendly CLI.",
+  "type": "python",
+  "category": "development",
+  "main": "__init__.py",
+  "dependencies": [],
+  "icon": "icon.svg",
+  "requires_qah": "2.0.8",
+  "marketplace": {
+    "price": 0.0,
+    "currency": "USD",
+    "price_model": "free",
+    "payment_required": false
+  },
+  "license": {
+    "type": "free",
+    "max_activations": 100
+  }
+}
