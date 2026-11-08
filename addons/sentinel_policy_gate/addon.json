@@ -1,0 +1,18 @@
+{
+  "format": "qah-sentinel-addon",
+  "id": "sentinel_policy_gate",
+  "name": "Sentinel Policy Gate",
+  "version": "1.0.0",
+  "api_version": 1,
+  "author": "Acxel Orozco",
+  "description": "Evaluates selected plugins against a declarative policy: denied and reviewed imports, manifest and license requirements, native-library rules, size limits and id allow/deny lists. It returns allow/review/deny decisions with evidence and is the reference example for the policy capability.",
+  "main": "main.py",
+  "entry": "run",
+  "timeout": 90,
+  "capabilities": [
+    "read-files",
+    "policy",
+    "findings",
+    "report"
+  ]
+}

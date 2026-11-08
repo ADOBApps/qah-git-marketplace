@@ -2,7 +2,7 @@
   "schema": 1,
   "name": "QAH Git Marketplace",
   "description": "Plugins for Quantum Analysis Helper, stored in Git.",
-  "updated": "2026-11-08T20:53:26Z",
+  "updated": "2026-11-08T20:53:38Z",
   "plugins": [
     {
       "id": "git_plugin_marketplace",
@@ -1858,7 +1858,13 @@
           "yanked": false
         }
       ],
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "dependencies": [],
+      "price": 0.0,
+      "currency": "USD",
+      "price_model": "free",
+      "license_type": "free",
+      "max_activations": 0
     },
     {
       "id": "sentinel_output_inventory",
@@ -1931,6 +1937,37 @@
       "price_model": "free",
       "license_type": "free",
       "max_activations": 0
+    },
+    {
+      "id": "sentinel_policy_gate",
+      "name": "Sentinel Policy Gate",
+      "author": "Acxel Orozco",
+      "description": "Evaluates selected plugins against a declarative policy: denied and reviewed imports, manifest and license requirements, native-library rules, size limits and id allow/deny lists. It returns allow/review/deny decisions with evidence and is the reference example for the policy capability.",
+      "category": "addon",
+      "type": "addon",
+      "kind": "addon",
+      "api_version": 1,
+      "capabilities": [
+        "read-files",
+        "policy",
+        "findings",
+        "report"
+      ],
+      "homepage": "",
+      "tags": [],
+      "versions": [
+        {
+          "version": "1.0.0",
+          "path": "addons/sentinel_policy_gate/1.0.0/sentinel_policy_gate-1.0.0.qah",
+          "url": "",
+          "sha256": "78959e54f182b7a9d480be932f106e14336b0dcac6620c3d7cf55fec3a0a35ae",
+          "size": 4460,
+          "changelog": "Initial release: declarative policy evaluation (allow/review/deny) for imports, ids, manifest, license, size and native libraries. Reference example for the policy capability.",
+          "published": "2026-11-08T20:53:38Z",
+          "yanked": false
+        }
+      ],
+      "version": "1.0.0"
     },
     {
       "id": "sentinel_privacy_audit",
