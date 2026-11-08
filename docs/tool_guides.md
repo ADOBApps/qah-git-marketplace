@@ -199,7 +199,7 @@ Sentinel addons.
 | **Findings** | Detailed findings with severity and remediation |
 | **Native** | DLL/SO/dylib headers, imports, exports, entropy, security flags, suspicious APIs |
 | **Capabilities** | Network, subprocess, filesystem, native, credentials, persistence, dynamic code, GUI, database |
-| **Runtime** | CPU/memory/disk/network, top processes, QAH process tree |
+| **Runtime** | CPU/memory/disk/network, top processes, QAH process tree; visible-only sampling with a 0.5/1/2/5/10 s interval and Pause |
 | **Runtime -> Plugin Executions** | Plugin source, loaded state, QAH PID, unload selected user plugin |
 | **Watchdog** | Two subtabs: hash watches and the Watchdog Builder |
 | **Sandbox** | Run plugin code in a separate process with audit hooks and limits |
@@ -230,6 +230,15 @@ Sentinel addons.
 - duplicate plugin id detection;
 - trusted baselines and drift;
 - policy gates and capabilities allowlists.
+
+### Runtime sampling
+
+Runtime metrics are sampled only while the Runtime tab is visible. Hiding the
+tab stops the timer, so Sentinel does not poll processes in the background. The
+toolbar offers a 0.5/1/2/5/10 second interval (default 2 s) and a Pause
+checkbox; both persist in `runtime_settings.json`. The source label reports
+psutil or the tasklist/ps fallback, and the status line shows the current
+interval and process count.
 
 ### Sandbox
 
