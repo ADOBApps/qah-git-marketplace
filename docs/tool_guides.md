@@ -263,7 +263,12 @@ The sandbox is a containment harness, not a hypervisor:
   the sandbox;
 - sensitive credential paths are read-protected;
 - POSIX rlimits or Windows Job Object memory/CPU limits;
-- hard timeout and process-tree kill.
+- hard timeout and process-tree kill;
+- QAH's `app_packages` and DLL search directories in the child, so plugins that
+  import `PySide6` work;
+- sandbox interpreter selection prefers a Python that can import QAH's PySide6;
+  incompatible Anaconda/MSYS Pythons are skipped;
+- `ModuleNotFoundError: No module named 'PySide6'` was fixed in Sentinel 1.2.9.
 
 Native code is blocked by the audit hook, but no in-process sandbox is a
 guarantee against every kernel-level escape.
@@ -283,6 +288,10 @@ error.
 
 Other plugins can register watches while Sentinel is installed. See the built-in
 **Documentation** tab and the `sentinel_api` module.
+
+The **Watchdog Builder** generates hash watchdogs (SHA256 baseline + QTimer +
+`report.json`); its template and examples are documented in
+`plugin_sentinel/WATCHDOG_BUILDER.md`. It does not monitor CPU/RAM.
 
 ---
 
@@ -306,8 +315,9 @@ conformers; custom XYZ files can be imported.
 - HOMO±3 orbital window, 2D orbital slices and orbital-energy diagram;
 - Markdown/JSON reports and PNG/SVG orbital plots.
 
-pydft Kohn–Sham is the primary engine; PyQInt Hartree–Fock is available as a
-fallback when DFT does not converge.
+pydft Kohn–Sham is the only SCF engine. There is no Hartree–Fock fallback;
+non-converged results are marked and can be retried with a higher iteration cap
+or looser tolerance.
 
 ### CPU limits
 
@@ -331,6 +341,31 @@ GPU.
 Inject `pydft` with Wheel Plugin Manager into `global` or the private
 `pydft_molecule_lab` target. pydft brings pyqint, pylebedev, numpy, scipy and
 numba. matplotlib is optional for plots and is normally bundled with QAH.
+
+---
+
+## Resource Watchdog
+
+Category: **Tools**. A read-only runtime monitor for QAH.
+
+- QAH PID, CPU %, RSS and thread count;
+- child processes with PID, name, CPU and RSS;
+- heavy modules currently loaded in QAH (`pydft`, `pyqint`, `numba`, `scipy`,
+  `matplotlib`, `torch`, `tensorflow`, `jax`, `cupy`, `pyscf`, `rdkit`);
+- CPU/RSS warning thresholds and a JSON report;
+- monitoring is off until **Start monitoring** is pressed; default interval 5 s.
+
+QAH plugins share one process, so CPU is attributed to QAH as a whole. The
+watchdog can show that pyqint/pydft are loaded and QAH is busy, but not which
+plugin caused it. It **never kills, unloads, suspends or throttles** anything.
+
+psutil is optional; inject it into `global` or `resource_watchdog`.
+
+### Static resource audit addon
+
+`sentinel_resource_audit` is a report-only Sentinel addon. It scans plugin
+folders for heavy imports and declared dependencies. It cannot inspect live CPU,
+call Sentinel internals or unload/kill anything.
 
 ---
 
