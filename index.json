@@ -2,7 +2,7 @@
   "schema": 1,
   "name": "QAH Git Marketplace",
   "description": "Plugins for Quantum Analysis Helper, stored in Git.",
-  "updated": "2026-11-08T19:33:38Z",
+  "updated": "2026-11-08T19:33:51Z",
   "plugins": [
     {
       "id": "git_plugin_marketplace",
@@ -1519,7 +1519,13 @@
           "yanked": false
         }
       ],
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "dependencies": [],
+      "price": 0.0,
+      "currency": "USD",
+      "price_model": "free",
+      "license_type": "free",
+      "max_activations": 0
     },
     {
       "id": "sentinel_log_audit",
@@ -1700,6 +1706,36 @@
       "price_model": "free",
       "license_type": "free",
       "max_activations": 0
+    },
+    {
+      "id": "sentinel_privacy_audit",
+      "name": "Sentinel Privacy Audit",
+      "author": "Acxel Orozco",
+      "description": "Report-only static privacy audit: hard-coded user/home paths, email addresses, credential handling, logging/printing of secrets, clipboard access and hard-coded temp paths.",
+      "category": "addon",
+      "type": "addon",
+      "kind": "addon",
+      "api_version": 1,
+      "capabilities": [
+        "read-files",
+        "findings",
+        "report"
+      ],
+      "homepage": "",
+      "tags": [],
+      "versions": [
+        {
+          "version": "1.0.0",
+          "path": "addons/sentinel_privacy_audit/1.0.0/sentinel_privacy_audit-1.0.0.qah",
+          "url": "",
+          "sha256": "341c2abc2d82a5b6be68efe0fcf885c2f205ed5a4c8fcc46a4c44c0f622884b2",
+          "size": 2536,
+          "changelog": "Sentinel Privacy Audit 1.0.0: hard-coded home paths, emails, credential references, secret logging, clipboard access and temp paths. Report-only.",
+          "published": "2026-11-08T19:33:51Z",
+          "yanked": false
+        }
+      ],
+      "version": "1.0.0"
     },
     {
       "id": "sentinel_resource_audit",
