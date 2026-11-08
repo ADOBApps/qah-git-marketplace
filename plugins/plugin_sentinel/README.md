@@ -383,5 +383,5 @@ README.md
 
 ---
 
-Version: 1.2.5  
+Version: 1.2.6  
 Author: Acxel Orozco
