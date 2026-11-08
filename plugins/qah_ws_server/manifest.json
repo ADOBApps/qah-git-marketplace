@@ -1,11 +1,11 @@
 {
   "name": "QAH WS Server",
   "id": "qah_ws_server",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "author": "Acxel Orozco",
   "description": "Encrypted WSS remote command console for QAH: paired clients run commands and receive streamed stdout/stderr, with timed or password-protected permanent auto-approve.",
   "type": "python",
-  "category": "development",
+  "category": "tools",
   "main": "__init__.py",
   "dependencies": [],
   "icon": "icon.svg",
