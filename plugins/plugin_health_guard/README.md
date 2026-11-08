@@ -43,6 +43,20 @@ The report contains:
 
 A summary is also written to the QAH log.
 
+## Read-only API
+
+Other plugins can read the latest report without opening Health Guard:
+
+```python
+from plugin_health_guard import health_api
+
+report = health_api.load_report()
+summary = health_api.summary()
+path = health_api.report_path()
+```
+
+**Plugin Sentinel** uses this report in its **Health** tab.
+
 ## Why a non-GUI plugin?
 
 Non-GUI plugins are valuable when the job is background maintenance rather than
@@ -76,5 +90,5 @@ falls back to `~/QAH/plugins/python_plugins`.
 
 ---
 
-Version: 1.0.0  
+Version: 1.0.1  
 Author: Acxel Orozco
