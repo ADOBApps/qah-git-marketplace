@@ -1,0 +1,23 @@
+{
+  "name": "Runtime Forge",
+  "id": "runtime_forge",
+  "version": "1.0.0",
+  "author": "Acxel Orozco",
+  "description": "Isolated per-plugin Python runtimes: hash-pinned wheel lock files, per-plugin site-packages, JSON-RPC runtime host, rollback, Sentinel integration, UI and CLI.",
+  "type": "python",
+  "category": "development",
+  "main": "__init__.py",
+  "dependencies": [],
+  "icon": "icon.svg",
+  "requires_qah": "2.0.8",
+  "marketplace": {
+    "price": 0.0,
+    "currency": "USD",
+    "price_model": "free",
+    "payment_required": false
+  },
+  "license": {
+    "type": "free",
+    "max_activations": 100
+  }
+}

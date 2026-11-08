@@ -2,7 +2,7 @@
   "schema": 1,
   "name": "QAH Git Marketplace",
   "description": "Plugins for Quantum Analysis Helper, stored in Git.",
-  "updated": "2026-11-08T06:00:25Z",
+  "updated": "2026-11-08T06:07:27Z",
   "plugins": [
     {
       "id": "git_plugin_marketplace",
@@ -433,6 +433,36 @@
         }
       ],
       "version": "1.2.0"
+    },
+    {
+      "id": "runtime_forge",
+      "name": "Runtime Forge",
+      "author": "Acxel Orozco",
+      "description": "Isolated per-plugin Python runtimes: hash-pinned wheel lock files, per-plugin site-packages, JSON-RPC runtime host, rollback, Sentinel integration, UI and CLI.",
+      "category": "development",
+      "type": "python",
+      "dependencies": [],
+      "requires_qah": "2.0.8",
+      "homepage": "",
+      "tags": [],
+      "price": 0.0,
+      "currency": "USD",
+      "price_model": "free",
+      "license_type": "free",
+      "max_activations": 100,
+      "versions": [
+        {
+          "version": "1.0.0",
+          "path": "plugins/runtime_forge/1.0.0/runtime_forge-1.0.0.qplugin.zip",
+          "url": "",
+          "sha256": "59dc507455dc14904e562197d876b29597d55d03c29603d10f06707e242aa76f",
+          "size": 18777,
+          "changelog": "Initial Runtime Forge release: isolated per-plugin Python site-packages, hash-locked wheel installs, JSON-RPC runtime host, rollback, Sentinel integration, UI and CLI. Wheels only; no pip/setup.py/cargo on the user machine.",
+          "published": "2026-11-08T06:07:27Z",
+          "yanked": false
+        }
+      ],
+      "version": "1.0.0"
     },
     {
       "id": "secure_share",
