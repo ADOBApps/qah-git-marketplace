@@ -2,7 +2,7 @@
   "schema": 1,
   "name": "QAH Git Marketplace",
   "description": "Plugins for Quantum Analysis Helper, stored in Git.",
-  "updated": "2026-11-08T09:00:45Z",
+  "updated": "2026-11-08T12:10:30Z",
   "plugins": [
     {
       "id": "git_plugin_marketplace",
@@ -624,9 +624,19 @@
           "changelog": "QAHtop 1.0.1: declares psutil>=5.9.0 and marks it explicitly optional with dependency_mode=optional and optional_dependencies, while keeping the tasklist/ps fallback and Detect dependencies probe.",
           "published": "2026-11-08T08:59:45Z",
           "yanked": false
+        },
+        {
+          "version": "1.0.2",
+          "path": "plugins/qahtop/1.0.2/qahtop-1.0.2.qplugin.zip",
+          "url": "",
+          "sha256": "79837adf6a846aee0508681dd83e8438652d2ae0e26d110d49bf1d011f54b5f4",
+          "size": 9280,
+          "changelog": "QAHtop 1.0.2: fixes QAH sluggishness. Uses fixed table widths and batched updates, preserves selection/scroll, defaults to 3 s refresh, and stops auto-refresh while the tab is hidden.",
+          "published": "2026-11-08T12:10:30Z",
+          "yanked": false
         }
       ],
-      "version": "1.0.1"
+      "version": "1.0.2"
     },
     {
       "id": "runtime_forge",

@@ -1,5 +1,13 @@
 # QAHtop
 
+## 1.0.2
+
+- Reduced UI load: fixed table column widths instead of per-row
+  `ResizeToContents`, batched table updates, and preserved selection/scroll.
+- Default refresh is 3 s; 1.5 s and 5 s remain selectable.
+- Auto-refresh stops while the QAHtop tab is hidden and restarts when shown.
+- This fixes QAH becoming sluggish while QAHtop stayed open in a background tab.
+
 A lightweight **htop-style read-only process monitor** for QAH.
 
 It lists processes, CPU, memory, disk and process counts. It never ends or

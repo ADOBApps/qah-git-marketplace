@@ -1,7 +1,7 @@
 {
   "name": "QAHtop",
   "id": "qahtop",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "author": "Acxel Orozco",
   "description": "Lightweight htop-style read-only process and system monitor for QAH. Uses an injected psutil>=5.9.0 when available and falls back to tasklist/ps, with a Detect dependencies probe for Wheel Plugin Manager vendor paths.",
   "type": "python",
