@@ -1,9 +1,9 @@
 {
   "name": "Git Plugin Marketplace",
   "id": "git_plugin_marketplace",
-  "version": "1.1.4",
+  "version": "1.2.0",
   "author": "Acxel Orozco",
-  "description": "Discover, install, update, publish and delete QAH plugins and themes using a Git repository (GitHub) instead of Firebase.",
+  "description": "Discover, install, update, publish and delete QAH plugins, themes and sandboxed Sentinel addons using a Git repository (GitHub) instead of Firebase. Includes a hard self-update guard.",
   "type": "python",
   "category": "development",
   "main": "__init__.py",

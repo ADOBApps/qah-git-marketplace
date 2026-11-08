@@ -11,6 +11,23 @@ plugin ZIPs live in a Git repository (GitHub) instead of Firebase.
 - One Git commit per publish/delete, so the history is the audit log
 - Linux / macOS / Windows
 
+## 1.2.0
+
+- Added **Sentinel addons** as a first-class asset: `addons` catalog section,
+  **Addons** filter, `.qah` install/update/uninstall/version selection, and
+  `addons/<id>/<version>/<id>-<version>.qah` repository layout.
+- Addons install to `%USERPROFILE%\QAH\plugin_sentinel\addons\<id>\` and are
+  hash-pinned automatically from the install record; the Sentinel Addons tab is
+  refreshed after install.
+- Added addon publishing: `list-addons`, `install-addon`, `uninstall-addon`,
+  `publish-addon`.
+- **Self-update guard:** the marketplace refuses to install, downgrade or
+  uninstall `git_plugin_marketplace` from its own running UI/process, and
+  excludes itself from **Update all**. Use QAH's system marketplace, the manual
+  ZIP importer, or update with QAH closed.
+- **Update all** now covers user plugins, themes and Sentinel addons.
+- Old catalogs without `addons` remain valid.
+
 ## 1.1.4
 
 - Added first-class **theme assets**: `themes` catalog section, `.qtheme.zip`
@@ -73,6 +90,16 @@ plugins/
     README.md                           optional description
     <version>/
       <id>-<version>.qplugin.zip        plugin archive
+themes/
+  <id>/
+    <version>/
+      <id>-<version>.qtheme.zip         theme archive
+addons/
+  <id>/
+    addon.json                          canonical Sentinel addon manifest
+    README.md                           optional description
+    <version>/
+      <id>-<version>.qah                Sentinel addon archive
 ```
 
 `index.json`:
@@ -251,6 +278,82 @@ marketplace.
 
 ---
 
+## Themes and Sentinel addons
+
+Use the **Plugins / Themes / Addons** filter above the list.
+
+### Themes
+
+Themes install flat into `%USERPROFILE%\QAH\themes\<id>.json` + `<id>.css`, so
+QAH's existing Theme Manager sees them without a restart. Existing `theme.json`
+files and their CSS keep working.
+
+```powershell
+py -3 git_marketplace_cli.py list-themes
+py -3 git_marketplace_cli.py install-theme studio_aurora
+py -3 git_marketplace_cli.py publish-theme "C:\path\to\theme" --changelog "Aurora palette"
+```
+
+### Sentinel addons
+
+Addons are `.qah` source packages with `addon.json` + a Python entry point. They
+are **not** QAH plugins: they run only in Plugin Sentinel's Addons tab, in an
+isolated process. The marketplace shows declared capabilities and API version
+before installation.
+
+Addons install into:
+
+```text
+%USERPROFILE%\QAH\plugin_sentinel\addons\<id>\
+```
+
+and get a `.qah_install.json` marker with the archive SHA256. Sentinel pins the
+installed folder hash automatically after a marketplace install.
+
+```powershell
+py -3 git_marketplace_cli.py list-addons
+py -3 git_marketplace_cli.py install-addon dft_output_checks
+py -3 git_marketplace_cli.py uninstall-addon dft_output_checks
+py -3 git_marketplace_cli.py publish-addon "C:\path\to\addon" --changelog "First release"
+```
+
+Required `addon.json` shape:
+
+```json
+{
+  "format": "qah-sentinel-addon",
+  "id": "dft_output_checks",
+  "name": "DFT Output Checks",
+  "version": "1.0.0",
+  "api_version": 1,
+  "author": "You",
+  "description": "Checks DFT output files",
+  "main": "main.py",
+  "entry": "run",
+  "capabilities": ["read-files", "findings", "report"]
+}
+```
+
+---
+
+## Self-update safety
+
+Git Plugin Marketplace refuses to install, downgrade or uninstall
+`git_plugin_marketplace` from its own running UI/process. It also excludes
+itself from **Update all**.
+
+To update it safely:
+
+- use QAH's system Plugin Marketplace,
+- use QAH's manual ZIP importer, or
+- replace it with QAH closed.
+
+Other plugins, themes and Sentinel addons update normally. The installer still
+uses staging + backup + atomic replace, so a failed extraction restores the
+previous folder.
+
+---
+
 ## Publish a plugin
 
 GUI: **Publish Plugin…** → choose the folder → manifest fields are filled in →
@@ -387,6 +490,14 @@ submit  <folder> [--version] [--changelog] [--homepage] [--draft]
 delete <id> [--version|--all]
 init [--name] [--description]
 updates                     compare installed vs catalog
+list-themes                 list theme assets
+install-theme <id>          install a theme
+uninstall-theme <id>        remove an installed theme
+publish-theme <folder>      package and publish a theme
+list-addons                 list Sentinel addon assets
+install-addon <id>          install a Sentinel addon
+uninstall-addon <id>        remove an installed Sentinel addon
+publish-addon <folder>      package and publish a Sentinel addon
 build <folder> [--out]      build a .qplugin.zip locally
 validate <folder>           build + print id/version/sha256
 ```
