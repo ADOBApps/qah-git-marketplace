@@ -1,0 +1,17 @@
+{
+  "format": "qah-sentinel-addon",
+  "id": "sentinel_persistence_audit",
+  "name": "Sentinel Persistence Audit",
+  "version": "1.0.0",
+  "api_version": 1,
+  "author": "Acxel Orozco",
+  "description": "Report-only static audit for persistence and autostart behavior in QAH plugins: registry Run keys, Startup folders, scheduled tasks, cron/systemd, LaunchAgents/LaunchDaemons, sitecustomize and atexit hooks. It reads source only and never executes it.",
+  "main": "main.py",
+  "entry": "run",
+  "timeout": 60,
+  "capabilities": [
+    "read-files",
+    "findings",
+    "report"
+  ]
+}

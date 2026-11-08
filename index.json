@@ -2,7 +2,7 @@
   "schema": 1,
   "name": "QAH Git Marketplace",
   "description": "Plugins for Quantum Analysis Helper, stored in Git.",
-  "updated": "2026-11-08T19:28:46Z",
+  "updated": "2026-11-08T19:29:06Z",
   "plugins": [
     {
       "id": "git_plugin_marketplace",
@@ -1267,7 +1267,13 @@
           "yanked": false
         }
       ],
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "dependencies": [],
+      "price": 0.0,
+      "currency": "USD",
+      "price_model": "free",
+      "license_type": "free",
+      "max_activations": 0
     },
     {
       "id": "sentinel_checksum_verify",
@@ -1520,6 +1526,36 @@
       "price_model": "free",
       "license_type": "free",
       "max_activations": 0
+    },
+    {
+      "id": "sentinel_persistence_audit",
+      "name": "Sentinel Persistence Audit",
+      "author": "Acxel Orozco",
+      "description": "Report-only static audit for persistence and autostart behavior in QAH plugins: registry Run keys, Startup folders, scheduled tasks, cron/systemd, LaunchAgents/LaunchDaemons, sitecustomize and atexit hooks. It reads source only and never executes it.",
+      "category": "addon",
+      "type": "addon",
+      "kind": "addon",
+      "api_version": 1,
+      "capabilities": [
+        "read-files",
+        "findings",
+        "report"
+      ],
+      "homepage": "",
+      "tags": [],
+      "versions": [
+        {
+          "version": "1.0.0",
+          "path": "addons/sentinel_persistence_audit/1.0.0/sentinel_persistence_audit-1.0.0.qah",
+          "url": "",
+          "sha256": "c3a1c1bdf333c079bafe68d9b187ceaf9d3654bee0ed6246828eebf2455a517a",
+          "size": 2819,
+          "changelog": "Sentinel Persistence Audit 1.0.0: static report-only audit for registry Run keys, Startup folders, scheduled tasks, cron/systemd, LaunchAgents, sitecustomize, atexit, WScript.Shell and CreateProcess. Reads text only; never executes audited code or changes startup state.",
+          "published": "2026-11-08T19:29:06Z",
+          "yanked": false
+        }
+      ],
+      "version": "1.0.0"
     },
     {
       "id": "sentinel_resource_audit",
