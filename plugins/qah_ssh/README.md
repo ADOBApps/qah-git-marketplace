@@ -64,6 +64,12 @@ transfer. If **Compress on server (tar.gz)** is checked, the queued download
 also compresses, downloads and extracts the archive. Compressed downloads
 always use the background queue, even if **Queue transfers** is unchecked.
 
+**Queue transfers** and **Compress on server** are on a separate options row
+below the file-action buttons, so they do not squeeze the terminal on small
+screens. The whole plugin is wrapped in a scroll area; if the window is smaller
+than the minimum usable size, scrollbars appear instead of compressing the
+terminal and file browser.
+
 The **Transfer Queue** tab is for control only:
 
 - **Pause / Resume**: let the current transfer finish, then wait before the next
@@ -115,6 +121,6 @@ button in the terminal toolbar to fetch the cluster command list again.
 | `one_click_importer.py` | Simplified plugin installation |
 | `debug_plugin_import.py` | Debug utilities for plugin loading |
 
-Version: 3.11.3
+Version: 3.11.4
 Author: Acxel Orozco
 Created: 2026-02-07
