@@ -1,9 +1,9 @@
 {
   "name": "Plugin Health Guard",
   "id": "plugin_health_guard",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "author": "Acxel Orozco",
-  "description": "Headless startup health check for QAH plugins: manifest integrity, missing entry points, duplicate ids, backup files and stale bytecode, with a JSON report and menu actions.",
+  "description": "Headless startup health check for QAH plugins: manifest integrity, missing entry points, duplicate ids, backup files and stale bytecode, with a JSON report, read-only API and menu actions.",
   "type": "python",
   "category": "development",
   "main": "__init__.py",
