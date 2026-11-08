@@ -198,6 +198,34 @@ not appear in Sentinel Inventory or Plugin Executions. Plugin Sentinel 1.2.4+
 shows them in the **Dependencies** tab with target, package, version,
 Python/platform and path, plus open/copy actions.
 
+### Sentinel addon catalog (20)
+
+All addons are report-only: `read-files`, `findings`, `report`. They cannot call
+Sentinel internals, spawn processes, unload plugins or kill anything.
+
+| Addon | Purpose |
+|---|---|
+| `sentinel_file_audit` | File hashes, empty/large files, executable/script extensions |
+| `sentinel_log_audit` | Log errors, crashes, timeouts and masked credentials |
+| `sentinel_manifest_audit` | Manifest fields, ids, versions, entry points and duplicates |
+| `sentinel_output_inventory` | Output file inventory and sizes |
+| `sentinel_checksum_verify` | SHA256 checksum verification |
+| `sentinel_secret_scan` | Private keys, cloud keys, tokens and generic secrets |
+| `sentinel_resource_audit` | Heavy imports/dependencies (`pydft`, `pyqint`, `numba`, …) |
+| `sentinel_dependency_audit` | Vendor manifest/dist-info consistency, duplicate/shadowed packages |
+| `sentinel_network_audit` | Network imports/endpoints and undeclared network capability |
+| `sentinel_archive_audit` | ZIP traversal, symlinks, encryption, zip bombs, executables |
+| `sentinel_persistence_audit` | Registry Run keys, startup folders, scheduled tasks, cron/LaunchAgents, atexit |
+| `sentinel_dangerous_api_audit` | `eval`/`exec`, pickle/marshal/yaml, shell, ctypes, winreg, dynamic import |
+| `sentinel_capability_audit` | Declared capabilities vs static source evidence |
+| `sentinel_import_audit` | Third-party imports not declared in manifest dependencies |
+| `sentinel_lifecycle_audit` | Fast timers, `while True`, blocking sleeps, threads without cleanup, heavy imports |
+| `sentinel_privacy_audit` | Hard-coded home paths, emails, credentials, secret logging, clipboard |
+| `sentinel_diff_audit` | Compare two plugin folders: files, version, capabilities, dependencies, imports |
+| `sentinel_license_audit` | Manifest/license/README/icon/version metadata |
+| `sentinel_supply_chain_audit` | Install record, archive hash, source URL, version agreement, backup hygiene |
+| `sentinel_crypto_audit` | MD5/SHA1, weak ciphers, ECB, disabled TLS verification, hard-coded keys |
+
 ---
 
 ## Plugin Sentinel
