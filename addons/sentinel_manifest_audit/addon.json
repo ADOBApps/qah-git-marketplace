@@ -1,0 +1,17 @@
+{
+  "format": "qah-sentinel-addon",
+  "id": "sentinel_manifest_audit",
+  "name": "Sentinel Manifest Audit",
+  "version": "1.0.0",
+  "api_version": 1,
+  "author": "Acxel Orozco",
+  "description": "Audits QAH plugin and Sentinel addon manifests for missing fields, invalid ids, missing entry files, unsupported addon APIs, risky dependencies, duplicate ids and backup artifacts.",
+  "main": "main.py",
+  "entry": "run",
+  "timeout": 60,
+  "capabilities": [
+    "read-files",
+    "findings",
+    "report"
+  ]
+}
