@@ -1,0 +1,17 @@
+{
+  "format": "qah-sentinel-addon",
+  "id": "sentinel_network_audit",
+  "name": "Sentinel Network Audit",
+  "version": "1.0.0",
+  "api_version": 1,
+  "author": "Acxel Orozco",
+  "description": "Report-only static network audit of QAH plugins. Finds network imports, URLs, WebSocket/SSH endpoints, IP addresses and declared network capability mismatches. It never opens a connection or sends data.",
+  "main": "main.py",
+  "entry": "run",
+  "timeout": 60,
+  "capabilities": [
+    "read-files",
+    "findings",
+    "report"
+  ]
+}
