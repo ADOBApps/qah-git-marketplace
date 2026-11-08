@@ -1,6 +1,6 @@
 # PyDFT Molecule Lab
 
-Category: **Analysis** · Version 1.0.1
+Category: **Analysis** · Version 1.0.2
 
 A pydft-based electronic-structure workbench for small organic molecules and
 hormones. It runs **single-point** Kohn–Sham calculations, reports electronic
@@ -35,8 +35,9 @@ imported from the Library tab.
 - orbital-energy diagram;
 - Markdown/JSON reports and PNG/SVG orbital plot export.
 
-The **pydft DFT** engine is primary. A **PyQInt Hartree–Fock fallback** is
-available when DFT does not converge or when a wavefunction method is wanted.
+The plugin uses only the **pydft Kohn–Sham DFT** engine. There is no
+Hartree–Fock fallback; a non-converged SCF is reported as indicative and the
+user can raise the iteration cap or loosen the tolerance.
 
 ## CPU limits and temperature
 
@@ -95,7 +96,8 @@ README.md
 - pydft is an educational localized-orbital DFT code. Absolute energies and
   gaps are indicative, not publication-grade.
 - SCF convergence is not guaranteed for every molecule. The UI marks
-  non-converged results and offers the PyQInt HF fallback.
+  non-converged results; raise the iteration cap or loosen the tolerance.
+  There is no alternate SCF engine.
 - Orbital plots are 2D slices, not isosurfaces.
 - Dipole moments use density-matrix dipole integrals and nuclear charges.
 

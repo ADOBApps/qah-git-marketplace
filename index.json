@@ -2,7 +2,7 @@
   "schema": 1,
   "name": "QAH Git Marketplace",
   "description": "Plugins for Quantum Analysis Helper, stored in Git.",
-  "updated": "2026-11-08T19:02:57Z",
+  "updated": "2026-11-08T19:04:08Z",
   "plugins": [
     {
       "id": "git_plugin_marketplace",
@@ -392,9 +392,19 @@
           "changelog": "PyDFT Molecule Lab 1.0.1: detects and displays the OS logical CPU thread count, populates the CPU thread selector from 1..total, and removes the thermal-safe banner/title. Renames the limits group to CPU and convergence limits. No calculation behavior change; still defaults to one thread and no automatic runs.",
           "published": "2026-11-08T18:02:36Z",
           "yanked": false
+        },
+        {
+          "version": "1.0.2",
+          "path": "plugins/pydft_molecule_lab/1.0.2/pydft_molecule_lab-1.0.2.qplugin.zip",
+          "url": "",
+          "sha256": "50395e6b856b64f54954957e154736a6305d486fc1bf4b7a1d8266f0cba0fcc6",
+          "size": 28796,
+          "changelog": "PyDFT Molecule Lab 1.0.2: removes the PyQInt Hartree-Fock fallback engine. The lab now runs only the pydft Kohn-Sham engine, so the SCF path respects the CPU thread budget. Non-converged results are still clearly reported; raise the iteration cap or loosen tolerance instead of switching engines.",
+          "published": "2026-11-08T19:04:08Z",
+          "yanked": false
         }
       ],
-      "version": "1.0.1"
+      "version": "1.0.2"
     },
     {
       "id": "pydft_workbench",
