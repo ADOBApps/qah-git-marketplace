@@ -1,0 +1,17 @@
+{
+  "format": "qah-sentinel-addon",
+  "id": "sentinel_supply_chain_audit",
+  "name": "Sentinel Supply Chain Audit",
+  "version": "1.0.0",
+  "api_version": 1,
+  "author": "Acxel Orozco",
+  "description": "Report-only provenance and packaging audit: .qah_install.json record, archive SHA256, source URL, version agreement, manifest consistency, stale backups and cache files. It does not install or execute anything.",
+  "main": "main.py",
+  "entry": "run",
+  "timeout": 60,
+  "capabilities": [
+    "read-files",
+    "findings",
+    "report"
+  ]
+}

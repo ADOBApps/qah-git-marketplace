@@ -2,7 +2,7 @@
   "schema": 1,
   "name": "QAH Git Marketplace",
   "description": "Plugins for Quantum Analysis Helper, stored in Git.",
-  "updated": "2026-11-08T19:34:16Z",
+  "updated": "2026-11-08T19:34:28Z",
   "plugins": [
     {
       "id": "git_plugin_marketplace",
@@ -1555,7 +1555,13 @@
           "yanked": false
         }
       ],
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "dependencies": [],
+      "price": 0.0,
+      "currency": "USD",
+      "price_model": "free",
+      "license_type": "free",
+      "max_activations": 0
     },
     {
       "id": "sentinel_lifecycle_audit",
@@ -1880,6 +1886,36 @@
       "price_model": "free",
       "license_type": "free",
       "max_activations": 0
+    },
+    {
+      "id": "sentinel_supply_chain_audit",
+      "name": "Sentinel Supply Chain Audit",
+      "author": "Acxel Orozco",
+      "description": "Report-only provenance and packaging audit: .qah_install.json record, archive SHA256, source URL, version agreement, manifest consistency, stale backups and cache files. It does not install or execute anything.",
+      "category": "addon",
+      "type": "addon",
+      "kind": "addon",
+      "api_version": 1,
+      "capabilities": [
+        "read-files",
+        "findings",
+        "report"
+      ],
+      "homepage": "",
+      "tags": [],
+      "versions": [
+        {
+          "version": "1.0.0",
+          "path": "addons/sentinel_supply_chain_audit/1.0.0/sentinel_supply_chain_audit-1.0.0.qah",
+          "url": "",
+          "sha256": "04f3e050fdbe03e8cd677864651e3a4434127450086d2e2cd58d5c64edf953dd",
+          "size": 2926,
+          "changelog": "Sentinel Supply Chain Audit 1.0.0: install-record, archive SHA256, HTTPS source, version agreement, archive manifest and backup/cache hygiene. Report-only.",
+          "published": "2026-11-08T19:34:28Z",
+          "yanked": false
+        }
+      ],
+      "version": "1.0.0"
     }
   ]
 }
