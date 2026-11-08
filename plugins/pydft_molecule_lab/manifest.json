@@ -1,7 +1,7 @@
 {
   "name": "PyDFT Molecule Lab",
   "id": "pydft_molecule_lab",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "author": "Acxel Orozco",
   "description": "pydft-based electronic-structure lab for small organic molecules and hormones. Runs bounded single-point Kohn-Sham calculations, reports HOMO/LUMO, gap, chemical descriptors, Mulliken charges and dipole moment, and draws molecular-orbital slices and energy diagrams. Includes E2, EE2, E1, E3, testosterone, progesterone, caffeine and reference molecules.",
   "type": "python",
