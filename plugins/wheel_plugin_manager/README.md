@@ -8,6 +8,21 @@ It is designed first for **Windows**, where QAH 2.0.8 packages built with
 Briefcase often have **no `python.exe`** in the application directory, but the
 same code works on Linux and macOS.
 
+## 1.2.0
+
+- Added **dependency injection into QAH's frozen Python** without rebuilding
+  QAH. It resolves pre-built wheels with the system Python/pip for QAH's
+  Python version and platform, verifies the wheel tags, and unpacks them under
+  `<QAH home>/plugins/vendor/<target>`.
+- New CLI: `inject`, `deps`, `deps-path`, `deps-verify`, `deps-remove`.
+- New GUI **Dependency injection** panel with Inject, List sets, Verify import,
+  Remove package and Remove set.
+- Injected paths are activated at QAH startup by the plugin and immediately
+  after injection. Example: `psutil` installs as a cp312/win_amd64 wheel with no
+  QAH rebuild and no change to the installed application directory.
+- Dependency sets are isolated by target name (`global` or a plugin id), can be
+  merged, upgraded, verified and removed.
+
 ---
 
 ## Why the built-in installer fails on some Windows builds
@@ -194,8 +209,11 @@ locks the file until the process exits.
 
 ### Dependencies
 
-QAH installs plugin wheels with `--no-deps` on purpose: PySide6, numpy, etc.
-come from the host. Use `--deps` only for a genuinely optional small dependency:
+There are two different cases.
+
+**1. Dependencies of a wheel plugin.** QAH installs plugin wheels with
+`--no-deps` on purpose: PySide6, numpy, etc. come from the host. Use `--deps`
+only for a genuinely optional small dependency:
 
 ```powershell
 py -3 $cli install "C:\path\to\plugin.whl" --deps
@@ -203,6 +221,55 @@ py -3 $cli install "C:\path\to\plugin.whl" --deps
 
 That uses pip. If the bundle has no `python.exe`, the CLI falls back to pip
 **in-process** (pip is pure Python). It never launches the GUI stub.
+
+**2. Extra runtime dependencies for the frozen QAH interpreter.** This is the
+new injection path. It downloads pre-built wheels with the **system Python**,
+but selects tags for **QAH's Python version and platform**, then unpacks them:
+
+```powershell
+$cli = "C:\path\to\wheel_plugin_manager\qah_wheel_cli.py"
+py -3 $cli inject psutil --target global
+py -3 $cli deps
+py -3 $cli deps-verify global psutil
+```
+
+It writes to:
+
+```text
+<QAH home>\plugins\vendor\global\
+```
+
+and adds that directory to `sys.path` at QAH startup and immediately after
+injection. Use a plugin id as the target for a private set:
+
+```powershell
+py -3 $cli inject "psutil>=5.9" --target my_plugin
+```
+
+Remove one package or the whole set:
+
+```powershell
+py -3 $cli deps-remove global --package psutil
+py -3 $cli deps-remove global
+```
+
+How it works:
+
+1. detects QAH's Python version (for example CPython 3.12) from the bundle;
+2. detects the platform wheel tag (`win_amd64`, `linux_x86_64`, ...);
+3. runs `pip download --only-binary=:all:` with the target `--python-version`,
+   `--abi` and `--platform` when the system Python differs;
+4. rejects any wheel whose tags do not match the QAH target;
+5. unpacks all resolved wheels into a staging vendor directory;
+6. atomically promotes the staging directory and activates it.
+
+Limits:
+
+- pre-built wheels only; source distributions are rejected;
+- the OS/CPU must match the QAH bundle;
+- native wheels must match QAH's Python ABI (normally cp312/abi3);
+- it never modifies the installed QAH application directory;
+- no QAH rebuild is required.
 
 ### Build a wheel
 
