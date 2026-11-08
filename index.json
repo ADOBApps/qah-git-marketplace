@@ -2,7 +2,7 @@
   "schema": 1,
   "name": "QAH Git Marketplace",
   "description": "Plugins for Quantum Analysis Helper, stored in Git.",
-  "updated": "2026-11-08T06:41:26Z",
+  "updated": "2026-11-08T06:42:17Z",
   "plugins": [
     {
       "id": "git_plugin_marketplace",
@@ -573,6 +573,36 @@
         }
       ],
       "version": "3.2.0"
+    },
+    {
+      "id": "theme_studio",
+      "name": "Theme Studio",
+      "author": "Acxel Orozco",
+      "description": "Advanced theme builder for QAH: live preview, token editor, generated QSS, legacy theme.json + CSS export, .qtheme.zip packages and Git Marketplace publishing.",
+      "category": "tools",
+      "type": "python",
+      "dependencies": [],
+      "requires_qah": "2.0.8",
+      "homepage": "",
+      "tags": [],
+      "price": 0.0,
+      "currency": "USD",
+      "price_model": "free",
+      "license_type": "free",
+      "max_activations": 100,
+      "versions": [
+        {
+          "version": "1.0.0",
+          "path": "plugins/theme_studio/1.0.0/theme_studio-1.0.0.qplugin.zip",
+          "url": "",
+          "sha256": "65da2277e70df84b9ffa0995d629f9037c6d7107bec1e490250f0393b2acf7b0",
+          "size": 11948,
+          "changelog": "Initial Theme Studio release: visual token editor, generated QSS, live preview, legacy-compatible theme.json + theme.css export, .qtheme.zip packaging, import and Git Marketplace publishing.",
+          "published": "2026-11-08T06:42:17Z",
+          "yanked": false
+        }
+      ],
+      "version": "1.0.0"
     },
     {
       "id": "wheel_plugin_manager",
