@@ -2,7 +2,7 @@
   "schema": 1,
   "name": "QAH Git Marketplace",
   "description": "Plugins for Quantum Analysis Helper, stored in Git.",
-  "updated": "2026-11-08T07:19:19Z",
+  "updated": "2026-11-08T07:27:28Z",
   "plugins": [
     {
       "id": "git_plugin_marketplace",
@@ -630,9 +630,19 @@
           "changelog": "Sentinel Addon Studio 1.0.0: first release. Scaffold .qah addon projects, edit addon.json/main.py/README, choose capabilities, test in Plugin Sentinel's isolated addon host, build hash-verifiable packages, install and pin them in Sentinel, and publish to the Git Plugin Marketplace Addons catalog.",
           "published": "2026-11-08T07:10:08Z",
           "yanked": false
+        },
+        {
+          "version": "1.0.1",
+          "path": "plugins/sentinel_addon_studio/1.0.1/sentinel_addon_studio-1.0.1.qplugin.zip",
+          "url": "",
+          "sha256": "788920d789881955a8ea2cbe3379d403cd060544228b33ab16a7836f8d101df3",
+          "size": 12983,
+          "changelog": "Sentinel Addon Studio 1.0.1: adds a vertical scrollbar to the project form for small screens, makes the action toolbar collapse overflow into its extension menu, and wraps the header so the window can shrink to 640x480.",
+          "published": "2026-11-08T07:27:28Z",
+          "yanked": false
         }
       ],
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "sqs_generator",
