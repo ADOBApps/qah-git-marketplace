@@ -334,6 +334,17 @@ Water, benzene, caffeine, estrone (E1), 17β-estradiol (E2), ethinylestradiol
 (EE2), estriol (E3), testosterone and progesterone. Geometries are PubChem 3D
 conformers; custom XYZ files can be imported.
 
+### How to use
+
+1. Restart QAH after installation.
+2. Open **Plugins → Analysis → PyDFT Molecule Lab**.
+3. Press **Probe dependencies**.
+4. Select **water** first and press **Run calculation**.
+5. Review energy, HOMO/LUMO, gap, charges, dipole and orbital slices.
+6. Select a heavier molecule only after the water/benzene smoke test.
+7. Use **Stop after current SCF step** or **Pause** to control load.
+8. Export Markdown/JSON/PNG/SVG from the report and orbital tabs.
+
 ### Output
 
 - total energy (Ha/eV);
@@ -370,6 +381,16 @@ Inject `pydft` with Wheel Plugin Manager into `global` or the private
 `pydft_molecule_lab` target. pydft brings pyqint, pylebedev, numpy, scipy and
 numba. matplotlib is optional for plots and is normally bundled with QAH.
 
+```powershell
+$wpm = "C:\path\to\wheel_plugin_manager\qah_wheel_cli.py"
+py -3 $wpm inject pydft --target pydft_molecule_lab
+py -3 $wpm deps-verify pydft_molecule_lab pydft
+```
+
+Use the private target to avoid shadowing QAH's numpy/scipy. If QAH already
+provides the whole stack, `--no-deps` keeps the injection minimal; check the
+result with **Probe dependencies**.
+
 ---
 
 ## SEQItachi
@@ -400,6 +421,61 @@ neither SEQCROW nor AaronTools.
   missing tools raise an actionable error and no job is started. SEQItachi never
   bundles or auto-installs these executables.
 
+### How to use
+
+1. Open **Plugins → Analysis → SEQItachi**.
+2. In **Structure**, load an XYZ file or a Gaussian/ORCA/Psi4/Q-Chem output.
+3. Inspect atoms/bonds in **Edit**; add/delete atoms, change elements, edit
+   bonds, rotate or translate.
+4. Use **Analysis** for formula, MW, COM, radius of gyration, distance, angle,
+   dihedral, and approximate Sterimol/cone/buried volume.
+5. In **QM Input**, select software/method/basis/job, preview and save.
+6. In **Results**, load an output file for energy, HOMO/LUMO, frequencies,
+   excitations, IR/UV plots and RRHO thermochemistry.
+7. In **Cube**, load a Gaussian cube and slice along X/Y/Z.
+8. In **Tools**, press **Detect tools**; missing executables are reported but do
+   not crash the plugin.
+
+### Tools and external executables
+
+SEQItachi does **not** bundle ORCA, xtb, CREST, Gaussian, Psi4 or Q-Chem.
+Detection order:
+
+1. custom path in `%USERPROFILE%\QAH\seqitachi\toolchain.json`;
+2. environment variables such as `QAH_ORCA`, `QAH_XTB`, `QAH_CREST`;
+3. `PATH`;
+4. common install locations.
+
+If a tool is missing, actions that need it raise `ToolNotFoundError`; no job
+starts. CREST is not installed by default and is normally a Linux executable.
+On Windows use WSL/Linux CREST or the RDKit + xtb alternative planned for a
+later release.
+
+### Optional future dependencies
+
+The 1.1.0 core is pure QAH/numpy/scipy/matplotlib. The planned ChimeraX-level
+features will use optional wheels injected into the private `seqitachi` target:
+
+```powershell
+$wpm = "C:\path\to\wheel_plugin_manager\qah_wheel_cli.py"
+
+# GPL-3.0; exact Sterimol/cone/buried volume/ligand library/normal modes/orbitals
+py -3 $wpm inject AaronTools --no-deps --target seqitachi
+
+# BSD-3; 2D sketcher, SMILES, ETKDG 3D embedding
+py -3 $wpm inject rdkit --no-deps --target seqitachi
+
+# BSD/MIT; 3D picking, mouse modes, isosurfaces
+py -3 $wpm inject vtk pyvista pyvistaqt qtpy pooch scooby --no-deps --target seqitachi
+
+# BSD-3; marching cubes for orbital isosurfaces
+py -3 $wpm inject scikit-image --no-deps --target seqitachi
+```
+
+`--no-deps` avoids duplicating QAH's numpy/scipy/matplotlib. Verify imports with
+**Tools**/**Probe** before use. WPM cannot inject CREST/ORCA/xtb; those remain
+user-supplied executables.
+
 ### Roadmap, not yet implemented
 
 ChimeraX mouse modes and commands, 2D sketcher, AaronTools fragment library,
@@ -424,7 +500,25 @@ QAH plugins share one process, so CPU is attributed to QAH as a whole. The
 watchdog can show that pyqint/pydft are loaded and QAH is busy, but not which
 plugin caused it. It **never kills, unloads, suspends or throttles** anything.
 
-psutil is optional; inject it into `global` or `resource_watchdog`.
+### How to use
+
+1. Open **Plugins → Tools → Resource Watchdog**.
+2. Read the QAH PID, CPU, RSS, thread count and loaded heavy modules.
+3. Set **Interval**, **CPU warning** and **RSS warning**.
+4. Press **Start monitoring**; monitoring is off by default.
+5. Press **Check now** for a one-shot sample.
+6. Open `%USERPROFILE%\QAH\resource_watchdog\report.json` from **Open report**.
+7. Press **Stop** when finished.
+
+psutil is optional; inject it into `global` or `resource_watchdog`:
+
+```powershell
+py -3 $wpm inject psutil --target resource_watchdog
+py -3 $wpm deps-verify resource_watchdog psutil
+```
+
+Without psutil, loaded heavy modules are still listed but CPU/RSS are not
+sampled.
 
 ### Static resource audit addon
 
@@ -508,6 +602,47 @@ platform tags, verifies them, unpacks them under:
 
 and activates that path at QAH startup and immediately after injection. No QAH
 rebuild and no installed application directory change.
+
+### What WPM can inject
+
+WPM installs **pre-built wheels**, not source packages:
+
+| Wheel kind | Example | Notes |
+|---|---|---|
+| Pure Python `py3-none-any` | AaronTools | Easiest; no ABI issues |
+| CPython C/C++ `cp312-cp312-win_amd64` | RDKit, VTK, scikit-image | Must match QAH's Python and platform |
+| Rust/maturin/PyO3 `cp312` or `abi3` | native helper | Works like any native wheel; no Rust compiler needed for injection |
+| `abi3` | compatible native wheels | Forward-compatible within the CPython ABI |
+
+Rejected: source distributions (`.tar.gz`), sdists, wheels for another Python
+minor, and wheels for another OS/architecture. Building a wheel needs
+Rust/maturin or the project's native toolchain; injecting a finished wheel does
+not.
+
+External programs are **not wheels** and cannot be injected:
+ORCA, xtb, CREST, Gaussian, Psi4 and Q-Chem must be installed by the user and
+selected in the plugin's tool settings.
+
+### Private targets and `--no-deps`
+
+Prefer a private target per plugin:
+
+```powershell
+py -3 $wcli inject pydft --target pydft_molecule_lab
+py -3 $wcli inject psutil --target resource_watchdog
+py -3 $wcli inject AaronTools --no-deps --target seqitachi
+```
+
+`--no-deps` avoids duplicating QAH's numpy/scipy/matplotlib in the vendor path.
+Vendor paths are prepended to `sys.path`; a duplicate numpy/scipy can shadow
+QAH's copy. After injection always run:
+
+```powershell
+py -3 $wcli deps
+py -3 $wcli deps-verify <target> <package>
+```
+
+Then restart QAH or press the plugin's dependency-probe button.
 
 Wheel Plugin Manager 1.2.1+ deliberately skips application-bundled Pythons such
 as LibreOffice/OpenOffice, Blender, QGIS, `app_packages`, `site-packages`,
