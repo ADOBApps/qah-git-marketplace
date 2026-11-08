@@ -2,7 +2,7 @@
   "schema": 1,
   "name": "QAH Git Marketplace",
   "description": "Plugins for Quantum Analysis Helper, stored in Git.",
-  "updated": "2026-11-08T12:24:47Z",
+  "updated": "2026-11-08T12:37:36Z",
   "plugins": [
     {
       "id": "git_plugin_marketplace",
@@ -874,9 +874,19 @@
           "changelog": "Wheel Plugin Manager 1.2.1: prefer the real system Python (py -3.12/PATH/registry) and exclude LibreOffice/OpenOffice/Blender/QGIS/app_packages/site-packages/WindowsApps/Cygwin/MSYS Pythons from dependency injection and verification. Prevents Verify import from reporting success with LibreOffice python-core.",
           "published": "2026-11-08T08:26:53Z",
           "yanked": false
+        },
+        {
+          "version": "1.2.2",
+          "path": "plugins/wheel_plugin_manager/1.2.2/wheel_plugin_manager-1.2.2.qplugin.zip",
+          "url": "",
+          "sha256": "f3eb3f355f654ceb045396eba75a3ad20406555c551eb860cdc755851bece62e",
+          "size": 62329,
+          "changelog": "Wheel Plugin Manager 1.2.2: adds --no-deps injection and multiple-requirement inject, plus a GUI No deps checkbox. pydft can reuse QAH's numpy/scipy/numba by injecting pydft pyqint pylebedev --no-deps. Existing Remove package and Remove set deletion paths remain.",
+          "published": "2026-11-08T12:37:36Z",
+          "yanked": false
         }
       ],
-      "version": "1.2.1"
+      "version": "1.2.2"
     }
   ],
   "themes": [
