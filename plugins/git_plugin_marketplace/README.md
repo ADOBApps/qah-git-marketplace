@@ -11,6 +11,14 @@ plugin ZIPs live in a Git repository (GitHub) instead of Firebase.
 - One Git commit per publish/delete, so the history is the audit log
 - Linux / macOS / Windows
 
+## 1.1.3
+
+- Added **Install version** selection: choose any published version, including
+  an older one, and replace the current user-plugin copy.
+- Update/version-install is disabled for system and wheel plugins; **Update all**
+  only touches user-installed plugins. System plugins stay owned by the QAH
+  installer and cannot be shadowed or blocked from the marketplace.
+
 ## 1.1.2
 
 - Fixed a QThread cleanup race: after a successful publish, the refresh task
