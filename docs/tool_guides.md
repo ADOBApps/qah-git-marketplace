@@ -286,6 +286,52 @@ Other plugins can register watches while Sentinel is installed. See the built-in
 
 ---
 
+## PyDFT Molecule Lab
+
+Category: **Analysis**. A pydft-based single-point electronic-structure
+workbench for small organic molecules and hormones.
+
+### Molecules
+
+Water, benzene, caffeine, estrone (E1), 17β-estradiol (E2), ethinylestradiol
+(EE2), estriol (E3), testosterone and progesterone. Geometries are PubChem 3D
+conformers; custom XYZ files can be imported.
+
+### Output
+
+- total energy (Ha/eV);
+- HOMO, LUMO and HOMO–LUMO gap;
+- hardness, softness, electronegativity and electrophilicity;
+- Mulliken charges and dipole moment;
+- HOMO±3 orbital window, 2D orbital slices and orbital-energy diagram;
+- Markdown/JSON reports and PNG/SVG orbital plots.
+
+pydft Kohn–Sham is the primary engine; PyQInt Hartree–Fock is available as a
+fallback when DFT does not converge.
+
+### Thermal safety
+
+pydft/pyqint are CPU-only. The plugin defaults to one native thread, a
+low-power grid, a bounded SCF iteration cap, a pause between SCF steps and a
+**Stop after current SCF step** button. It never starts a calculation on load.
+Heavy hormones (E2/EE2/E3/testosterone/progesterone) require confirmation and
+can run for minutes; use the low-power preset and an external temperature
+watchdog. Start with water or benzene.
+
+### GPU?
+
+No. pydft/pyqint have no GPU backend. An integrated GPU has no CUDA path; GPU
+quantum chemistry requires a separate CUDA stack such as GPU4PySCF on an NVIDIA
+GPU.
+
+### Dependencies
+
+Inject `pydft` with Wheel Plugin Manager into `global` or the private
+`pydft_molecule_lab` target. pydft brings pyqint, pylebedev, numpy, scipy and
+numba. matplotlib is optional for plots and is normally bundled with QAH.
+
+---
+
 ## Wheel Plugin Manager
 
 Wheel Plugin Manager installs, validates, repairs, builds and tests QAH `.whl`
