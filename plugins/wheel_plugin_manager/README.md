@@ -8,6 +8,18 @@ It is designed first for **Windows**, where QAH 2.0.8 packages built with
 Briefcase often have **no `python.exe`** in the application directory, but the
 same code works on Linux and macOS.
 
+## 1.2.2
+
+- Added **`--no-deps` injection**: download only the named wheels and reuse
+  QAH's host packages (for example pydft + pyqint + pylebedev with QAH's
+  numpy/scipy/numba).
+- `inject` accepts multiple requirements, e.g.
+  `inject pydft pyqint pylebedev --no-deps --target pydft_workbench`.
+- The GUI has a **No deps (reuse QAH packages)** checkbox.
+- The dependency manifest records the `no_deps` mode and requirement list.
+- Existing Remove package / Remove set commands remain the supported deletion
+  path.
+
 ## 1.2.1
 
 - Interpreter selection now prefers the real system Python (`py -3.12`, PATH,
@@ -244,6 +256,17 @@ py -3 $cli inject psutil --target global
 py -3 $cli deps
 py -3 $cli deps-verify global psutil
 ```
+
+To reuse packages already bundled with QAH instead of vendoring a second copy,
+use `--no-deps` and list the packages explicitly:
+
+```powershell
+py -3 $cli inject pydft pyqint pylebedev --no-deps --target pydft_workbench
+py -3 $cli deps-verify pydft_workbench pydft
+```
+
+For pydft, QAH already provides numpy, scipy and numba; `--no-deps` keeps the
+vendor set small. Only use it when the host packages satisfy the requirements.
 
 It writes to:
 
