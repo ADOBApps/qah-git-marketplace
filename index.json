@@ -2,7 +2,7 @@
   "schema": 1,
   "name": "QAH Git Marketplace",
   "description": "Plugins for Quantum Analysis Helper, stored in Git.",
-  "updated": "2026-11-08T00:18:57Z",
+  "updated": "2026-11-08T01:12:58Z",
   "plugins": [
     {
       "id": "git_plugin_marketplace",
@@ -88,7 +88,7 @@
       "id": "qah_ssh",
       "name": "QAH SSH",
       "author": "Acxel Orozco",
-      "description": "Enhanced Cluster Connector with folder upload/download, background queued transfers, server-side compressed downloads, command auto-complete, custom icon, temporal files and credential history",
+      "description": "Enhanced Cluster Connector with folder upload/download, background queued transfers and deletes, server-side compressed downloads, command auto-complete, custom icon, temporal files and credential history",
       "category": "tools",
       "type": "python",
       "dependencies": [
@@ -230,9 +230,19 @@
           "changelog": "QAH SSH 3.11.4: moves Queue transfers and Compress on server to a second options row so the terminal is not squeezed, and wraps the whole plugin UI in a scroll area for small screens.",
           "published": "2026-11-08T00:18:57Z",
           "yanked": false
+        },
+        {
+          "version": "3.12.0",
+          "path": "plugins/qah_ssh/3.12.0/qah_ssh-3.12.0.qplugin.zip",
+          "url": "",
+          "sha256": "170b781e2e44c7dc53caaf27eababf5152bd7493007c3f982bc1d7f9574aead0",
+          "size": 61397,
+          "changelog": "QAH SSH 3.12.0: deletes can now run in the background transfer queue (respecting the Queue transfers checkbox), and removes the redundant Edit in Text Editor toolbar button. Edit remains in the context menu and Ctrl+E.",
+          "published": "2026-11-08T01:12:58Z",
+          "yanked": false
         }
       ],
-      "version": "3.11.4"
+      "version": "3.12.0"
     },
     {
       "id": "qah_ws_client",

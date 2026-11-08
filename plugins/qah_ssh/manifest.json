@@ -1,9 +1,9 @@
 {
   "name": "QAH SSH",
   "id": "qah_ssh",
-  "version": "3.11.4",
+  "version": "3.12.0",
   "author": "Acxel Orozco",
-  "description": "Enhanced Cluster Connector with folder upload/download, background queued transfers, server-side compressed downloads, command auto-complete, custom icon, temporal files and credential history",
+  "description": "Enhanced Cluster Connector with folder upload/download, background queued transfers and deletes, server-side compressed downloads, command auto-complete, custom icon, temporal files and credential history",
   "type": "python",
   "category": "tools",
   "main": "__init__.py",
