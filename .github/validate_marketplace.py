@@ -12,6 +12,7 @@ Checks:
   * every ZIP has manifest.json at the root with matching id/version
   * no duplicate versions and no path traversal
   * the catalog "version" equals the highest non-yanked version
+  * Sentinel addons use API version 1 and known capabilities
 """
 
 from __future__ import annotations
@@ -27,6 +28,16 @@ from typing import Any, Dict, List, Optional, Tuple
 ROOT = Path(__file__).resolve().parents[1]
 INDEX = ROOT / "index.json"
 ID_RE = re.compile(r"^[A-Za-z0-9][A-Za-z0-9._-]*$")
+ADDON_API_VERSION = 1
+ADDON_CAPABILITIES = {
+    "read-files",
+    "write-files",
+    "network",
+    "report",
+    "findings",
+    "policy",
+    "watchdog",
+}
 ERRORS: List[str] = []
 
 
@@ -141,6 +152,19 @@ def check_addon_zip(addon_id: str, version: str, path: Path) -> None:
                 error(f"{path}: addon id != {addon_id!r}")
             if str(addon.get("version")) != version:
                 error(f"{path}: addon version != {version!r}")
+            try:
+                api_version = int(addon.get("api_version", 0))
+            except Exception:
+                api_version = -1
+            if api_version != ADDON_API_VERSION:
+                error(f"{path}: unsupported addon api_version {api_version!r}")
+            capabilities = addon.get("capabilities", [])
+            if not isinstance(capabilities, list):
+                error(f"{path}: addon capabilities must be a list")
+            else:
+                unknown = sorted(set(str(item) for item in capabilities) - ADDON_CAPABILITIES)
+                if unknown:
+                    error(f"{path}: unknown addon capabilities: {', '.join(unknown)}")
             main = str(addon.get("main") or "main.py")
             if main not in names:
                 error(f"{path}: addon main file {main!r} is missing")
