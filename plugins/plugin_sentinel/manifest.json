@@ -1,13 +1,18 @@
 {
   "name": "Plugin Sentinel",
   "id": "plugin_sentinel",
-  "version": "1.2.4",
+  "version": "1.2.5",
   "author": "Acxel Orozco",
   "description": "Advanced plugin security audit: risk scoring, capability mapping, native DLL/SO/dylib inspection, trusted baselines, hash watchdog, public watchdog API, installable watchdog builder, sandboxed Sentinel addons with hash pinning, process sandbox, runtime monitor with plugin-execution control, policy gates, Health Guard integration, reports and CI-friendly CLI.",
   "type": "python",
   "category": "development",
   "main": "__init__.py",
   "dependencies": [],
+  "optional_dependencies": [
+    "psutil>=5.9.0"
+  ],
+  "dependency_mode": "optional",
+  "dependency_note": "psutil is optional and improves Runtime metrics. Inject it into target plugin_sentinel to keep it Sentinel-private.",
   "icon": "icon.svg",
   "requires_qah": "2.0.8",
   "marketplace": {

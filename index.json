@@ -2,7 +2,7 @@
   "schema": 1,
   "name": "QAH Git Marketplace",
   "description": "Plugins for Quantum Analysis Helper, stored in Git.",
-  "updated": "2026-11-08T12:37:36Z",
+  "updated": "2026-11-08T13:17:54Z",
   "plugins": [
     {
       "id": "git_plugin_marketplace",
@@ -290,9 +290,19 @@
           "changelog": "Plugin Sentinel 1.2.4: adds a read-only Dependencies tab for packages injected into QAH's frozen Python (target, package, version, Python/platform, path), with open/copy actions. Documents that injected packages are not plugins and do not appear in Inventory/Plugin Executions.",
           "published": "2026-11-08T08:27:52Z",
           "yanked": false
+        },
+        {
+          "version": "1.2.5",
+          "path": "plugins/plugin_sentinel/1.2.5/plugin_sentinel-1.2.5.qplugin.zip",
+          "url": "",
+          "sha256": "ccb17f954fde1edb5720bd2f897eaac49722c6d8ed9a9c49df6ad886eb8ae191",
+          "size": 76173,
+          "changelog": "Plugin Sentinel 1.2.5: groups Watchdog and Watchdog Builder into one Watchdog tab with subtabs, moves Health under Addons as a subtab, removes the psutil warning, prefers a private plugin_sentinel vendor target for optional psutil, and adds Remove package / Remove set actions to the Dependencies tab.",
+          "published": "2026-11-08T13:17:54Z",
+          "yanked": false
         }
       ],
-      "version": "1.2.4"
+      "version": "1.2.5"
     },
     {
       "id": "pydft_workbench",
