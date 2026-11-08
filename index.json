@@ -2,7 +2,7 @@
   "schema": 1,
   "name": "QAH Git Marketplace",
   "description": "Plugins for Quantum Analysis Helper, stored in Git.",
-  "updated": "2026-11-08T07:39:00Z",
+  "updated": "2026-11-08T07:40:45Z",
   "plugins": [
     {
       "id": "git_plugin_marketplace",
@@ -270,9 +270,19 @@
           "changelog": "Plugin Sentinel 1.2.2: addon integrity hashes now exclude marketplace install metadata, so reinstalling the same verified version is not falsely marked modified. Marketplace updates still re-pin from the new install record, and plain local edits are still blocked.",
           "published": "2026-11-08T07:19:19Z",
           "yanked": false
+        },
+        {
+          "version": "1.2.3",
+          "path": "plugins/plugin_sentinel/1.2.3/plugin_sentinel-1.2.3.qplugin.zip",
+          "url": "",
+          "sha256": "a494592a162824ffacae1cd6b806ec7ed49313537164dcaba393b9e1695aeef7",
+          "size": 72073,
+          "changelog": "Plugin Sentinel 1.2.3: Plugin Executions now preserves the selected row across the live refresh and only refreshes while that subtab is visible, so Stop selected user plugin is usable. The addon host now accepts high/critical result statuses.",
+          "published": "2026-11-08T07:40:45Z",
+          "yanked": false
         }
       ],
-      "version": "1.2.2"
+      "version": "1.2.3"
     },
     {
       "id": "qah_ssh",
@@ -987,7 +997,13 @@
           "yanked": false
         }
       ],
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "dependencies": [],
+      "price": 0.0,
+      "currency": "USD",
+      "price_model": "free",
+      "license_type": "free",
+      "max_activations": 0
     }
   ]
 }

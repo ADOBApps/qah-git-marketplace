@@ -90,6 +90,8 @@ A live htop-style view:
 - process PID, name, CPU, RSS, threads, status and user
 - **Plugin Executions** subtab with QAH plugin source, loaded state and QAH PID
 - **Stop selected user plugin** asks QAH's PluginManager to unload it
+- selection is preserved across the live refresh; the table only refreshes while
+  the Plugin Executions tab is visible
 
 Uses `psutil` when available and falls back to native task/ps listings.
 System and wheel plugins are protected from the stop action. This is an unload,
@@ -361,5 +363,5 @@ README.md
 
 ---
 
-Version: 1.2.2  
+Version: 1.2.3  
 Author: Acxel Orozco
