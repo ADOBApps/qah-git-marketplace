@@ -2,7 +2,7 @@
   "schema": 1,
   "name": "QAH Git Marketplace",
   "description": "Plugins for Quantum Analysis Helper, stored in Git.",
-  "updated": "2026-11-08T07:38:25Z",
+  "updated": "2026-11-08T07:38:37Z",
   "plugins": [
     {
       "id": "git_plugin_marketplace",
@@ -876,6 +876,42 @@
           "size": 3570,
           "changelog": "Sentinel Manifest Audit 1.0.0: validates plugin/addon manifests, entry files, dependencies, duplicate ids and backup artifacts.",
           "published": "2026-11-08T07:38:25Z",
+          "yanked": false
+        }
+      ],
+      "version": "1.0.0",
+      "dependencies": [],
+      "price": 0.0,
+      "currency": "USD",
+      "price_model": "free",
+      "license_type": "free",
+      "max_activations": 0
+    },
+    {
+      "id": "sentinel_output_inventory",
+      "name": "Sentinel Output Inventory",
+      "author": "Acxel Orozco",
+      "description": "Inventories computational output and data files: counts, extensions, total size, empty/truncated/very large files and the largest outputs.",
+      "category": "addon",
+      "type": "addon",
+      "kind": "addon",
+      "api_version": 1,
+      "capabilities": [
+        "read-files",
+        "findings",
+        "report"
+      ],
+      "homepage": "",
+      "tags": [],
+      "versions": [
+        {
+          "version": "1.0.0",
+          "path": "addons/sentinel_output_inventory/1.0.0/sentinel_output_inventory-1.0.0.qah",
+          "url": "",
+          "sha256": "0829abce6c147b942d5a8754c4d2513df0abdc964f5838b446a65bc6041cb8c6",
+          "size": 2703,
+          "changelog": "Sentinel Output Inventory 1.0.0: inventories calculation outputs, sizes, extensions, empty/tiny/large files and largest outputs.",
+          "published": "2026-11-08T07:38:37Z",
           "yanked": false
         }
       ],
