@@ -2,7 +2,7 @@
   "schema": 1,
   "name": "QAH Git Marketplace",
   "description": "Plugins for Quantum Analysis Helper, stored in Git.",
-  "updated": "2026-11-08T19:07:23Z",
+  "updated": "2026-11-08T19:08:13Z",
   "plugins": [
     {
       "id": "git_plugin_marketplace",
@@ -781,6 +781,36 @@
       "version": "1.0.2"
     },
     {
+      "id": "resource_watchdog",
+      "name": "Resource Watchdog",
+      "author": "Acxel Orozco",
+      "description": "Read-only runtime resource monitor for QAH. Reports QAH CPU, RSS, thread count, child processes and loaded heavy scientific modules (pydft, pyqint, numba, scipy, matplotlib, torch, tensorflow, jax, cupy). It warns on thresholds and writes a JSON report, but never kills or unloads anything.",
+      "category": "tools",
+      "type": "python",
+      "dependencies": [],
+      "requires_qah": "2.0.8",
+      "homepage": "",
+      "tags": [],
+      "price": 0.0,
+      "currency": "USD",
+      "price_model": "free",
+      "license_type": "free",
+      "max_activations": 100,
+      "versions": [
+        {
+          "version": "1.0.0",
+          "path": "plugins/resource_watchdog/1.0.0/resource_watchdog-1.0.0.qplugin.zip",
+          "url": "",
+          "sha256": "692be0a5659ed9aba4b21e81f9858158ae3f247c684c7f4dd9c96340095b2888",
+          "size": 7706,
+          "changelog": "Resource Watchdog 1.0.0: new Tools plugin. Read-only QAH CPU/RSS/thread/child-process monitor with loaded heavy-module detection (pydft, pyqint, numba, scipy, matplotlib, torch, tensorflow, jax, cupy, pyscf, rdkit). Default monitoring off, 5 s interval, CPU/RSS thresholds, JSON report. Never kills, unloads or throttles anything. Optional psutil with vendor/global fallback.",
+          "published": "2026-11-08T19:08:13Z",
+          "yanked": false
+        }
+      ],
+      "version": "1.0.0"
+    },
+    {
       "id": "runtime_forge",
       "name": "Runtime Forge",
       "author": "Acxel Orozco",
@@ -1407,7 +1437,13 @@
           "yanked": false
         }
       ],
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "dependencies": [],
+      "price": 0.0,
+      "currency": "USD",
+      "price_model": "free",
+      "license_type": "free",
+      "max_activations": 0
     },
     {
       "id": "sentinel_secret_scan",
