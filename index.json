@@ -2,7 +2,7 @@
   "schema": 1,
   "name": "QAH Git Marketplace",
   "description": "Plugins for Quantum Analysis Helper, stored in Git.",
-  "updated": "2026-11-08T19:33:26Z",
+  "updated": "2026-11-08T19:33:38Z",
   "plugins": [
     {
       "id": "git_plugin_marketplace",
@@ -1480,6 +1480,42 @@
           "size": 2939,
           "changelog": "Sentinel Import Audit 1.0.0: flags undeclared third-party imports, heavy imports and wildcard imports. Uses addon-host stdlib list; report-only.",
           "published": "2026-11-08T19:33:26Z",
+          "yanked": false
+        }
+      ],
+      "version": "1.0.0",
+      "dependencies": [],
+      "price": 0.0,
+      "currency": "USD",
+      "price_model": "free",
+      "license_type": "free",
+      "max_activations": 0
+    },
+    {
+      "id": "sentinel_lifecycle_audit",
+      "name": "Sentinel Lifecycle Audit",
+      "author": "Acxel Orozco",
+      "description": "Report-only static lifecycle and load audit: QTimer intervals, QThread/threading cleanup, while-True loops, blocking sleeps, atexit hooks, heavy imports and missing cleanup methods.",
+      "category": "addon",
+      "type": "addon",
+      "kind": "addon",
+      "api_version": 1,
+      "capabilities": [
+        "read-files",
+        "findings",
+        "report"
+      ],
+      "homepage": "",
+      "tags": [],
+      "versions": [
+        {
+          "version": "1.0.0",
+          "path": "addons/sentinel_lifecycle_audit/1.0.0/sentinel_lifecycle_audit-1.0.0.qah",
+          "url": "",
+          "sha256": "711004fb90a87da69fe4d1fb54683156574a02534131ea33f596067ef7673e99",
+          "size": 2617,
+          "changelog": "Sentinel Lifecycle Audit 1.0.0: flags sub-second QTimer intervals, while-True loops, blocking sleeps, threads without cleanup, atexit hooks and heavy imports. Report-only.",
+          "published": "2026-11-08T19:33:38Z",
           "yanked": false
         }
       ],

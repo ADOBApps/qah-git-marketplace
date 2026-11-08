@@ -1,0 +1,17 @@
+{
+  "format": "qah-sentinel-addon",
+  "id": "sentinel_lifecycle_audit",
+  "name": "Sentinel Lifecycle Audit",
+  "version": "1.0.0",
+  "api_version": 1,
+  "author": "Acxel Orozco",
+  "description": "Report-only static lifecycle and load audit: QTimer intervals, QThread/threading cleanup, while-True loops, blocking sleeps, atexit hooks, heavy imports and missing cleanup methods.",
+  "main": "main.py",
+  "entry": "run",
+  "timeout": 60,
+  "capabilities": [
+    "read-files",
+    "findings",
+    "report"
+  ]
+}
