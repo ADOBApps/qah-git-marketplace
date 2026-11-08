@@ -1,0 +1,31 @@
+{
+  "id": "studio_ocean",
+  "name": "Studio Ocean",
+  "author": "Acxel Orozco",
+  "version": "1.0.0",
+  "description": "Deep ocean theme: navy-teal surfaces, cyan accent and cool light text.",
+  "css_file": "theme.css",
+  "preview_color": "#061a24",
+  "tokens": {
+    "background": "#061a24",
+    "surface": "#0b2733",
+    "surface_alt": "#113443",
+    "text": "#e0f7ff",
+    "text_muted": "#8fb9c7",
+    "accent": "#06b6d4",
+    "accent_text": "#04151c",
+    "border": "#1c4b5c",
+    "hover": "#164152",
+    "selection": "#0e7490",
+    "error": "#fb7185",
+    "warning": "#fbbf24",
+    "success": "#34d399",
+    "code_bg": "#041219"
+  },
+  "font_family": "Segoe UI, Arial, sans-serif",
+  "font_size": 10,
+  "radius": 6,
+  "category": "theme",
+  "type": "theme",
+  "kind": "theme"
+}
