@@ -201,15 +201,13 @@ Sentinel addons.
 | **Capabilities** | Network, subprocess, filesystem, native, credentials, persistence, dynamic code, GUI, database |
 | **Runtime** | CPU/memory/disk/network, top processes, QAH process tree |
 | **Runtime -> Plugin Executions** | Plugin source, loaded state, QAH PID, unload selected user plugin |
-| **Watchdog** | Hash watches for plugin folders, DLL/SO/dylib and reports |
-| **Watchdog Builder** | Generate an installable headless watchdog plugin |
+| **Watchdog** | Two subtabs: hash watches and the Watchdog Builder |
 | **Sandbox** | Run plugin code in a separate process with audit hooks and limits |
 | **Baseline** | Trusted SHA256 baselines and drift detection |
 | **Policy** | Block severity, max risk, trusted-baseline requirement, capability allowlist |
 | **Report** | JSON / Markdown / HTML / CSV export |
-| **Health** | Health Guard integration |
-| **Addons** | Install, pin, enable, run, import, inspect and remove Sentinel addons |
-| **Dependencies** | Read-only view of packages injected for QAH's frozen Python by Wheel Plugin Manager |
+| **Addons** | Two subtabs: Sentinel addons and Health Guard |
+| **Dependencies** | View and remove packages injected for QAH's frozen Python |
 | **Documentation** | Built-in reference |
 
 ### Audit workflow
@@ -314,7 +312,7 @@ Use the same Python minor version as QAH (normal 2.0.8 is CPython 3.12). A
 
 ### Dependency injection for QAH's frozen Python
 
-Wheel Plugin Manager 1.2.0 can inject pre-built dependencies without rebuilding
+Wheel Plugin Manager 1.2.2 can inject pre-built dependencies without rebuilding
 QAH:
 
 ```powershell
