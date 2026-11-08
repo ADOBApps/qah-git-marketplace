@@ -17,16 +17,25 @@ Git instead of Firebase.
 No GitHub account or token is needed to browse or install plugins from this
 public repository.
 
+## Tool guides
+
+See [`docs/tool_guides.md`](docs/tool_guides.md) for practical usage notes for
+**Theme Studio**, **Sentinel Addon Studio**, **Plugin Sentinel** and
+**Wheel Plugin Manager**, including publishing and dependency injection.
+
 ## Layout
 
 ```text
 index.json                              catalog
+docs/tool_guides.md                     public tool usage guide
 plugins/
   <id>/
     manifest.json                       canonical manifest
     README.md                           optional description
     <version>/
       <id>-<version>.qplugin.zip        plugin archive
+themes/<id>/...                         theme assets
+addons/<id>/...                         Sentinel addon assets
 .github/
   CODEOWNERS                            owner review required
   validate_marketplace.py               catalog/ZIP validator
