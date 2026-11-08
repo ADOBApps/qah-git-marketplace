@@ -11,6 +11,14 @@ plugin ZIPs live in a Git repository (GitHub) instead of Firebase.
 - One Git commit per publish/delete, so the history is the audit log
 - Linux / macOS / Windows
 
+## 1.1.2
+
+- Fixed a QThread cleanup race: after a successful publish, the refresh task
+  could start before the previous task's `finished` signal was handled. The old
+  handler then deleted the new running thread, which could abort QAH with a Qt
+  fatal error (`Qt6Core.dll`, `0xc0000409`).
+- Publish now defers its catalog refresh until the publish worker has finished.
+
 ---
 
 ## Why Git instead of Firebase
