@@ -1,0 +1,31 @@
+{
+  "id": "studio_aurora",
+  "name": "Studio Aurora",
+  "author": "Acxel Orozco",
+  "version": "1.0.0",
+  "description": "Aurora-inspired theme with teal accents and a deep navy surface.",
+  "css_file": "theme.css",
+  "preview_color": "#07111f",
+  "tokens": {
+    "background": "#07111f",
+    "surface": "#0d1b2e",
+    "surface_alt": "#14263d",
+    "text": "#e5f4ff",
+    "text_muted": "#8aa6bf",
+    "accent": "#22d3ee",
+    "accent_text": "#04131f",
+    "border": "#1e3a55",
+    "hover": "#18324c",
+    "selection": "#155e75",
+    "error": "#fb7185",
+    "warning": "#fbbf24",
+    "success": "#34d399",
+    "code_bg": "#050c16"
+  },
+  "font_family": "Segoe UI, Arial, sans-serif",
+  "font_size": 10,
+  "radius": 6,
+  "category": "theme",
+  "type": "theme",
+  "kind": "theme"
+}

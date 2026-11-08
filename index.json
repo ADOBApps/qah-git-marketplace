@@ -2,7 +2,7 @@
   "schema": 1,
   "name": "QAH Git Marketplace",
   "description": "Plugins for Quantum Analysis Helper, stored in Git.",
-  "updated": "2026-11-08T06:42:17Z",
+  "updated": "2026-11-08T06:43:25Z",
   "plugins": [
     {
       "id": "git_plugin_marketplace",
@@ -635,5 +635,31 @@
       "version": "1.1.1"
     }
   ],
-  "themes": []
+  "themes": [
+    {
+      "id": "studio_aurora",
+      "name": "Studio Aurora",
+      "author": "Acxel Orozco",
+      "description": "Aurora-inspired theme with teal accents and a deep navy surface.",
+      "category": "theme",
+      "type": "theme",
+      "kind": "theme",
+      "homepage": "",
+      "tags": [],
+      "preview_color": "#07111f",
+      "versions": [
+        {
+          "version": "1.0.0",
+          "path": "themes/studio_aurora/1.0.0/studio_aurora-1.0.0.qtheme.zip",
+          "url": "",
+          "sha256": "a43a399280109675214561f851a3b056aea5a21d95cf492dff8a1ec33354df7a",
+          "size": 2269,
+          "changelog": "Initial Studio Aurora theme: deep navy surfaces, teal accents and legacy-compatible theme.json + theme.css.",
+          "published": "2026-11-08T06:43:25Z",
+          "yanked": false
+        }
+      ],
+      "version": "1.0.0"
+    }
+  ]
 }
