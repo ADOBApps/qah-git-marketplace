@@ -2,7 +2,7 @@
   "schema": 1,
   "name": "QAH Git Marketplace",
   "description": "Plugins for Quantum Analysis Helper, stored in Git.",
-  "updated": "2026-11-08T08:26:53Z",
+  "updated": "2026-11-08T08:27:52Z",
   "plugins": [
     {
       "id": "git_plugin_marketplace",
@@ -280,9 +280,19 @@
           "changelog": "Plugin Sentinel 1.2.3: Plugin Executions now preserves the selected row across the live refresh and only refreshes while that subtab is visible, so Stop selected user plugin is usable. The addon host now accepts high/critical result statuses.",
           "published": "2026-11-08T07:40:45Z",
           "yanked": false
+        },
+        {
+          "version": "1.2.4",
+          "path": "plugins/plugin_sentinel/1.2.4/plugin_sentinel-1.2.4.qplugin.zip",
+          "url": "",
+          "sha256": "f30efe4e1acaa8ee74d8dd41544584e51b7b7e0be0d00077f24785132cb05cbe",
+          "size": 74270,
+          "changelog": "Plugin Sentinel 1.2.4: adds a read-only Dependencies tab for packages injected into QAH's frozen Python (target, package, version, Python/platform, path), with open/copy actions. Documents that injected packages are not plugins and do not appear in Inventory/Plugin Executions.",
+          "published": "2026-11-08T08:27:52Z",
+          "yanked": false
         }
       ],
-      "version": "1.2.3"
+      "version": "1.2.4"
     },
     {
       "id": "qah_ssh",

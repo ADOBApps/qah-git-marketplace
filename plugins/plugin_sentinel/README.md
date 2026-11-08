@@ -234,6 +234,14 @@ Reads the JSON report from the headless **Plugin Health Guard** plugin:
 - **Run Health Guard check** when that plugin is loaded
 - open the raw `health.json`
 
+### Dependencies
+
+Read-only list of pre-built wheels injected for QAH's frozen Python by Wheel
+Plugin Manager. These packages live under `plugins/vendor/<target>` and are not
+QAH plugins, so they do not appear in Inventory or Plugin Executions. The tab
+shows target, package, version, Python/platform and path, and can open or copy
+the set folder.
+
 ### Documentation
 
 Offline guide for the native scanner, runtime monitor, watchdog, sandbox,
@@ -363,5 +371,5 @@ README.md
 
 ---
 
-Version: 1.2.3  
+Version: 1.2.4  
 Author: Acxel Orozco
