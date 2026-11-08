@@ -2,7 +2,7 @@
   "schema": 1,
   "name": "QAH Git Marketplace",
   "description": "Plugins for Quantum Analysis Helper, stored in Git.",
-  "updated": "2026-11-08T12:10:30Z",
+  "updated": "2026-11-08T12:24:47Z",
   "plugins": [
     {
       "id": "git_plugin_marketplace",
@@ -299,7 +299,7 @@
       "name": "PyDFT Workbench",
       "author": "Acxel Orozco",
       "description": "Educational pydft workbench for QAH. Detects pydft from a Wheel Plugin Manager vendor set, runs a CO/STO-3G Kohn-Sham demo and reports energy, HOMO/LUMO, gap, SCF iterations and timing.",
-      "category": "science",
+      "category": "tools",
       "type": "python",
       "dependencies": [
         "pydft>=1.2.0"
@@ -322,9 +322,19 @@
           "changelog": "PyDFT Workbench 1.0.0: educational pydft plugin with a Detect dependencies probe, optional vendor-path activation, QC/STO-3G demo for CO/H2O/H2/N2, energy/HOMO/LUMO/gap/SCF timing, and clear instructions when pydft is not injected.",
           "published": "2026-11-08T09:00:45Z",
           "yanked": false
+        },
+        {
+          "version": "1.0.1",
+          "path": "plugins/pydft_workbench/1.0.1/pydft_workbench-1.0.1.qplugin.zip",
+          "url": "",
+          "sha256": "aee4344241ddb6a0a3cb9aa00bb2300515183f07f9bbe8a4bea5cdc8b1bbc36d",
+          "size": 6619,
+          "changelog": "PyDFT Workbench 1.0.1: category changed from science to tools. No functional changes.",
+          "published": "2026-11-08T12:24:47Z",
+          "yanked": false
         }
       ],
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "qah_ssh",
