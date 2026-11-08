@@ -11,6 +11,12 @@ plugin ZIPs live in a Git repository (GitHub) instead of Firebase.
 - One Git commit per publish/delete, so the history is the audit log
 - Linux / macOS / Windows
 
+## 1.2.2
+
+- Addon install and publish now reject an unsupported `api_version` and unknown
+  capabilities instead of installing an addon Sentinel cannot run.
+- The catalog validator enforces the same addon API/capability rules.
+
 ## 1.2.1
 
 - The UI now also blocks deleting `git_plugin_marketplace` from its own catalog,
