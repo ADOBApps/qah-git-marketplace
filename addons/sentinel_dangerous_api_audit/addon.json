@@ -1,0 +1,17 @@
+{
+  "format": "qah-sentinel-addon",
+  "id": "sentinel_dangerous_api_audit",
+  "name": "Sentinel Dangerous API Audit",
+  "version": "1.0.0",
+  "api_version": 1,
+  "author": "Acxel Orozco",
+  "description": "Report-only static audit for dangerous Python APIs: eval/exec, pickle/marshal/yaml.load, os.system/shell=True, ctypes native loading, winreg and dynamic imports. It never executes the audited code.",
+  "main": "main.py",
+  "entry": "run",
+  "timeout": 60,
+  "capabilities": [
+    "read-files",
+    "findings",
+    "report"
+  ]
+}
