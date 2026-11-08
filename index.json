@@ -2,7 +2,7 @@
   "schema": 1,
   "name": "QAH Git Marketplace",
   "description": "Plugins for Quantum Analysis Helper, stored in Git.",
-  "updated": "2026-11-08T07:08:21Z",
+  "updated": "2026-11-08T07:09:15Z",
   "plugins": [
     {
       "id": "git_plugin_marketplace",
@@ -168,7 +168,7 @@
       "id": "plugin_sentinel",
       "name": "Plugin Sentinel",
       "author": "Acxel Orozco",
-      "description": "Advanced plugin security audit: risk scoring, capability mapping, native DLL/SO/dylib inspection, trusted baselines, hash watchdog, public watchdog API, installable watchdog builder, process sandbox, runtime monitor with plugin-execution control, policy gates, Health Guard integration, reports and CI-friendly CLI.",
+      "description": "Advanced plugin security audit: risk scoring, capability mapping, native DLL/SO/dylib inspection, trusted baselines, hash watchdog, public watchdog API, installable watchdog builder, sandboxed Sentinel addons with hash pinning, process sandbox, runtime monitor with plugin-execution control, policy gates, Health Guard integration, reports and CI-friendly CLI.",
       "category": "development",
       "type": "python",
       "dependencies": [],
@@ -220,9 +220,19 @@
           "changelog": "Plugin Sentinel 1.1.2: fixes Plugin Executions manager discovery, adds Watchdog Builder that generates installable headless watchdog plugins, and keeps Health Guard integration and sandbox improvements.",
           "published": "2026-11-08T06:47:08Z",
           "yanked": false
+        },
+        {
+          "version": "1.2.0",
+          "path": "plugins/plugin_sentinel/1.2.0/plugin_sentinel-1.2.0.qplugin.zip",
+          "url": "",
+          "sha256": "81893f0a4030e58f7e2e3156f690ef803c35ea536cbff5a0f883467618369f1f",
+          "size": 71486,
+          "changelog": "Plugin Sentinel 1.2.0: adds the Addons tab and sandboxed addon runtime (.qah source packages, addon.json API v1, hash pinning, capability checks, isolated addon_host with audit hooks, timeouts and memory limits), marketplace addon install integration, and Addon Studio test support via run_addon_folder.",
+          "published": "2026-11-08T07:09:15Z",
+          "yanked": false
         }
       ],
-      "version": "1.1.2"
+      "version": "1.2.0"
     },
     {
       "id": "qah_ssh",
