@@ -176,6 +176,14 @@ py -3 $cli install-addon my_addon
 Marketplace installs are pinned automatically. Marketplace updates re-pin from
 the new install record; plain local edits remain `modified`.
 
+### Injected dependencies in Sentinel
+
+Wheel Plugin Manager can inject pre-built wheels for QAH's frozen Python under
+`plugins/vendor/<target>`. These are **packages**, not QAH plugins, so they do
+not appear in Sentinel Inventory or Plugin Executions. Plugin Sentinel 1.2.4+
+shows them in the **Dependencies** tab with target, package, version,
+Python/platform and path, plus open/copy actions.
+
 ---
 
 ## Plugin Sentinel
@@ -201,6 +209,7 @@ Sentinel addons.
 | **Report** | JSON / Markdown / HTML / CSV export |
 | **Health** | Health Guard integration |
 | **Addons** | Install, pin, enable, run, import, inspect and remove Sentinel addons |
+| **Dependencies** | Read-only view of packages injected for QAH's frozen Python by Wheel Plugin Manager |
 | **Documentation** | Built-in reference |
 
 ### Audit workflow
@@ -330,6 +339,11 @@ platform tags, verifies them, unpacks them under:
 
 and activates that path at QAH startup and immediately after injection. No QAH
 rebuild and no installed application directory change.
+
+Wheel Plugin Manager 1.2.1+ deliberately skips application-bundled Pythons such
+as LibreOffice/OpenOffice, Blender, QGIS, `app_packages`, `site-packages`,
+WindowsApps, Cygwin and MSYS. `Verify import` should report the real system
+Python, for example `C:\Python312\python.exe`, not LibreOffice `python-core`.
 
 Remove one package or a whole set:
 
