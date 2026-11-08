@@ -8,6 +8,18 @@ It is designed first for **Windows**, where QAH 2.0.8 packages built with
 Briefcase often have **no `python.exe`** in the application directory, but the
 same code works on Linux and macOS.
 
+## 1.2.1
+
+- Interpreter selection now prefers the real system Python (`py -3.12`, PATH,
+  registry) **before** application-bundled Pythons.
+- LibreOffice, OpenOffice, Blender, QGIS, `app_packages`, `site-packages`,
+  `node_modules`, WindowsApps, Cygwin and MSYS Pythons are excluded as
+  dependency-injection interpreters.
+- This prevents `Verify import` from reporting success with LibreOffice's
+  `python-core` while QAH itself still cannot see the dependency.
+- The verification log now makes clear that the import check uses the system
+  Python ABI; QAH activation happens in the running QAH process.
+
 ## 1.2.0
 
 - Added **dependency injection into QAH's frozen Python** without rebuilding
