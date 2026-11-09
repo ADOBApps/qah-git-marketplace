@@ -7,6 +7,22 @@ code.
 > **Warning.** This client can execute commands on the paired server with that
 > server's user account. Connect only to servers you own or administer.
 
+## Headless CLI (1.3.0)
+
+`qah_ws_cli.py` uses the same pairing, certificate pinning, encryption and
+streaming as the GUI, without importing Qt. It is intended for scripts and
+agent-to-agent coordination.
+
+```bash
+python qah_ws_cli.py pair --invite-file invite.txt --name windows-agent
+python qah_ws_cli.py status
+python qah_ws_cli.py run "uname -a"
+python qah_ws_cli.py run "cat results/pkad2_summary.json" --json
+```
+
+Use `--root <dir>` before the subcommand for a separate settings directory.
+For permanent auto-approve, pass `--password` or set `QAH_WS_PASSWORD`.
+
 ## Documentation tab
 
 The plugin includes an offline **Documentation** tab with:
@@ -124,6 +140,7 @@ __init__.py
 ws_common.py        WSS, TLS, crypto, invite, relay client helpers
 client_core.py      pairing, authentication, execute/cancel, output
 client_ui.py        PySide6 UI
+qah_ws_cli.py       headless pairing/status/run CLI
 documentation.py    offline Documentation tab
 icon.svg
 README.md
