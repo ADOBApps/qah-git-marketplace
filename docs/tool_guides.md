@@ -444,6 +444,7 @@ neither SEQCROW nor AaronTools.
 - auto-detected or manual x-axis range around the active peaks;
 - multiple conformers with Boltzmann weights and per-conformer components;
 - experimental CSV overlay and CSV export of peaks plus curve data;
+- **Save plot…** as PDF/SVG or PNG, plus JPEG/TIFF with Pillow, with DPI control;
 - UV/Vis broadening;
 - RRHO thermochemistry: ZPE, thermal correction, entropy and Gibbs correction;
 - Gaussian cube import and 2D X/Y/Z slices;
@@ -490,7 +491,7 @@ later release.
 
 ### Optional future dependencies
 
-The 1.2.4 core is pure QAH/numpy/scipy/matplotlib. The planned ChimeraX-level
+The 1.2.5 core is pure QAH/numpy/scipy/matplotlib. The planned ChimeraX-level
 features will use optional wheels injected into the private `seqitachi` target:
 
 ```powershell
