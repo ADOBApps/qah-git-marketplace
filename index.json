@@ -2,7 +2,7 @@
   "schema": 1,
   "name": "QAH Git Marketplace",
   "description": "Plugins for Quantum Analysis Helper, stored in Git.",
-  "updated": "2026-11-09T00:49:06Z",
+  "updated": "2026-11-09T01:03:09Z",
   "plugins": [
     {
       "id": "git_plugin_marketplace",
@@ -1036,9 +1036,19 @@
           "changelog": "1.2.1: adds Gaussian Rot. str. VCD parsing and a more compact Results layout on top of 1.2.0's SEQCROW-style spectra (ORCA Int/T**2, Raman/VCD, Gaussian IR/Raman, peak shapes, scaling, Boltzmann conformers, experimental overlay, CSV export).",
           "published": "2026-11-09T00:49:06Z",
           "yanked": false
+        },
+        {
+          "version": "1.2.2",
+          "path": "plugins/seqitachi/1.2.2/seqitachi-1.2.2.qplugin.zip",
+          "url": "",
+          "sha256": "9ada119c7232ce1bb3c1fcf3fdf08445ef1dc382a60c37c1282456865fdb4cab",
+          "size": 33694,
+          "changelog": "1.2.2: every tab is wrapped in a scroll area with as-needed horizontal and vertical bars; compact controls and shortened action labels keep Results/Tools usable on small screens; table, plot and text panes keep their own scrollbars.",
+          "published": "2026-11-09T01:03:09Z",
+          "yanked": false
         }
       ],
-      "version": "1.2.1"
+      "version": "1.2.2"
     },
     {
       "id": "sqs_generator",
