@@ -2,7 +2,7 @@
   "schema": 1,
   "name": "QAH Git Marketplace",
   "description": "Plugins for Quantum Analysis Helper, stored in Git.",
-  "updated": "2026-11-09T18:26:43Z",
+  "updated": "2026-11-09T18:26:56Z",
   "plugins": [
     {
       "id": "git_plugin_marketplace",
@@ -500,9 +500,19 @@
           "changelog": "0.2.0: add a structure Viewer tab (C-alpha/heavy-atom display, protonation/pKa/burial/site-type colouring, metal markers, selected-site ring, PNG/SVG/PDF export); flag metal sites within 3.5 A; report modified/oxidized histidines such as OHI; show out-of-range pKa as <0 or >14; verify the 6F5K laccase metalloprotein case.",
           "published": "2026-11-09T15:34:14Z",
           "yanked": false
+        },
+        {
+          "version": "0.2.1",
+          "path": "plugins/protonation_lab/0.2.1/protonation_lab-0.2.1.qplugin.zip",
+          "url": "",
+          "sha256": "4ef909a58b05b74e7b271b7701c94232ed81c152d6a561dfb47feada4861f120",
+          "size": 263649,
+          "changelog": "0.2.1: compact two-row Viewer controls for 700 px screens; reduces horizontal scrolling without changing the pKa core.",
+          "published": "2026-11-09T18:26:56Z",
+          "yanked": false
         }
       ],
-      "version": "0.2.0"
+      "version": "0.2.1"
     },
     {
       "id": "pydft_molecule_lab",

@@ -58,7 +58,8 @@ Because the same public set was used to choose the burial scale, this is a
 calibration result, not independent validation. Cysteine and some coupled or
 metal-bound sites remain the largest error sources. v0.2.0 adds the structure
 viewer and explicit metal/modified-residue reporting without changing the pKa
-core.
+core. v0.2.1 wraps the Viewer controls into a compact grid for 700 px screens;
+the pKa core is unchanged.
 
 ## License
 
