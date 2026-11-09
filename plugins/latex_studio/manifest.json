@@ -1,7 +1,7 @@
 {
   "name": "LaTeX Studio",
   "id": "latex_studio",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "author": "Acxel Orozco",
   "description": "LaTeX paper workspace with syntax-highlighted editing, latexmk builds, PDF preview and a Git-relay collaboration workflow: commit, pull, push, sync, auto-pull and conflict handling.",
   "type": "python",

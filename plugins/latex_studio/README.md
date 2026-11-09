@@ -67,6 +67,22 @@ python3 "$HOME/QAH/plugins/python_plugins/wheel_plugin_manager/qah_wheel_cli.py"
   inject google-api-python-client google-auth google-auth-oauthlib --target latex_studio
 ```
 
+Graphical route:
+
+1. Open **Plugins → Wheel Plugin Manager**.
+2. In **Dependency injection into QAH's frozen Python**, set **Target** to `latex_studio`.
+3. Leave **No deps** unchecked.
+4. For the inline PDF parser, enter `pymupdf` and press **Inject**.
+5. For Google Drive, enter `google-api-python-client google-auth google-auth-oauthlib` and press **Inject**.
+6. Use **Verify import** with `fitz`, `googleapiclient` and `google_auth_oauthlib`.
+7. Restart QAH.
+
+If the PDF parser is missing, the plugin still builds and **Open PDF** works. Inline preview only needs `pymupdf`.
+
+## LaTeX compiler path
+
+LaTeX Studio auto-detects `latexmk`, `pdflatex`, `xelatex` and `lualatex` on `PATH`. If none is found, press **Find LaTeX…** in the Build tab and select the executable; the path is stored in the local settings.
+
 Create a Google Cloud **OAuth Desktop app** client, paste its client ID and
 secret into **Google Drive**, press **Authorize**, then **Create / find
 folder**. Share the Drive folder with collaborators. Because `drive.file` only

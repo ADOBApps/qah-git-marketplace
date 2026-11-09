@@ -2,7 +2,7 @@
   "schema": 1,
   "name": "QAH Git Marketplace",
   "description": "Plugins for Quantum Analysis Helper, stored in Git.",
-  "updated": "2026-11-09T07:09:03Z",
+  "updated": "2026-11-09T07:22:16Z",
   "plugins": [
     {
       "id": "git_plugin_marketplace",
@@ -160,9 +160,19 @@
           "changelog": "1.1.0: optional Google Drive relay using the drive.file scope and Drive v3 API. Adds OAuth Desktop authorization, app-created LaTeX Studio folder, snapshot push/pull/sync, manual conflict copies, folder sharing, auto-sync, and WPM instructions for the optional Google libraries. Git relay remains primary. Keeps scrollbars everywhere and Tools category.",
           "published": "2026-11-09T07:09:03Z",
           "yanked": false
+        },
+        {
+          "version": "1.2.0",
+          "path": "plugins/latex_studio/1.2.0/latex_studio-1.2.0.qplugin.zip",
+          "url": "",
+          "sha256": "0b0da2cf47be0534d75c7a6869234bb49eeddf0e1a205760f0f063171a7b3405",
+          "size": 29984,
+          "changelog": "1.2.0: adds a Find LaTeX button left of Build (persisted compiler path, auto-detect fallback), and Help instructions for the WPM graphical workflow and CLI commands to install PyMuPDF and the Google Drive libraries into the private latex_studio target.",
+          "published": "2026-11-09T07:22:16Z",
+          "yanked": false
         }
       ],
-      "version": "1.1.0"
+      "version": "1.2.0"
     },
     {
       "id": "luaqah_studio",
