@@ -105,8 +105,9 @@ output.
 
 ### Timed arm
 
-**Policy → Arm auto-approve (30 min)**
+**Policy → Duration → Arm auto-approve**
 
+- Choose a window from **1 to 1440 minutes** (default 30).
 - A visible countdown shows the remaining time.
 - While armed, commands from paired clients run without a dialog.
 - **Disarm now** stops auto-approval immediately.
