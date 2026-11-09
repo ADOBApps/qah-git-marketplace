@@ -1,7 +1,7 @@
 {
   "name": "Protonation Lab",
   "id": "protonation_lab",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "author": "Acxel Orozco",
   "description": "Structure-based pH-dependent protonation and pKa analysis for proteins and metalloproteins with residue templates, solvent-accessible burial, screened continuum electrostatics, mean-field titration, Monte Carlo microstates and protonated-coordinate/CSV/JSON export.",
   "type": "python",

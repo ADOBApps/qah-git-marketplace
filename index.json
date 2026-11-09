@@ -2,7 +2,7 @@
   "schema": 1,
   "name": "QAH Git Marketplace",
   "description": "Plugins for Quantum Analysis Helper, stored in Git.",
-  "updated": "2026-11-09T08:14:36Z",
+  "updated": "2026-11-09T15:34:14Z",
   "plugins": [
     {
       "id": "git_plugin_marketplace",
@@ -490,9 +490,19 @@
           "changelog": "0.1.1: fix multi-atom burial parsing for Asp/Glu/His/Arg; calibrate burial scale to 0.4 against the public PKAD-2 experimental pKa set (1,369 matched residues, MAE 0.92, RMSE 1.26); document calibration and remaining Cys/His limitations.",
           "published": "2026-11-09T08:14:36Z",
           "yanked": false
+        },
+        {
+          "version": "0.2.0",
+          "path": "plugins/protonation_lab/0.2.0/protonation_lab-0.2.0.qplugin.zip",
+          "url": "",
+          "sha256": "98bd0bd977b5dcee76b9edb7098eae35fcd24ce7ff777cddd4a14285f3e93e08",
+          "size": 263412,
+          "changelog": "0.2.0: add a structure Viewer tab (C-alpha/heavy-atom display, protonation/pKa/burial/site-type colouring, metal markers, selected-site ring, PNG/SVG/PDF export); flag metal sites within 3.5 A; report modified/oxidized histidines such as OHI; show out-of-range pKa as <0 or >14; verify the 6F5K laccase metalloprotein case.",
+          "published": "2026-11-09T15:34:14Z",
+          "yanked": false
         }
       ],
-      "version": "0.1.1"
+      "version": "0.2.0"
     },
     {
       "id": "pydft_molecule_lab",
