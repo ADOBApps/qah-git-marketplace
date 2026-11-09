@@ -1,6 +1,6 @@
 # SEQItachi
 
-Category: **Analysis** · Version 1.0.0
+Category: **Analysis** · Version 1.2.0
 
 A QAH-native structure and quantum-chemistry workbench inspired by
 **SEQCROW** for ChimeraX. It is an independent implementation: no SEQCROW code
@@ -59,11 +59,30 @@ Parse:
 
 Display:
 
-- IR spectrum (Gaussian broadening);
+- IR, Raman and VCD spectra with real intensities when the output provides
+  them (ORCA `Int`/`T**2`, Gaussian `IR Inten`, ORCA `RAMAN SPECTRUM`,
+  ORCA VCD rotational strengths);
+- Gaussian, Lorentzian, pseudo-Voigt and delta peak shapes with FWHM/Voigt
+  mixing, absorbance or transmittance;
+- linear, quadratic and shift frequency scaling with common method/basis
+  presets;
+- multiple conformers with Boltzmann weights, per-conformer components and a
+  weighted total;
+- experimental CSV overlay;
 - UV/Vis spectrum (Gaussian broadening);
-- frequency and excitation tables;
+- frequency/excitation tables plus CSV export of peaks and curve data;
 - RRHO thermochemistry: ZPE, thermal correction, entropy and Gibbs correction
   from frequencies.
+
+Notes:
+
+- Frequency scaling presets are approximate literature factors; use the manual
+  factor to match your method/basis exactly.
+- Boltzmann weights use the electronic energy parsed from the outputs
+  (`FINAL SINGLE POINT ENERGY`, `SCF Done`, etc.). If any energy is missing,
+  equal weights are used and the table shows the reason indirectly via `—`.
+- Older ORCA output without the `Int` column uses the printed `T**2` values as
+  relative intensities; the summary reports which source was used.
 
 ### Cube files
 
