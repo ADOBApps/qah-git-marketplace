@@ -44,6 +44,36 @@ Git is asynchronous. Pull before a writing session, make small commits, and push
 
 Tokens are stored in the local QAH LaTeX Studio settings, not in the repository. Prefer SSH keys or the system Git credential manager when possible.
 
+## Optional Google Drive relay
+
+The Google Drive backend uses the `drive.file` scope: the plugin creates a
+`LaTeX Studio` folder in Drive and syncs source snapshots. It is file-level
+sync, not Git; conflicting files are saved as `.conflict-...` copies.
+
+Install the optional Google libraries with Wheel Plugin Manager, into the
+private `latex_studio` target:
+
+```powershell
+$wpm = "C:\Users\HP\QAH\plugins\python_plugins\wheel_plugin_manager\qah_wheel_cli.py"
+py -3 $wpm inject google-api-python-client google-auth google-auth-oauthlib --target latex_studio
+py -3 $wpm deps-verify latex_studio google-api-python-client
+py -3 $wpm deps-verify latex_studio google-auth-oauthlib
+```
+
+Linux:
+
+```bash
+python3 "$HOME/QAH/plugins/python_plugins/wheel_plugin_manager/qah_wheel_cli.py" \
+  inject google-api-python-client google-auth google-auth-oauthlib --target latex_studio
+```
+
+Create a Google Cloud **OAuth Desktop app** client, paste its client ID and
+secret into **Google Drive**, press **Authorize**, then **Create / find
+folder**. Share the Drive folder with collaborators. Because `drive.file` only
+grants per-app access, collaborators may need to select/open the shared folder
+in Drive or use Drive for Desktop; this is a Google scope limitation, not a
+plugin bug.
+
 ## Notes
 
 - Builds run in the project folder; auxiliary files and PDFs are ignored by the default `.gitignore`.

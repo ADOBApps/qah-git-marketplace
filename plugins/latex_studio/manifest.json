@@ -1,7 +1,7 @@
 {
   "name": "LaTeX Studio",
   "id": "latex_studio",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "author": "Acxel Orozco",
   "description": "LaTeX paper workspace with syntax-highlighted editing, latexmk builds, PDF preview and a Git-relay collaboration workflow: commit, pull, push, sync, auto-pull and conflict handling.",
   "type": "python",
@@ -9,10 +9,13 @@
   "main": "__init__.py",
   "dependencies": [],
   "optional_dependencies": [
-    "pymupdf"
+    "pymupdf",
+    "google-api-python-client",
+    "google-auth",
+    "google-auth-oauthlib"
   ],
   "dependency_mode": "optional",
-  "dependency_note": "PyMuPDF is optional and only enables the inline first-page PDF preview; Open PDF works without it.",
+  "dependency_note": "PyMuPDF enables inline PDF preview. Google API/OAuth wheels enable the optional Google Drive relay; inject them with WPM into the private latex_studio target. Git relay and Open PDF work without them.",
   "icon": "icon.svg",
   "requires_qah": "2.0.8",
   "marketplace": {
