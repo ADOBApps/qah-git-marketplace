@@ -441,6 +441,7 @@ neither SEQCROW nor AaronTools.
 - Gaussian, Lorentzian, pseudo-Voigt and delta peaks with FWHM/Voigt mixing,
   absorbance or transmittance;
 - linear, quadratic and shift frequency scaling with method/basis presets;
+- auto-detected or manual x-axis range around the active peaks;
 - multiple conformers with Boltzmann weights and per-conformer components;
 - experimental CSV overlay and CSV export of peaks plus curve data;
 - UV/Vis broadening;
@@ -489,7 +490,7 @@ later release.
 
 ### Optional future dependencies
 
-The 1.2.3 core is pure QAH/numpy/scipy/matplotlib. The planned ChimeraX-level
+The 1.2.4 core is pure QAH/numpy/scipy/matplotlib. The planned ChimeraX-level
 features will use optional wheels injected into the private `seqitachi` target:
 
 ```powershell
