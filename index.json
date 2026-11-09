@@ -2,7 +2,7 @@
   "schema": 1,
   "name": "QAH Git Marketplace",
   "description": "Plugins for Quantum Analysis Helper, stored in Git.",
-  "updated": "2026-11-09T06:51:14Z",
+  "updated": "2026-11-09T07:00:40Z",
   "plugins": [
     {
       "id": "git_plugin_marketplace",
@@ -119,7 +119,7 @@
       "name": "LaTeX Studio",
       "author": "Acxel Orozco",
       "description": "LaTeX paper workspace with syntax-highlighted editing, latexmk builds, PDF preview and a Git-relay collaboration workflow: commit, pull, push, sync, auto-pull and conflict handling.",
-      "category": "development",
+      "category": "tools",
       "type": "python",
       "dependencies": [],
       "requires_qah": "2.0.8",
@@ -140,9 +140,19 @@
           "changelog": "Initial release: LaTeX project workspace with syntax-highlighted editor, line numbers, find/replace, latexmk/direct builds, build log, optional PDF preview, and a Git-relay collaboration workflow with commit, pull, push, sync, auto-pull and conflict handling.",
           "published": "2026-11-09T06:51:14Z",
           "yanked": false
+        },
+        {
+          "version": "1.0.1",
+          "path": "plugins/latex_studio/1.0.1/latex_studio-1.0.1.qplugin.zip",
+          "url": "",
+          "sha256": "2b718d2a825e1b54001f3eece52e8bf3d593e56499cd3f7c921889000525982b",
+          "size": 20764,
+          "changelog": "1.0.1: scrollbars everywhere (outer shell, project panel, Editor/Build/Git/Help tabs, logs and preview) for small screens; category moved from development to tools.",
+          "published": "2026-11-09T07:00:40Z",
+          "yanked": false
         }
       ],
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "luaqah_studio",

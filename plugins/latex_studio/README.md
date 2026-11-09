@@ -1,5 +1,7 @@
 # LaTeX Studio
 
+Category: **Tools**
+
 A QAH-native LaTeX paper workspace with:
 
 - project and file management (`main.tex`, `sections/`, `figures/`, `.bib`);
@@ -11,7 +13,7 @@ A QAH-native LaTeX paper workspace with:
 
 ## Install
 
-Install from the Git Plugin Marketplace, or use **Plugins → Development → LaTeX Studio**.
+Install from the Git Plugin Marketplace, or use **Plugins → Tools → LaTeX Studio**.
 
 External requirements:
 
