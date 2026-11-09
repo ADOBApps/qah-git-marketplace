@@ -18,7 +18,9 @@ metalloproteins.
 - Per-site pKa, protonation, state, burial and warnings.
 - Net charge, isoelectric point and titration curves.
 - Structure viewer with Cα trace or all-heavy-atom display, coloured by
-  protonation, apparent pKa, burial or site type, with metal markers and PNG export.
+  protonation, apparent pKa, burial or site type, with metal markers.
+- 2D projections or a **pure-Qt orthographic 3D view** (drag to rotate,
+  right-drag to pan, wheel to zoom, double-click to reset); PNG export.
 - CSV, JSON and state-mapped PDB export.
 
 ## Use
@@ -58,8 +60,9 @@ Because the same public set was used to choose the burial scale, this is a
 calibration result, not independent validation. Cysteine and some coupled or
 metal-bound sites remain the largest error sources. v0.2.0 adds the structure
 viewer and explicit metal/modified-residue reporting without changing the pKa
-core. v0.2.1 wraps the Viewer controls into a compact grid for 700 px screens;
-the pKa core is unchanged.
+core. v0.2.1 wraps the Viewer controls into a compact grid for 700 px screens.
+v0.2.2 adds a pure-Qt orthographic 3D view with mouse orbit, pan and zoom; the
+pKa core is unchanged.
 
 ## License
 

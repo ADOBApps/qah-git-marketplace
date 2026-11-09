@@ -2,7 +2,7 @@
   "schema": 1,
   "name": "QAH Git Marketplace",
   "description": "Plugins for Quantum Analysis Helper, stored in Git.",
-  "updated": "2026-11-09T18:59:15Z",
+  "updated": "2026-11-09T19:43:16Z",
   "plugins": [
     {
       "id": "git_plugin_marketplace",
@@ -510,9 +510,19 @@
           "changelog": "0.2.1: compact two-row Viewer controls for 700 px screens; reduces horizontal scrolling without changing the pKa core.",
           "published": "2026-11-09T18:26:56Z",
           "yanked": false
+        },
+        {
+          "version": "0.2.2",
+          "path": "plugins/protonation_lab/0.2.2/protonation_lab-0.2.2.qplugin.zip",
+          "url": "",
+          "sha256": "c97b658a0cffc6bdbb45e8d2d3a35e335c62f890157300be4549b134b452814d",
+          "size": 267975,
+          "changelog": "0.2.2: add a pure-Qt orthographic 3D Viewer mode (drag rotate, right-drag pan, wheel zoom, double-click reset) with C-alpha/heavy-atom display, protonation/pKa/burial colouring, metal markers, selected-site highlight and PNG export.",
+          "published": "2026-11-09T19:43:16Z",
+          "yanked": false
         }
       ],
-      "version": "0.2.1"
+      "version": "0.2.2"
     },
     {
       "id": "pydft_molecule_lab",
