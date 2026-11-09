@@ -2,7 +2,7 @@
   "schema": 1,
   "name": "QAH Git Marketplace",
   "description": "Plugins for Quantum Analysis Helper, stored in Git.",
-  "updated": "2026-11-09T00:47:58Z",
+  "updated": "2026-11-09T00:49:06Z",
   "plugins": [
     {
       "id": "git_plugin_marketplace",
@@ -1026,9 +1026,19 @@
           "changelog": "1.2.0: SEQCROW-style IR/Raman/VCD spectra. Parses ORCA IR Int (km/mol) and older T**2, RAMAN SPECTRUM activities, VCD rotational strengths, and Gaussian IR Inten/Raman Activ. Adds Gaussian/Lorentzian/pseudo-Voigt/delta peaks, FWHM/Voigt mixing, absorbance/transmittance, linear/quadratic/shift scaling with presets, multi-conformer Boltzmann averaging, experimental CSV overlay, and CSV export of peaks plus curve data.",
           "published": "2026-11-09T00:47:58Z",
           "yanked": false
+        },
+        {
+          "version": "1.2.1",
+          "path": "plugins/seqitachi/1.2.1/seqitachi-1.2.1.qplugin.zip",
+          "url": "",
+          "sha256": "c3288cd04b317a337447480436c1a8604ba6071ebee78cc674d0af498eb62e1f",
+          "size": 33118,
+          "changelog": "1.2.1: adds Gaussian Rot. str. VCD parsing and a more compact Results layout on top of 1.2.0's SEQCROW-style spectra (ORCA Int/T**2, Raman/VCD, Gaussian IR/Raman, peak shapes, scaling, Boltzmann conformers, experimental overlay, CSV export).",
+          "published": "2026-11-09T00:49:06Z",
+          "yanked": false
         }
       ],
-      "version": "1.2.0"
+      "version": "1.2.1"
     },
     {
       "id": "sqs_generator",
