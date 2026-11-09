@@ -2,7 +2,7 @@
   "schema": 1,
   "name": "QAH Git Marketplace",
   "description": "Plugins for Quantum Analysis Helper, stored in Git.",
-  "updated": "2026-11-09T07:22:16Z",
+  "updated": "2026-11-09T07:43:43Z",
   "plugins": [
     {
       "id": "git_plugin_marketplace",
@@ -453,6 +453,36 @@
         }
       ],
       "version": "1.2.13"
+    },
+    {
+      "id": "protonation_lab",
+      "name": "Protonation Lab",
+      "author": "Acxel Orozco",
+      "description": "Structure-based pH-dependent protonation and pKa analysis for proteins and metalloproteins with residue templates, solvent-accessible burial, screened continuum electrostatics, mean-field titration, Monte Carlo microstates and protonated-coordinate/CSV/JSON export.",
+      "category": "analysis",
+      "type": "python",
+      "dependencies": [],
+      "requires_qah": "2.0.8",
+      "homepage": "",
+      "tags": [],
+      "price": 0.0,
+      "currency": "USD",
+      "price_model": "free",
+      "license_type": "free",
+      "max_activations": 100,
+      "versions": [
+        {
+          "version": "0.1.0",
+          "path": "plugins/protonation_lab/0.1.0/protonation_lab-0.1.0.qplugin.zip",
+          "url": "",
+          "sha256": "798cb5a7949257267ace5d7e0081e4edb4568c4433ee213e33078573832891bb",
+          "size": 259256,
+          "changelog": "Initial release: PDB/mmCIF import, SASA burial, screened Coulomb/Debye-Huckel electrostatics, mean-field pH titration, Monte Carlo microstates, pKa/pI/state table, titration plots, CSV/JSON/protonated-PDB export.",
+          "published": "2026-11-09T07:43:43Z",
+          "yanked": false
+        }
+      ],
+      "version": "0.1.0"
     },
     {
       "id": "pydft_molecule_lab",
