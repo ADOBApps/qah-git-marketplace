@@ -1,6 +1,6 @@
 # SEQItachi
 
-Category: **Analysis** · Version 1.2.4
+Category: **Analysis** · Version 1.2.5
 
 A QAH-native structure and quantum-chemistry workbench inspired by
 **SEQCROW** for ChimeraX. It is an independent implementation: no SEQCROW code
@@ -73,6 +73,7 @@ Display:
 - experimental CSV overlay;
 - UV/Vis spectrum (Gaussian broadening);
 - frequency/excitation tables plus CSV export of peaks and curve data;
+- **Save plot…** for the current figure as PDF/SVG (vector) or PNG, plus JPEG/TIFF when Pillow is available, with a configurable DPI;
 - RRHO thermochemistry: ZPE, thermal correction, entropy and Gibbs correction
   from frequencies.
 

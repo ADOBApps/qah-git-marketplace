@@ -2,7 +2,7 @@
   "schema": 1,
   "name": "QAH Git Marketplace",
   "description": "Plugins for Quantum Analysis Helper, stored in Git.",
-  "updated": "2026-11-09T02:38:43Z",
+  "updated": "2026-11-09T03:02:38Z",
   "plugins": [
     {
       "id": "git_plugin_marketplace",
@@ -1066,9 +1066,19 @@
           "changelog": "1.2.4: adds automatic x-axis range detection around the active vibrational peaks (8% padding, 50 cm-1 outward rounding, 200 cm-1 minimum span) plus manual Range min/max controls. Editing a bound disables auto; re-checking auto refits. Verified on the real water B3LYP/BP86/HF ORCA outputs.",
           "published": "2026-11-09T02:38:43Z",
           "yanked": false
+        },
+        {
+          "version": "1.2.5",
+          "path": "plugins/seqitachi/1.2.5/seqitachi-1.2.5.qplugin.zip",
+          "url": "",
+          "sha256": "cb9c43b5eddb41906c8fb0f425cf01b5e4ff52fd837ede81b5470f5fb9ff9147",
+          "size": 35737,
+          "changelog": "1.2.5: adds Save plot for the current spectra figure. Supports PDF and SVG vector output, PNG, and JPEG/TIFF when Pillow is available, with a 72-1200 DPI control for raster output. Verified on the real water B3LYP output with auto range.",
+          "published": "2026-11-09T03:02:38Z",
+          "yanked": false
         }
       ],
-      "version": "1.2.4"
+      "version": "1.2.5"
     },
     {
       "id": "sqs_generator",
