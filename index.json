@@ -2,7 +2,7 @@
   "schema": 1,
   "name": "QAH Git Marketplace",
   "description": "Plugins for Quantum Analysis Helper, stored in Git.",
-  "updated": "2026-11-09T18:26:29Z",
+  "updated": "2026-11-09T18:26:43Z",
   "plugins": [
     {
       "id": "git_plugin_marketplace",
@@ -832,7 +832,7 @@
       "id": "qah_ws_server",
       "name": "QAH WS Server",
       "author": "Acxel Orozco",
-      "description": "Encrypted WSS remote command console for QAH: paired clients run commands and receive streamed stdout/stderr, with timed or password-protected permanent auto-approve.",
+      "description": "Encrypted WSS remote command console for QAH: paired clients run commands and receive streamed stdout/stderr, with timed or password-protected permanent auto-approve. Includes a headless server CLI for Linux and AI-to-AI use.",
       "category": "tools",
       "type": "python",
       "dependencies": [],
@@ -884,9 +884,19 @@
           "changelog": "QAH WS Server 1.2.1: category changed from development to tools. No functional changes.",
           "published": "2026-11-08T13:19:55Z",
           "yanked": false
+        },
+        {
+          "version": "1.3.0",
+          "path": "plugins/qah_ws_server/1.3.0/qah_ws_server-1.3.0.qplugin.zip",
+          "url": "",
+          "sha256": "916d89585a36dbf89a27dfb9ea800490737b8c404ffb8ab4d6b26373e883c1ab",
+          "size": 50294,
+          "changelog": "1.3.0: add qah_ws_server_cli.py, a headless server for Linux and AI-to-AI coordination; direct/relay WSS, timed auto-approve, one-time invites and streamed output.",
+          "published": "2026-11-09T18:26:43Z",
+          "yanked": false
         }
       ],
-      "version": "1.2.1"
+      "version": "1.3.0"
     },
     {
       "id": "qahtop",

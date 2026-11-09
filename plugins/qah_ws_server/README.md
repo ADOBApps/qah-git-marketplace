@@ -10,6 +10,24 @@ commands on this computer, and streams stdout, stderr and the exit code back.
 > understand port forwarding, firewalls and the password/arming model. There is
 > no autostart; the server listens only after you click **Start server**.
 
+## Headless server CLI (1.3.0)
+
+`qah_ws_server_cli.py` runs the same encrypted server without Qt. It is useful
+on Linux or for agent-to-agent coordination.
+
+```bash
+python3 qah_ws_server_cli.py \
+  --bind 0.0.0.0 \
+  --public-host <tailscale-or-LAN-IP> \
+  --auto-minutes 60 \
+  --invite-file invite.txt
+```
+
+It supports direct WSS and relay mode (`--transport relay --relay-host ...`).
+The invite file is written with mode `0600`. Stop it with `Ctrl+C`; do not
+leave it running after the task. Use `--approve-all` only if you understand
+the risk; timed auto-approve is safer.
+
 ## Documentation tab
 
 The plugin includes an offline **Documentation** tab with:
@@ -197,6 +215,7 @@ __init__.py
 ws_common.py        WSS, TLS certificate, crypto, invite, relay client helpers
 server_core.py      pairing, clients, policy, execution, audit, relay transport
 server_ui.py        PySide6 UI
+qah_ws_server_cli.py headless Linux/script server CLI
 documentation.py    offline Documentation tab
 relay_server.py     standalone outbound rendezvous relay
 icon.svg
