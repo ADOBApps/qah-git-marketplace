@@ -2,7 +2,7 @@
   "schema": 1,
   "name": "QAH Git Marketplace",
   "description": "Plugins for Quantum Analysis Helper, stored in Git.",
-  "updated": "2026-11-09T01:03:09Z",
+  "updated": "2026-11-09T01:20:23Z",
   "plugins": [
     {
       "id": "git_plugin_marketplace",
@@ -1046,9 +1046,19 @@
           "changelog": "1.2.2: every tab is wrapped in a scroll area with as-needed horizontal and vertical bars; compact controls and shortened action labels keep Results/Tools usable on small screens; table, plot and text panes keep their own scrollbars.",
           "published": "2026-11-09T01:03:09Z",
           "yanked": false
+        },
+        {
+          "version": "1.2.3",
+          "path": "plugins/seqitachi/1.2.3/seqitachi-1.2.3.qplugin.zip",
+          "url": "",
+          "sha256": "75e55dbd4d4e8834b631fb7c47b4354bc2fb956f781dce7158cd6d953c853e1b",
+          "size": 34048,
+          "changelog": "1.2.3: fixes real ORCA 6 frequency parsing. ORCA inserts blank lines and a Scaling factor preamble before the mode list; SEQItachi now scans to NORMAL MODES/IR SPECTRUM and reads Int/Raman/VCD correctly. Also stops ORBITAL ENERGIES parsing at MOLECULAR ORBITALS so HOMO/LUMO are correct. Verified on real water B3LYP/BP86/HF outputs.",
+          "published": "2026-11-09T01:20:23Z",
+          "yanked": false
         }
       ],
-      "version": "1.2.2"
+      "version": "1.2.3"
     },
     {
       "id": "sqs_generator",

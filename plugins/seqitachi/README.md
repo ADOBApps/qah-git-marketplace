@@ -1,6 +1,6 @@
 # SEQItachi
 
-Category: **Analysis** · Version 1.2.2
+Category: **Analysis** · Version 1.2.3
 
 A QAH-native structure and quantum-chemistry workbench inspired by
 **SEQCROW** for ChimeraX. It is an independent implementation: no SEQCROW code
@@ -83,6 +83,9 @@ Notes:
   equal weights are used and the table shows the reason indirectly via `—`.
 - Older ORCA output without the `Int` column uses the printed `T**2` values as
   relative intensities; the summary reports which source was used.
+- ORCA 6 outputs with blank lines and a `Scaling factor for frequencies` line
+  before the mode list are parsed correctly; this was verified on real
+  B3LYP/BP86/HF water frequency outputs.
 - Every tab is wrapped in a scroll area with horizontal and vertical bars as
   needed, so the workbench remains usable on small screens. Tables, plots and
   text panes keep their own scrollbars.
