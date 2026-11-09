@@ -1,6 +1,6 @@
 # SEQItachi
 
-Category: **Analysis** · Version 1.2.3
+Category: **Analysis** · Version 1.2.4
 
 A QAH-native structure and quantum-chemistry workbench inspired by
 **SEQCROW** for ChimeraX. It is an independent implementation: no SEQCROW code
@@ -64,6 +64,8 @@ Display:
   ORCA VCD rotational strengths);
 - Gaussian, Lorentzian, pseudo-Voigt and delta peak shapes with FWHM/Voigt
   mixing, absorbance or transmittance;
+- auto-detected x-axis range around the active peaks with manual min/max
+  override (default auto, rounding outward to 50 cm⁻¹ with 8% padding);
 - linear, quadratic and shift frequency scaling with common method/basis
   presets;
 - multiple conformers with Boltzmann weights, per-conformer components and a
