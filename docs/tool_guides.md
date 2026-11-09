@@ -1,4 +1,4 @@
-# QAH Tool Guides
+﻿# QAH Tool Guides
 
 Practical, public usage notes for the four main QAH tools.
 
@@ -182,12 +182,12 @@ QAH is a frozen launcher, so inside QAH `sys.executable` is the QAH executable,
 not `python.exe`. Sentinel addons and the sandbox run in a separate real Python
 process. Sentinel resolves it from:
 
-1. the path saved in **Sandbox → Python interpreter** (`python.json`);
+1. the path saved in **Sandbox â†’ Python interpreter** (`python.json`);
 2. `QAH_SENTINEL_PYTHON` or `QAH_PYTHON`;
 3. `python3` / `python` on `PATH`;
 4. the Windows `py -3` launcher.
 
-**Browse…** selects an interpreter, **Test** validates Python plus QAH's
+**Browseâ€¦** selects an interpreter, **Test** validates Python plus QAH's
 PySide6, and **Auto** clears the override. This is the recommended fix when a
 Linux conda environment cannot load QAH's Qt libraries. The same interpreter is
 used for addons and the sandbox. The PySide6 probe is cross-platform: it only
@@ -229,7 +229,7 @@ plugins or kill anything. `write-files` is limited to the addon data directory;
 | `sentinel_output_inventory` | Output file inventory and sizes |
 | `sentinel_checksum_verify` | SHA256 checksum verification |
 | `sentinel_secret_scan` | Private keys, cloud keys, tokens and generic secrets |
-| `sentinel_resource_audit` | Heavy imports/dependencies (`pydft`, `pyqint`, `numba`, …) |
+| `sentinel_resource_audit` | Heavy imports/dependencies (`pydft`, `pyqint`, `numba`, â€¦) |
 | `sentinel_dependency_audit` | Vendor manifest/dist-info consistency, duplicate/shadowed packages |
 | `sentinel_network_audit` | Network imports/endpoints and undeclared network capability |
 | `sentinel_archive_audit` | ZIP traversal, symlinks, encryption, zip bombs, executables |
@@ -353,14 +353,14 @@ workbench for small organic molecules and hormones.
 
 ### Molecules
 
-Water, benzene, caffeine, estrone (E1), 17β-estradiol (E2), ethinylestradiol
+Water, benzene, caffeine, estrone (E1), 17Î²-estradiol (E2), ethinylestradiol
 (EE2), estriol (E3), testosterone and progesterone. Geometries are PubChem 3D
 conformers; custom XYZ files can be imported.
 
 ### How to use
 
 1. Restart QAH after installation.
-2. Open **Plugins → Analysis → PyDFT Molecule Lab**.
+2. Open **Plugins â†’ Analysis â†’ PyDFT Molecule Lab**.
 3. Press **Probe dependencies**.
 4. Select **water** first and press **Run calculation**.
 5. Review energy, HOMO/LUMO, gap, charges, dipole and orbital slices.
@@ -371,13 +371,13 @@ conformers; custom XYZ files can be imported.
 ### Output
 
 - total energy (Ha/eV);
-- HOMO, LUMO and HOMO–LUMO gap;
+- HOMO, LUMO and HOMOâ€“LUMO gap;
 - hardness, softness, electronegativity and electrophilicity;
 - Mulliken charges and dipole moment;
-- HOMO±3 orbital window, 2D orbital slices and orbital-energy diagram;
+- HOMOÂ±3 orbital window, 2D orbital slices and orbital-energy diagram;
 - Markdown/JSON reports and PNG/SVG orbital plots.
 
-pydft Kohn–Sham is the only SCF engine. There is no Hartree–Fock fallback;
+pydft Kohnâ€“Sham is the only SCF engine. There is no Hartreeâ€“Fock fallback;
 non-converged results are marked and can be retried with a higher iteration cap
 or looser tolerance.
 
@@ -432,11 +432,18 @@ neither SEQCROW nor AaronTools.
   rotate/translate/center;
 - formula, molecular weight, center of mass, radius of gyration;
 - distance, angle, dihedral;
-- approximate Sterimol L/B1–B5, cone angle and buried-volume voxels;
+- approximate Sterimol L/B1â€“B5, cone angle and buried-volume voxels;
 - QM input builders for Gaussian, ORCA, Psi4, Q-Chem, xTB and sqm;
 - output parsing for Gaussian, ORCA, Psi4 and Q-Chem: energy, geometry,
   HOMO/LUMO, frequencies and excited states;
-- broadened IR and UV/Vis plots;
+- intensity-aware IR, Raman and VCD plots (ORCA `Int`/`T**2`, `RAMAN SPECTRUM`,
+  VCD rotational strengths; Gaussian `IR Inten`/`Raman Activ`);
+- Gaussian, Lorentzian, pseudo-Voigt and delta peaks with FWHM/Voigt mixing,
+  absorbance or transmittance;
+- linear, quadratic and shift frequency scaling with method/basis presets;
+- multiple conformers with Boltzmann weights and per-conformer components;
+- experimental CSV overlay and CSV export of peaks plus curve data;
+- UV/Vis broadening;
 - RRHO thermochemistry: ZPE, thermal correction, entropy and Gibbs correction;
 - Gaussian cube import and 2D X/Y/Z slices;
 - optional external-tool detection for ORCA, xtb, CREST, Gaussian, Psi4 and
@@ -446,15 +453,17 @@ neither SEQCROW nor AaronTools.
 
 ### How to use
 
-1. Open **Plugins → Analysis → SEQItachi**.
+1. Open **Plugins â†’ Analysis â†’ SEQItachi**.
 2. In **Structure**, load an XYZ file or a Gaussian/ORCA/Psi4/Q-Chem output.
 3. Inspect atoms/bonds in **Edit**; add/delete atoms, change elements, edit
    bonds, rotate or translate.
 4. Use **Analysis** for formula, MW, COM, radius of gyration, distance, angle,
    dihedral, and approximate Sterimol/cone/buried volume.
 5. In **QM Input**, select software/method/basis/job, preview and save.
-6. In **Results**, load an output file for energy, HOMO/LUMO, frequencies,
-   excitations, IR/UV plots and RRHO thermochemistry.
+6. In **Results**, load one or more outputs. **Add conformer** appends files and
+   shows energies plus Boltzmann weights. Choose Absorbance, Transmittance, VCD
+   or Raman, set peak shape/FWHM, scaling and temperature, optionally load an
+   experimental CSV, then **Export CSV** for the peak table and curve data.
 7. In **Cube**, load a Gaussian cube and slice along X/Y/Z.
 8. In **Tools**, press **Detect tools**; missing executables are reported but do
    not crash the plugin.
@@ -476,7 +485,7 @@ later release.
 
 ### Optional future dependencies
 
-The 1.1.0 core is pure QAH/numpy/scipy/matplotlib. The planned ChimeraX-level
+The 1.2.1 core is pure QAH/numpy/scipy/matplotlib. The planned ChimeraX-level
 features will use optional wheels injected into the private `seqitachi` target:
 
 ```powershell
@@ -525,7 +534,7 @@ plugin caused it. It **never kills, unloads, suspends or throttles** anything.
 
 ### How to use
 
-1. Open **Plugins → Tools → Resource Watchdog**.
+1. Open **Plugins â†’ Tools â†’ Resource Watchdog**.
 2. Read the QAH PID, CPU, RSS, thread count and loaded heavy modules.
 3. Set **Interval**, **CPU warning** and **RSS warning**.
 4. Press **Start monitoring**; monitoring is off by default.
