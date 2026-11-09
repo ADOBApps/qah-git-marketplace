@@ -489,7 +489,7 @@ later release.
 
 ### Optional future dependencies
 
-The 1.2.2 core is pure QAH/numpy/scipy/matplotlib. The planned ChimeraX-level
+The 1.2.3 core is pure QAH/numpy/scipy/matplotlib. The planned ChimeraX-level
 features will use optional wheels injected into the private `seqitachi` target:
 
 ```powershell
