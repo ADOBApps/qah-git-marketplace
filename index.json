@@ -2,7 +2,7 @@
   "schema": 1,
   "name": "QAH Git Marketplace",
   "description": "Plugins for Quantum Analysis Helper, stored in Git.",
-  "updated": "2026-11-09T07:43:43Z",
+  "updated": "2026-11-09T08:14:36Z",
   "plugins": [
     {
       "id": "git_plugin_marketplace",
@@ -480,9 +480,19 @@
           "changelog": "Initial release: PDB/mmCIF import, SASA burial, screened Coulomb/Debye-Huckel electrostatics, mean-field pH titration, Monte Carlo microstates, pKa/pI/state table, titration plots, CSV/JSON/protonated-PDB export.",
           "published": "2026-11-09T07:43:43Z",
           "yanked": false
+        },
+        {
+          "version": "0.1.1",
+          "path": "plugins/protonation_lab/0.1.1/protonation_lab-0.1.1.qplugin.zip",
+          "url": "",
+          "sha256": "3102361f6509ce4d46b835e6cc5780b29fa2a4fab2972ecd0eee72e8a39d4bb4",
+          "size": 259661,
+          "changelog": "0.1.1: fix multi-atom burial parsing for Asp/Glu/His/Arg; calibrate burial scale to 0.4 against the public PKAD-2 experimental pKa set (1,369 matched residues, MAE 0.92, RMSE 1.26); document calibration and remaining Cys/His limitations.",
+          "published": "2026-11-09T08:14:36Z",
+          "yanked": false
         }
       ],
-      "version": "0.1.0"
+      "version": "0.1.1"
     },
     {
       "id": "pydft_molecule_lab",

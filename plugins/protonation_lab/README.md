@@ -44,6 +44,15 @@ finite-difference Poisson-Boltzmann grid solver is the next planned refinement.
 - The method is not a substitute for experimental pKa measurement or
   constant-pH MD.
 
+## Validation status
+
+v0.1.1 fixed multi-atom burial parsing (Asp/Glu/His/Arg) and calibrated the
+burial term against the public PKAD-2 experimental pKa set. On 1,369 matched
+wild-type residues the apparent-pKa MAE is 0.92 and RMSE is 1.26 pKa units.
+Because the same public set was used to choose the burial scale, this is a
+calibration result, not independent validation. Cysteine and some coupled or
+metal-bound sites remain the largest error sources.
+
 ## License
 
 GPL-3.0-or-later.
