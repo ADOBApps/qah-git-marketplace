@@ -2,7 +2,7 @@
   "schema": 1,
   "name": "QAH Git Marketplace",
   "description": "Plugins for Quantum Analysis Helper, stored in Git.",
-  "updated": "2026-11-09T03:02:38Z",
+  "updated": "2026-11-09T06:51:14Z",
   "plugins": [
     {
       "id": "git_plugin_marketplace",
@@ -113,6 +113,36 @@
         }
       ],
       "version": "1.2.2"
+    },
+    {
+      "id": "latex_studio",
+      "name": "LaTeX Studio",
+      "author": "Acxel Orozco",
+      "description": "LaTeX paper workspace with syntax-highlighted editing, latexmk builds, PDF preview and a Git-relay collaboration workflow: commit, pull, push, sync, auto-pull and conflict handling.",
+      "category": "development",
+      "type": "python",
+      "dependencies": [],
+      "requires_qah": "2.0.8",
+      "homepage": "",
+      "tags": [],
+      "price": 0.0,
+      "currency": "USD",
+      "price_model": "free",
+      "license_type": "free",
+      "max_activations": 100,
+      "versions": [
+        {
+          "version": "1.0.0",
+          "path": "plugins/latex_studio/1.0.0/latex_studio-1.0.0.qplugin.zip",
+          "url": "",
+          "sha256": "375b7cbdfe0512d5ce755d77d7db538aa0b541942a6b14cc45f0f2e536dd376e",
+          "size": 20363,
+          "changelog": "Initial release: LaTeX project workspace with syntax-highlighted editor, line numbers, find/replace, latexmk/direct builds, build log, optional PDF preview, and a Git-relay collaboration workflow with commit, pull, push, sync, auto-pull and conflict handling.",
+          "published": "2026-11-09T06:51:14Z",
+          "yanked": false
+        }
+      ],
+      "version": "1.0.0"
     },
     {
       "id": "luaqah_studio",

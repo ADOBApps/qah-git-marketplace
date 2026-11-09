@@ -1,0 +1,28 @@
+{
+  "name": "LaTeX Studio",
+  "id": "latex_studio",
+  "version": "1.0.0",
+  "author": "Acxel Orozco",
+  "description": "LaTeX paper workspace with syntax-highlighted editing, latexmk builds, PDF preview and a Git-relay collaboration workflow: commit, pull, push, sync, auto-pull and conflict handling.",
+  "type": "python",
+  "category": "development",
+  "main": "__init__.py",
+  "dependencies": [],
+  "optional_dependencies": [
+    "pymupdf"
+  ],
+  "dependency_mode": "optional",
+  "dependency_note": "PyMuPDF is optional and only enables the inline first-page PDF preview; Open PDF works without it.",
+  "icon": "icon.svg",
+  "requires_qah": "2.0.8",
+  "marketplace": {
+    "price": 0.0,
+    "currency": "USD",
+    "price_model": "free",
+    "payment_required": false
+  },
+  "license": {
+    "type": "free",
+    "max_activations": 100
+  }
+}
