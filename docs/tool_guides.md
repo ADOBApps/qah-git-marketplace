@@ -465,8 +465,12 @@ neither SEQCROW nor AaronTools.
    or Raman, set peak shape/FWHM, scaling and temperature, optionally load an
    experimental CSV, then **Export CSV** for the peak table and curve data.
 7. In **Cube**, load a Gaussian cube and slice along X/Y/Z.
-8. In **Tools**, press **Detect tools**; missing executables are reported but do
-   not crash the plugin.
+8. In **Tools**, press **Detect**; missing executables are reported but do not
+   crash the plugin.
+
+Every tab is wrapped in a scroll area with horizontal and vertical bars as
+needed, so SEQItachi fits small screens; tables, plots and text panes keep their
+own scrollbars.
 
 ### Tools and external executables
 
@@ -485,7 +489,7 @@ later release.
 
 ### Optional future dependencies
 
-The 1.2.1 core is pure QAH/numpy/scipy/matplotlib. The planned ChimeraX-level
+The 1.2.2 core is pure QAH/numpy/scipy/matplotlib. The planned ChimeraX-level
 features will use optional wheels injected into the private `seqitachi` target:
 
 ```powershell
