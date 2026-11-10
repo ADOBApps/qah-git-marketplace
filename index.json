@@ -2,7 +2,7 @@
   "schema": 1,
   "name": "QAH Git Marketplace",
   "description": "Plugins for Quantum Analysis Helper, stored in Git.",
-  "updated": "2026-11-10T12:49:36Z",
+  "updated": "2026-11-10T13:08:38Z",
   "plugins": [
     {
       "id": "git_plugin_marketplace",
@@ -1246,9 +1246,19 @@
           "changelog": "Fix ORCA 6 TD-DFT UV/Vis parsing (3-token transition label + eV column); broaden UV/Vis in energy; add 1H/13C NMR spectra from ORCA NMR isotropic shieldings with editable reference, line width, peak table and CSV export; UV/Vis-only outputs use the full figure.",
           "published": "2026-11-10T12:49:36Z",
           "yanked": false
+        },
+        {
+          "version": "1.2.7",
+          "path": "plugins/seqitachi/1.2.7/seqitachi-1.2.7.qplugin.zip",
+          "url": "",
+          "sha256": "b59709a70e5a0fc287cd8f703d7db064ddd3533e06cb26b992b63c59058f4c35",
+          "size": 40798,
+          "changelog": "Use the TMS reference computed at the same level (PBE0-D4/def2-SVP): sigma_ref 1H 31.053, 13C 191.054, 29Si 375.953 ppm. New 'From output...' button loads any reference-compound ORCA output and averages its shieldings per element. E2 with these references: 1H -0.3..6.6 ppm, 13C 9.0..149.2 ppm (17-C 79.3, C18 9.0).",
+          "published": "2026-11-10T13:08:38Z",
+          "yanked": false
         }
       ],
-      "version": "1.2.6"
+      "version": "1.2.7"
     },
     {
       "id": "sqs_generator",

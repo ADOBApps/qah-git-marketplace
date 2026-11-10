@@ -1,6 +1,6 @@
 # SEQItachi
 
-Category: **Analysis** · Version 1.2.6
+Category: **Analysis** · Version 1.2.7
 
 A QAH-native structure and quantum-chemistry workbench inspired by
 **SEQCROW** for ChimeraX. It is an independent implementation: no SEQCROW code
@@ -11,6 +11,21 @@ is copied, and it is not affiliated with the SEQCROW authors.
 SEQCROW (`QChASM/SEQCROW`) is **GPL-3.0** open source. Its GitHub metadata
 declares `GPL-3.0`, and the project is a ChimeraX bundle built on AaronTools.
 SEQItachi is GPL-3.0 or later and does not bundle SEQCROW or AaronTools.
+
+## 1.2.7 — TMS reference at the same level
+
+- The sigma(NMR) reference is now taken from the TMS calculation at the same
+  level of theory (`molecular/TMS/01_nmr.out`, PBE0-D4/def2-SVP, RKS):
+  **1H sigma_ref = 31.053 ppm**, **13C sigma_ref = 191.054 ppm**,
+  **29Si sigma_ref = 375.953 ppm**.
+- New **"From output…"** button next to *NMR ref.*: point it at a TMS (or other
+  reference) ORCA output and the mean shielding of the selected element becomes
+  sigma_ref. Use it whenever the target run uses another functional/basis or a
+  solvent model.
+- δ = sigma_ref − sigma; equivalent nuclei are averaged.
+
+With these references the E2 spectrum gives 1H −0.3 … 6.6 ppm and
+13C 9.0 … 149.2 ppm (17-C at 79.3 ppm, C18 at 9.0 ppm).
 
 ## 1.2.6 — UV/Vis and NMR
 
@@ -27,8 +42,9 @@ SEQItachi is GPL-3.0 or later and does not bundle SEQCROW or AaronTools.
   (`Diagonalized sT*s matrix ... iso=`). δ = σ_ref − σ with an editable
   reference (defaults 31.8 ppm for 1H and 195.0 ppm for 13C) and an editable
   ppm line width. Peak table and CSV export are included.
-- The reference must be computed at the same level of theory (TMS); the
-  defaults are approximate starting values, not a calibration.
+- The reference must be computed at the same level of theory (TMS). Version
+  1.2.7 replaces the initial approximate defaults with the TMS values of
+  `molecular/TMS` and adds the *From output…* button.
 
 ## Implemented in 1.0.0
 
