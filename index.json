@@ -2,7 +2,7 @@
   "schema": 1,
   "name": "QAH Git Marketplace",
   "description": "Plugins for Quantum Analysis Helper, stored in Git.",
-  "updated": "2026-11-10T13:08:38Z",
+  "updated": "2026-11-10T13:16:43Z",
   "plugins": [
     {
       "id": "git_plugin_marketplace",
@@ -1256,9 +1256,19 @@
           "changelog": "Use the TMS reference computed at the same level (PBE0-D4/def2-SVP): sigma_ref 1H 31.053, 13C 191.054, 29Si 375.953 ppm. New 'From output...' button loads any reference-compound ORCA output and averages its shieldings per element. E2 with these references: 1H -0.3..6.6 ppm, 13C 9.0..149.2 ppm (17-C 79.3, C18 9.0).",
           "published": "2026-11-10T13:08:38Z",
           "yanked": false
+        },
+        {
+          "version": "1.2.8",
+          "path": "plugins/seqitachi/1.2.8/seqitachi-1.2.8.qplugin.zip",
+          "url": "",
+          "sha256": "1b5aa35adc6eca8f70702f8fd3e0eb5b07c12cf4b1ff73be7c7eb8a9350701f2",
+          "size": 41574,
+          "changelog": "The plot now follows the loaded file: an NMR-only output auto-selects 1H/13C NMR and a UV-only output shows the broadened UV/Vis. Realistic NMR line widths (1H 0.01 ppm, 13C 0.05 ppm) instead of merging lines into a band; new sticks overlay (default on) with one line per nucleus.",
+          "published": "2026-11-10T13:16:43Z",
+          "yanked": false
         }
       ],
-      "version": "1.2.7"
+      "version": "1.2.8"
     },
     {
       "id": "sqs_generator",

@@ -1,6 +1,6 @@
 # SEQItachi
 
-Category: **Analysis** · Version 1.2.7
+Category: **Analysis** · Version 1.2.8
 
 A QAH-native structure and quantum-chemistry workbench inspired by
 **SEQCROW** for ChimeraX. It is an independent implementation: no SEQCROW code
@@ -11,6 +11,19 @@ is copied, and it is not affiliated with the SEQCROW authors.
 SEQCROW (`QChASM/SEQCROW`) is **GPL-3.0** open source. Its GitHub metadata
 declares `GPL-3.0`, and the project is a ChimeraX bundle built on AaronTools.
 SEQItachi is GPL-3.0 or later and does not bundle SEQCROW or AaronTools.
+
+## 1.2.8 — the plot follows the file
+
+- Loading an output now **auto-selects the matching plot**: an NMR-only file
+  switches to 1H/13C NMR, a UV-only file shows the broadened UV/Vis. Before,
+  the selector stayed on *Absorbance* and the tab looked like it had ignored
+  the file.
+- Realistic NMR line widths: **1H 0.01 ppm**, **13C 0.05 ppm** (about 4 Hz at
+  400/100 MHz). The previous 1.0 ppm 13C default merged nearby lines into a
+  band.
+- New **sticks** overlay (on by default) draws one vertical line per computed
+  nucleus, as in a normal NMR spectrum.
+- The line-width control now has a Hz/ppm hint in its tooltip.
 
 ## 1.2.7 — TMS reference at the same level
 
