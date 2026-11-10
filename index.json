@@ -2,7 +2,7 @@
   "schema": 1,
   "name": "QAH Git Marketplace",
   "description": "Plugins for Quantum Analysis Helper, stored in Git.",
-  "updated": "2026-11-09T19:43:16Z",
+  "updated": "2026-11-10T12:49:36Z",
   "plugins": [
     {
       "id": "git_plugin_marketplace",
@@ -1144,7 +1144,7 @@
       "id": "seqitachi",
       "name": "SEQItachi",
       "author": "Acxel Orozco",
-      "description": "QAH-native structure and quantum-chemistry workbench inspired by SEQCROW. Imports XYZ and Gaussian/ORCA/Psi4/Q-Chem outputs, edits structures, builds QM inputs, parses energies/orbitals/frequencies/excitations, plots intensity-aware IR/Raman/VCD spectra with frequency scaling and Boltzmann conformer averaging, computes RRHO thermochemistry, approximates Sterimol/cone angle/buried volume, and slices Gaussian cube files.",
+      "description": "QAH-native structure and quantum-chemistry workbench inspired by SEQCROW. Imports XYZ and Gaussian/ORCA/Psi4/Q-Chem outputs, edits structures, builds QM inputs, parses energies/orbitals/frequencies/excitations/NMR shieldings, plots intensity-aware IR/Raman/VCD spectra and broadened UV/Vis and 1H/13C NMR spectra with frequency scaling and Boltzmann conformer averaging, computes RRHO thermochemistry, approximates Sterimol/cone angle/buried volume, and slices Gaussian cube files.",
       "category": "analysis",
       "type": "python",
       "dependencies": [],
@@ -1236,9 +1236,19 @@
           "changelog": "1.2.5: adds Save plot for the current spectra figure. Supports PDF and SVG vector output, PNG, and JPEG/TIFF when Pillow is available, with a 72-1200 DPI control for raster output. Verified on the real water B3LYP output with auto range.",
           "published": "2026-11-09T03:02:38Z",
           "yanked": false
+        },
+        {
+          "version": "1.2.6",
+          "path": "plugins/seqitachi/1.2.6/seqitachi-1.2.6.qplugin.zip",
+          "url": "",
+          "sha256": "697c2d8d8654b984c2537d9dfb773d22cb6ddcda1db84485a1bc3e04553ebfc4",
+          "size": 39899,
+          "changelog": "Fix ORCA 6 TD-DFT UV/Vis parsing (3-token transition label + eV column); broaden UV/Vis in energy; add 1H/13C NMR spectra from ORCA NMR isotropic shieldings with editable reference, line width, peak table and CSV export; UV/Vis-only outputs use the full figure.",
+          "published": "2026-11-10T12:49:36Z",
+          "yanked": false
         }
       ],
-      "version": "1.2.5"
+      "version": "1.2.6"
     },
     {
       "id": "sqs_generator",

@@ -1,6 +1,6 @@
 # SEQItachi
 
-Category: **Analysis** · Version 1.2.5
+Category: **Analysis** · Version 1.2.6
 
 A QAH-native structure and quantum-chemistry workbench inspired by
 **SEQCROW** for ChimeraX. It is an independent implementation: no SEQCROW code
@@ -11,6 +11,24 @@ is copied, and it is not affiliated with the SEQCROW authors.
 SEQCROW (`QChASM/SEQCROW`) is **GPL-3.0** open source. Its GitHub metadata
 declares `GPL-3.0`, and the project is a ChimeraX bundle built on AaronTools.
 SEQItachi is GPL-3.0 or later and does not bundle SEQCROW or AaronTools.
+
+## 1.2.6 — UV/Vis and NMR
+
+- **Fixed ORCA 6 UV/Vis parsing.** The absorption table now accepts the
+  three-token transition label (`0-1A -> 1-3A`) and the extra `Energy (eV)`
+  column that ORCA 6 introduced. Previously every row was discarded and the
+  panel reported "No excitations" even though the output contained the table.
+- Optional `multiplicity` and `energy_cm` are kept per excitation.
+- **UV/Vis broadening is now done in energy (eV, default σ = 0.20 eV)** instead
+  of a constant 0.15 nm, which produced needles in the visible.
+- A UV/Vis-only output uses the full figure instead of an empty half panel, and
+  exports an excitation table plus the broadened curve as CSV.
+- **New 1H and 13C NMR spectra** from ORCA `! NMR` isotropic shieldings
+  (`Diagonalized sT*s matrix ... iso=`). δ = σ_ref − σ with an editable
+  reference (defaults 31.8 ppm for 1H and 195.0 ppm for 13C) and an editable
+  ppm line width. Peak table and CSV export are included.
+- The reference must be computed at the same level of theory (TMS); the
+  defaults are approximate starting values, not a calibration.
 
 ## Implemented in 1.0.0
 
@@ -71,7 +89,8 @@ Display:
 - multiple conformers with Boltzmann weights, per-conformer components and a
   weighted total;
 - experimental CSV overlay;
-- UV/Vis spectrum (Gaussian broadening);
+- UV/Vis spectrum (broadened in energy) and 1H/13C NMR from isotropic
+  shieldings (ORCA `! NMR`), with editable reference and line width;
 - frequency/excitation tables plus CSV export of peaks and curve data;
 - **Save plot…** for the current figure as PDF/SVG (vector) or PNG, plus JPEG/TIFF when Pillow is available, with a configurable DPI;
 - RRHO thermochemistry: ZPE, thermal correction, entropy and Gibbs correction
