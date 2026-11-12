@@ -3,7 +3,7 @@
 Plot and analyse post-processing output for **Quantum ESPRESSO**, **CP2K** and
 **VASP**: DOS, PDOS, band structures, potentials and volumetric fields.
 
-Version 1.1.2 adds a pure-Python VASP field layer (streaming reader; correct
+Version 1.1.3 adds a pure-Python VASP field layer (streaming reader; correct
 VASP augmentation-occupancy parsing). No Perl, no VTST scripts and
 no external executables are needed.
 
