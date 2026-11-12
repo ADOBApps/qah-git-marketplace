@@ -2,7 +2,7 @@
   "schema": 1,
   "name": "QAH Git Marketplace",
   "description": "Plugins for Quantum Analysis Helper, stored in Git.",
-  "updated": "2026-11-12T19:15:15Z",
+  "updated": "2026-11-12T19:33:32Z",
   "plugins": [
     {
       "id": "git_plugin_marketplace",
@@ -458,17 +458,25 @@
       "id": "post_process_plotter",
       "name": "Post Process Plotter",
       "author": "Acxel Orozco",
-      "description": "Plot and analyse post-processing output for Quantum ESPRESSO, CP2K and VASP: DOS, PDOS, band structures, potentials, and volumetric fields (CHGCAR/LOCPOT/PARCHG/ELFCAR) with planar averages, vacuum levels, work functions, charge sums/differences and Gaussian cube export. Pure Python; no Perl or external executables required.",
+      "description": "Post-processing workbench for VASP, Quantum ESPRESSO and CP2K: band structures, DOS, PDOS, potentials and work functions, plus volumetric VASP fields (CHGCAR/LOCPOT/PARCHG/ELFCAR) with planar averages, vacuum levels, charge sums/differences and Gaussian cube export. Pure Python, with a terminal CLI and no Perl or external executables.",
       "category": "analysis",
       "type": "python",
       "dependencies": [
         "numpy",
-        "re",
         "matplotlib"
       ],
-      "requires_qah": "",
+      "requires_qah": "2.0.8",
       "homepage": "",
-      "tags": [],
+      "tags": [
+        "VASP",
+        "Quantum ESPRESSO",
+        "CP2K",
+        "DOS",
+        "band structure",
+        "work function",
+        "charge density",
+        "cube"
+      ],
       "price": 0.0,
       "currency": "USD",
       "price_model": "free",
@@ -494,9 +502,19 @@
           "changelog": "Packaging fix: hidden directories (agent state .state/) are no longer shipped; the marketplace builder now skips every hidden path. Repository keeps the user manual in docs/ (documentation.tex, references.bib, documentation.pdf) and the git-ignored agent state in .state/. No numerical change since 1.1.1 (augmentation + streaming fixes).",
           "published": "2026-11-12T19:14:49Z",
           "yanked": false
+        },
+        {
+          "version": "1.2.0",
+          "path": "plugins/post_process_plotter/1.2.0/post_process_plotter-1.2.0.qplugin.zip",
+          "url": "",
+          "sha256": "0bb7985a86c88d06b6c6383b668194441672f4ea378f55c34ce18c50d07c14f1",
+          "size": 131521,
+          "changelog": "Plugin-wide improvements: terminal CLI (post_process_cli.py: detect, bands, dos, pdos, potential, vasp info/avg/workfunction/cube/sum/diff, doctor; --json/--csv/--plot), VASP file detection in file_detector, QE PDOS header parsing fixed (unit token no longer becomes an orbital label), QE dispatch fixed in UnifiedAnalyzer (the old code imported itself), every tab wrapped in a scroll area for 700x500, new plugin icon (SVG + 256px PNG), docs updated. No change to the validated VASP numerics.",
+          "published": "2026-11-12T19:33:32Z",
+          "yanked": false
         }
       ],
-      "version": "1.1.3"
+      "version": "1.2.0"
     },
     {
       "id": "protonation_lab",
