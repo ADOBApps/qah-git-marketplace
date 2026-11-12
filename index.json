@@ -2,7 +2,7 @@
   "schema": 1,
   "name": "QAH Git Marketplace",
   "description": "Plugins for Quantum Analysis Helper, stored in Git.",
-  "updated": "2026-11-12T19:15:07Z",
+  "updated": "2026-11-12T19:15:15Z",
   "plugins": [
     {
       "id": "git_plugin_marketplace",
@@ -483,16 +483,6 @@
           "size": 106557,
           "changelog": "VASP volumetric support, pure Python (no Perl/VTST): CHGCAR/LOCPOT/PARCHG/ELFCAR reader and writer with real VASP headers, blank lines, spin blocks and augmentation-occupancy sections; planar and macroscopic averages along a/b/c; vacuum levels, work function and ionisation potential (E_F from OUTCAR, VBM from EIGENVAL); electron integration; trilinear value-at-point; Gaussian cube export (bohr/e-bohr^3); weighted sum/difference that keeps the file VASP-readable; new 'VASP Charge' tab and a standalone CLI. Validated against the four thesis LOCPOT work functions (4.2703, 4.0991, 4.0626, 4.3032 eV).",
           "published": "2026-11-12T18:52:38Z",
-          "yanked": false
-        },
-        {
-          "version": "1.1.2",
-          "path": "plugins/post_process_plotter/1.1.2/post_process_plotter-1.1.2.qplugin.zip",
-          "url": "",
-          "sha256": "4da77f8d2690fed140acb46b523abd291e00ce67311db88e8389abbc2f97bea9",
-          "size": 112049,
-          "changelog": "Package hygiene: the agent state folder is now hidden (.state/) so it is never shipped; user documentation stays in the repository under docs/ (documentation.tex, references.bib, documentation.pdf). No code change since 1.1.1.",
-          "published": "2026-11-12T19:13:48Z",
           "yanked": false
         },
         {
