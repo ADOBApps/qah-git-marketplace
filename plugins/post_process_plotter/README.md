@@ -3,7 +3,7 @@
 Plot and analyse post-processing output for **Quantum ESPRESSO**, **CP2K** and
 **VASP**: DOS, PDOS, band structures, potentials and volumetric fields.
 
-Version 1.1.1 adds a pure-Python VASP field layer (streaming reader; correct
+Version 1.1.2 adds a pure-Python VASP field layer (streaming reader; correct
 VASP augmentation-occupancy parsing). No Perl, no VTST scripts and
 no external executables are needed.
 
@@ -74,7 +74,7 @@ interpolation) and checks four real LOCPOT files against the work functions in
   units, validation, limitations, credits.
 - `docs/documentation.tex` + `docs/references.bib` — LaTeX sources; rebuild with
   `cd docs && pdflatex documentation && bibtex documentation && pdflatex documentation && pdflatex documentation`.
-- `_state/` — **git-ignored** working state for the next agent (`STATE.json`,
+- `.state/` — **git-ignored** working state for the next agent (`STATE.json`,
   `NOTES.md`): validation numbers, format gotchas, decisions and next steps.
 
 ## Credits
