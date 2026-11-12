@@ -2,7 +2,7 @@
   "schema": 1,
   "name": "QAH Git Marketplace",
   "description": "Plugins for Quantum Analysis Helper, stored in Git.",
-  "updated": "2026-11-12T19:14:49Z",
+  "updated": "2026-11-12T19:15:07Z",
   "plugins": [
     {
       "id": "git_plugin_marketplace",
@@ -483,16 +483,6 @@
           "size": 106557,
           "changelog": "VASP volumetric support, pure Python (no Perl/VTST): CHGCAR/LOCPOT/PARCHG/ELFCAR reader and writer with real VASP headers, blank lines, spin blocks and augmentation-occupancy sections; planar and macroscopic averages along a/b/c; vacuum levels, work function and ionisation potential (E_F from OUTCAR, VBM from EIGENVAL); electron integration; trilinear value-at-point; Gaussian cube export (bohr/e-bohr^3); weighted sum/difference that keeps the file VASP-readable; new 'VASP Charge' tab and a standalone CLI. Validated against the four thesis LOCPOT work functions (4.2703, 4.0991, 4.0626, 4.3032 eV).",
           "published": "2026-11-12T18:52:38Z",
-          "yanked": false
-        },
-        {
-          "version": "1.1.1",
-          "path": "plugins/post_process_plotter/1.1.1/post_process_plotter-1.1.1.qplugin.zip",
-          "url": "",
-          "sha256": "0a0130ca2648ad3230e94c274da013167da37a368955f6c1c7218e3a758a9cf6",
-          "size": 111926,
-          "changelog": "Real-CHGCAR fixes: VASP augmentation sections are flat value arrays (not one record per line) and are now parsed and rewritten correctly; the reader is streaming and accepts dtype=float32 for huge grids; writers stream instead of building gigabyte strings. Validated on a 934 MB Ti144O288 CHGCAR (53.76M points, 432 augmentation sections, 3456.000004 electrons = NELECT) with a write/reread cycle. Adds docs/documentation.tex+pdf with the Henkelman VTST citation and references.",
-          "published": "2026-11-12T19:11:29Z",
           "yanked": false
         },
         {
