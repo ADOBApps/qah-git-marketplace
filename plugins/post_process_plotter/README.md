@@ -3,7 +3,8 @@
 Plot and analyse post-processing output for **Quantum ESPRESSO**, **CP2K** and
 **VASP**: DOS, PDOS, band structures, potentials and volumetric fields.
 
-Version 1.1.0 adds a pure-Python VASP field layer. No Perl, no VTST scripts and
+Version 1.1.1 adds a pure-Python VASP field layer (streaming reader; correct
+VASP augmentation-occupancy parsing). No Perl, no VTST scripts and
 no external executables are needed.
 
 ## Tabs
@@ -66,6 +67,26 @@ TIO2_SN_VASP=~/TiO2-Sn/vasp python test_vasp_charge.py
 Builds synthetic spin-polarised CHGCARs (round trip, arithmetic, cube, periodic
 interpolation) and checks four real LOCPOT files against the work functions in
 `TiO2-Sn/vasp/analysis/work_function.py`.
+
+## Documentation
+
+- `docs/documentation.pdf` — user manual (5 pages): GUI, CLI, VASP format,
+  units, validation, limitations, credits.
+- `docs/documentation.tex` + `docs/references.bib` — LaTeX sources; rebuild with
+  `cd docs && pdflatex documentation && bibtex documentation && pdflatex documentation && pdflatex documentation`.
+- `_state/` — **git-ignored** working state for the next agent (`STATE.json`,
+  `NOTES.md`): validation numbers, format gotchas, decisions and next steps.
+
+## Credits
+
+The operations implemented here were designed after studying the VTST scripts
+of the **Henkelman group** (University of Texas at Austin), in particular
+`chgsum.pl`, `chgdiff.pl`, `chg2cube.pl`, `chgsplit.pl` and `chgvalue.pl`.
+Those scripts were used **only as a behavioural reference and numerical
+oracle**: no Perl code is executed, bundled or translated. See
+`docs/documentation.pdf` §8 for the full citation and references
+(Henkelman 2006; Sanville 2007; Tang 2009; Yu & Trinkle 2011) and
+`docs/references.bib`.
 
 ## Implementation
 
