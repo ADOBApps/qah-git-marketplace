@@ -46,7 +46,9 @@ Every data command supports `--json`, `--csv FILE`, `--plot FILE` and `--dpi`.
 
 ## VASP Charge tab
 
-1. **Browse…** a CHGCAR, LOCPOT, PARCHG or ELFCAR and press **Load**.
+1. **Browse…** a CHGCAR, LOCPOT, PARCHG or ELFCAR and press **Load**. Large
+   files are read in a worker thread; a **progress bar** and a **Cancel** button
+   appear while the grid is parsed (a 934 MB, 53.8 M-point CHGCAR takes ~40 s).
 2. The header panel shows kind, atom counts, grid, cell volume and data blocks
    (for a spin-polarised CHGCAR: Total and Magnetization).
 3. Choose the axis (a/b/c) and an optional macroscopic averaging window.

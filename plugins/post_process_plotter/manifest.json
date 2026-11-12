@@ -1,7 +1,7 @@
 {
   "name": "Post Process Plotter",
   "id": "post_process_plotter",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "author": "Acxel Orozco",
   "description": "Post-processing workbench for VASP, Quantum ESPRESSO and CP2K: band structures, DOS, PDOS, potentials and work functions, plus volumetric VASP fields (CHGCAR/LOCPOT/PARCHG/ELFCAR) with planar averages, vacuum levels, charge sums/differences and Gaussian cube export. Pure Python, with a terminal CLI and no Perl or external executables.",
   "type": "python",
