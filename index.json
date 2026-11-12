@@ -2,7 +2,7 @@
   "schema": 1,
   "name": "QAH Git Marketplace",
   "description": "Plugins for Quantum Analysis Helper, stored in Git.",
-  "updated": "2026-11-10T13:16:43Z",
+  "updated": "2026-11-12T18:52:38Z",
   "plugins": [
     {
       "id": "git_plugin_marketplace",
@@ -453,6 +453,40 @@
         }
       ],
       "version": "1.2.13"
+    },
+    {
+      "id": "post_process_plotter",
+      "name": "Post Process Plotter",
+      "author": "Acxel Orozco",
+      "description": "Plot and analyse post-processing output for Quantum ESPRESSO, CP2K and VASP: DOS, PDOS, band structures, potentials, and volumetric fields (CHGCAR/LOCPOT/PARCHG/ELFCAR) with planar averages, vacuum levels, work functions, charge sums/differences and Gaussian cube export. Pure Python; no Perl or external executables required.",
+      "category": "analysis",
+      "type": "python",
+      "dependencies": [
+        "numpy",
+        "re",
+        "matplotlib"
+      ],
+      "requires_qah": "",
+      "homepage": "",
+      "tags": [],
+      "price": 0.0,
+      "currency": "USD",
+      "price_model": "free",
+      "license_type": "free",
+      "max_activations": 50,
+      "versions": [
+        {
+          "version": "1.1.0",
+          "path": "plugins/post_process_plotter/1.1.0/post_process_plotter-1.1.0.qplugin.zip",
+          "url": "",
+          "sha256": "5ec6c02f4a43f7266e226dc2f6d83a6f6a8c2b77c38731e7dd9eaae22eeb4d9f",
+          "size": 106557,
+          "changelog": "VASP volumetric support, pure Python (no Perl/VTST): CHGCAR/LOCPOT/PARCHG/ELFCAR reader and writer with real VASP headers, blank lines, spin blocks and augmentation-occupancy sections; planar and macroscopic averages along a/b/c; vacuum levels, work function and ionisation potential (E_F from OUTCAR, VBM from EIGENVAL); electron integration; trilinear value-at-point; Gaussian cube export (bohr/e-bohr^3); weighted sum/difference that keeps the file VASP-readable; new 'VASP Charge' tab and a standalone CLI. Validated against the four thesis LOCPOT work functions (4.2703, 4.0991, 4.0626, 4.3032 eV).",
+          "published": "2026-11-12T18:52:38Z",
+          "yanked": false
+        }
+      ],
+      "version": "1.1.0"
     },
     {
       "id": "protonation_lab",

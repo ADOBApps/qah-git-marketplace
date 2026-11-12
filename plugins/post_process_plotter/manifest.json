@@ -1,0 +1,25 @@
+{
+  "name": "Post Process Plotter",
+  "id": "post_process_plotter",
+  "version": "1.1.0",
+  "author": "Acxel Orozco",
+  "description": "Plot and analyse post-processing output for Quantum ESPRESSO, CP2K and VASP: DOS, PDOS, band structures, potentials, and volumetric fields (CHGCAR/LOCPOT/PARCHG/ELFCAR) with planar averages, vacuum levels, work functions, charge sums/differences and Gaussian cube export. Pure Python; no Perl or external executables required.",
+  "type": "python",
+  "category": "analysis",
+  "main": "__init__.py",
+  "dependencies": [
+    "numpy",
+    "re",
+    "matplotlib"
+  ],
+  "marketplace": {
+    "price": 0.0,
+    "currency": "USD",
+    "price_model": "free",
+    "payment_required": false
+  },
+  "license": {
+    "type": "free",
+    "max_activations": 50
+  }
+}
