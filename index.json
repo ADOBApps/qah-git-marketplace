@@ -1542,9 +1542,19 @@
           "changelog": "1.9.2: adsorption calculation runs in a background thread.",
           "published": "2026-11-14T01:30:00Z",
           "yanked": false
+        },
+        {
+          "version": "1.10.0",
+          "path": "plugins/adobmd_gui/1.10.0/adobmd_gui-1.10.0.qplugin.zip",
+          "url": "",
+          "sha256": "74df0cb59f6c28e2ae7bc7a8e122c623089a599bbd7dd2ef970ae3a078f9a0b8",
+          "size": 58652731,
+          "changelog": "1.10.0: bundles molff and periodic_ff plugins; importers copy the matching plugin next to the generated .ff.",
+          "published": "2026-11-14T02:00:00Z",
+          "yanked": false
         }
       ],
-      "version": "1.9.2"
+      "version": "1.10.0"
     }
   ],
   "themes": [
