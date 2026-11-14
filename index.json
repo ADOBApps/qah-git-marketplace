@@ -1471,6 +1471,50 @@
         }
       ],
       "version": "1.2.2"
+    },
+    {
+      "id": "adobmd_gui",
+      "name": "ADOBMD GUI",
+      "author": "Acxel Orozco",
+      "description": "Complete Graphic User Interface for Advanced Development of Binary Molecular Dynamics: 3D visualizer for ADOBMD data, molecule converter (CIF/PDB/SDF/XYZ), and importers for OpenKIM archives, VASP (POSCAR/OUTCAR), Quantum ESPRESSO (pw.x) and ORCA (Hessian + MBIS/CHELPG -> molecule force field).",
+      "category": "tools",
+      "type": "python",
+      "dependencies": [
+        "numpy",
+        "matplotlib",
+        "pandas",
+        "sklearn",
+        "scipy"
+      ],
+      "requires_qah": "2.0.8",
+      "homepage": "",
+      "tags": [
+        "md",
+        "adobmd",
+        "visualizer",
+        "kim",
+        "vasp",
+        "qe",
+        "orca"
+      ],
+      "price": 0.0,
+      "currency": "USD",
+      "price_model": "free",
+      "license_type": "free",
+      "max_activations": 100,
+      "versions": [
+        {
+          "version": "1.8.0",
+          "path": "plugins/adobmd_gui/1.8.0/adobmd_gui-1.8.0.qplugin.zip",
+          "url": "",
+          "sha256": "27a7558db3314a35567f8b6ae6bf708715a69f252a556ce8db8bf17d1135c958",
+          "size": 58200631,
+          "changelog": "1.8.0: adds the Importers tab (OpenKIM, VASP, Quantum ESPRESSO, ORCA), the ADOBMD icon and the updated libadobmd libraries.",
+          "published": "2026-11-13T23:05:00Z",
+          "yanked": false
+        }
+      ],
+      "version": "1.8.0"
     }
   ],
   "themes": [
