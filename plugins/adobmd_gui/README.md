@@ -63,3 +63,19 @@ The **Importers** tab contains three front ends, backed by the modules in
 
 `periodic.params` from the KIM tab can be passed to the VASP/QE tabs so the
 generated force field uses the same parameter set.
+
+
+## Adsorption
+
+The **Adsorption** tab computes the rigid-slab adsorption energy of a molecule
+on a periodic slab:
+
+```
+E_ads = E(complex) - E(slab) - E(molecule, gas)
+```
+
+Inputs: the complex `CONTCAR`, the molecule `.ff` and `.data`, its
+`_molff.params`, and the `periodic_ff.so` plugin. The nonbonded terms use the
+periodic plugin (Ewald + Buckingham/LJ, 1-2/1-3 exclusions); the molecule's
+harmonic bonded terms come from its `.ff`. The result is reported in eV and
+kcal/mol together with the component energies.
