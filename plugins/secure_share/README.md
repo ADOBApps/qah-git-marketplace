@@ -71,6 +71,23 @@ its inbox under a per-peer folder, with the original name and a timestamp.
 envelope. The receiver extracts it safely (no absolute paths, `..` or symlinks)
 into the inbox.
 
+### Large files and folders (split transfer)
+
+Leave **Split large transfers over 50 MB (20 MB parts)** enabled (default).
+Files and folders above 50 MB are sent as a manifest plus 20 MB encrypted parts;
+the receiver joins and verifies them automatically.
+
+- 20 MB parts are relay-safe: each encrypted envelope is about 36 MB, below the
+  ~90 MB Git relay limit.
+- Maximum split transfer size: **2 GB**.
+- Each part has its own SHA-256 check; the joined file/folder has a final
+  SHA-256 check.
+- If a part is missing, the transfer remains incomplete and is not shown as a
+  received file. Parts are kept on disk for a retry; a completed transfer is
+  joined automatically, including after a restart.
+- This is not a resumable stream yet; a failed transfer may require resending
+  the missing parts or the whole transfer.
+
 ### Inbox
 
 Received items are listed in **Inbox**. Double-click or **Open** to open a file
@@ -161,9 +178,11 @@ Windows. Do not commit it.
 - The pairing invite is a bearer secret. Transfer it only through a trusted
   channel and do not leave it in chat history.
 - LAN discovery metadata is not encrypted.
-- Files are encrypted in memory; very large transfers use memory. Limits:
-  **100 MB per file**, **200 MB per folder**.
-- No chunking/resume; a failed large LAN transfer must be retried.
+- Normal single-envelope transfers are encrypted in memory. Limits:
+  **100 MB per file**, **200 MB per folder**, **~90 MB per relay envelope**.
+- Split transfers (default for items over 50 MB) use 20 MB parts, up to **2 GB**
+  total. The receiver joins and verifies them automatically. No automatic retry
+  or resumable stream yet; a missing part leaves the transfer incomplete.
 - No automatic updates, no central server, no accounts.
 
 ---
@@ -177,7 +196,7 @@ Windows. Do not commit it.
 | LAN port busy | The next free port is used; the invite advertises the actual port. |
 | Relay 401/403 | Token invalid or missing Contents read/write on the private repo. |
 | Relay 404 | Wrong owner/repo/branch, or token has no access. |
-| Folder rejected | It exceeds 200 MB or contains a symlink/unsafe path. |
+| Folder rejected | It exceeds 200 MB with split transfer disabled, or contains a symlink/unsafe path. |
 | Text not on clipboard | Enable **Copy received text to the clipboard** in Settings. |
 
 ---

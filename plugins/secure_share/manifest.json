@@ -1,9 +1,9 @@
 {
   "name": "Secure Share",
   "id": "secure_share",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "author": "Acxel Orozco",
-  "description": "Encrypted text, file and folder exchange between QAH computers over the LAN or through a private Git relay, with per-device key pairing.",
+  "description": "Encrypted text, file and folder exchange between QAH computers over the LAN or through a private Git relay, with per-device key pairing. Large transfers use verified 20 MB split parts with automatic join.",
   "type": "python",
   "category": "tools",
   "main": "__init__.py",
