@@ -79,3 +79,56 @@ Inputs: the complex `CONTCAR`, the molecule `.ff` and `.data`, its
 periodic plugin (Ewald + Buckingham/LJ, 1-2/1-3 exclusions); the molecule's
 harmonic bonded terms come from its `.ff`. The result is reported in eV and
 kcal/mol together with the component energies.
+
+
+## Method notes: use the same level of theory
+
+An adsorption energy is
+`E_ads = E(complex) - E(slab) - E(molecule)`, a difference of three large
+numbers. It is only meaningful if the three terms use the **same level of
+theory**:
+
+- same functional (and Hubbard `U`, if any);
+- same basis set / pseudopotentials and plane-wave cutoff;
+- same dispersion correction (D3/D4);
+- same charge model (MBIS, Bader/DDEC, or formal);
+- same cell, vacuum and k-mesh; the gas molecule in a box large enough that
+  its images do not interact, but otherwise identical settings.
+
+Do not mix, for example, a PBE+U slab with a PBE0-D4 gas molecule, or a DFT
+complex with a force-field slab: those differences are not adsorption.
+
+The rule also applies inside the force field: the molecule force field and the
+slab parameters must come from the same level (or be calibrated against it),
+and the gas reference must use the same charge and Lennard-Jones model as the
+complex. A **rigid** comparison at the DFT geometry is the strict test;
+comparing a force-field-relaxed minimum with a DFT single point mixes two
+geometries and two energy surfaces.
+
+## Appendix: worked example (E2 / EE2 on TiO2(101))
+
+System: 2x1 anatase TiO2(101) slab (72 atoms) + E2 (44) / EE2 (46) = 116/118
+atoms, 40 A vacuum.
+
+1. **Importers -> VASP (or Quantum ESPRESSO)**: convert the complex `CONTCAR`,
+   the bare slab and the gas molecule with the same charge model.
+2. **Importers -> ORCA**: fit the molecule force field from the optimized XYZ,
+   the `.hess` and the `.property.txt`; check the reported Hessian correlation
+   and frequency RMSE.
+3. **Adsorption**: select the complex, the molecule `.ff`/`.data`/
+   `_molff.params` and `periodic_ff`; compute `E_ads` (rigid), optionally
+   relax the molecule (slab fixed, threaded).
+
+Rigid results at the DFT geometry:
+
+| molecule | orientation | E_ads (FF) | E_ads (DFT, prelim.) |
+|---|---|---:|---:|
+| E2 | upright | -0.136 eV | -0.287 eV |
+| E2 | OH down | **-0.286 eV** | **-0.305 eV** |
+| EE2 | upright | -0.137 eV | -0.403 eV |
+| EE2 | OH down | broken DFT cell | -0.346 eV |
+
+The E2 OH-down value agrees with DFT to 0.02 eV. The force-field-relaxed value
+(-0.445 eV) is deeper because the classical model lacks electronic/steric
+repulsion; it must be compared with a DFT-relaxed complex, not with a DFT
+single point.
