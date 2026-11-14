@@ -1532,9 +1532,19 @@
           "changelog": "1.9.1: optional molecule relaxation in the adsorption tab.",
           "published": "2026-11-14T01:00:00Z",
           "yanked": false
+        },
+        {
+          "version": "1.9.2",
+          "path": "plugins/adobmd_gui/1.9.2/adobmd_gui-1.9.2.qplugin.zip",
+          "url": "",
+          "sha256": "ae0bc9f0cd5b51ad0365892a75d7d9ac70e40865361a1da785e79aad5a92655f",
+          "size": 58209352,
+          "changelog": "1.9.2: adsorption calculation runs in a background thread.",
+          "published": "2026-11-14T01:30:00Z",
+          "yanked": false
         }
       ],
-      "version": "1.9.1"
+      "version": "1.9.2"
     }
   ],
   "themes": [

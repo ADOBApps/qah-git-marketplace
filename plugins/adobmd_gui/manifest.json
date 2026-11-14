@@ -1,7 +1,7 @@
 {
   "name": "ADOBMD GUI",
   "id": "adobmd_gui",
-  "version": "1.9.1",
+  "version": "1.9.2",
   "author": "Acxel Orozco",
   "description": "Complete Graphic User Interface for Advanced Development of Binary Molecular Dynamics: 3D visualizer, molecule converter, importers (OpenKIM, VASP, Quantum ESPRESSO, ORCA) and a rigid-slab adsorption-energy calculator.",
   "type": "python",
