@@ -65,6 +65,119 @@ The **Importers** tab contains three front ends, backed by the modules in
 generated force field uses the same parameter set.
 
 
+## Creating a molecule force field from ORCA files
+
+A molecule potential is **parameter-driven**: one generic plugin (`molff`)
+serves every molecule, and the per-molecule data live in
+`<stem>_molff.params`. No per-molecule shared library is compiled.
+
+### Required ORCA output
+
+All three files must come from the **same** calculation, at the same level of
+theory:
+
+| file | produced by | content |
+|---|---|---|
+| `*.xyz` | `Opt` / `Opt Freq` | optimized geometry (the CLI can read the ORCA output instead with `--out`) |
+| `*.hess` | `Freq` / `AnFreq` | Cartesian Hessian (Eh/bohr^2) and harmonic frequencies |
+| `*.property.txt` | MBIS or CHELPG | per-atom charges (`$SCF_MBIS_Population_Analysis` / `$SCF_CHELPG_Population_Analysis`) |
+
+Minimal ORCA input:
+
+```
+! PBE0 def2-SVP def2/J D4 Opt Freq
+%output Print[P_MBIS] 1 end
+* xyzfile 0 1 molecule.xyz
+```
+
+The geometry must be a true minimum; a saddle point carries an imaginary mode
+into the fit.
+
+### Command line
+
+`orca2adobmd_cli.py` (also available as `importers/orca2adobmd_cli.py`):
+
+```bash
+OPT="--xyz molecule.xyz --hess molecule.hess"
+OPT="$OPT --property molecule.property.txt --charges mbis"
+
+python3 orca2adobmd_cli.py info     $OPT   # atoms, topology, charge sum
+python3 orca2adobmd_cli.py topology $OPT   # explicit bond list (1-based)
+python3 orca2adobmd_cli.py fit      $OPT   # force constants + frequency RMSE
+python3 orca2adobmd_cli.py validate $OPT   # same comparison, no output files
+python3 orca2adobmd_cli.py export   $OPT \
+    --outdir adobmd --stem molecule
+```
+
+`export` writes:
+
+| file | content |
+|---|---|
+| `molecule.json` | full parameter set and metadata |
+| `molecule_molff.params` | bonds, angles, torsions, exclusions, 1-4 scaling |
+| `molecule.ff` | atom types, `<Plugins>`, `<NonBonded>`; bonded blocks are comments (the plugin owns them) |
+| `molecule.data`, `molecule.conf` | coordinates/topology and run control |
+| `molecule_validation.json` | mode-by-mode ORCA vs FF comparison |
+
+Run from the export directory with `adobmd.x molecule.conf`; the generated
+`.ff` refers to `./molff.so` (Linux) or `./molff.dll` (Windows). `export` copies
+the bundled plugin into the output directory, so the run directory is
+self-contained.
+
+`_molff.params` is the authoritative model: bonds, angles, torsions,
+1-2/1-3 exclusions, 1-4 scaling, plus one `site i sigma epsilon charge` line per
+atom (Angstrom, kcal/mol, e). The `.ff` only supplies the atom types and the
+plugin routing; its bonded blocks are comments, so the host does not double
+count the intramolecular terms.
+
+Validated with 1 ps NVT runs (300 K set-point, 1 fs): aligned RMSD 0.08 A (E2),
+0.15 A (EE2), 0.07 A (TMS); all bonds stay within 0.05 A.
+
+Options: `--plugin-name` / `--plugin-path` change the plugin reference,
+`--intramolecular-nonbonded` enables the molecule's own LJ/Coulomb terms (needed
+in the condensed phase, not for a pure Hessian fit), and `--nsteps`,
+`--temperature`, `--dt-fs`, `--box` and `--material` fill the `.conf` template.
+
+### GUI
+
+**Importers → ORCA** exposes the same options:
+
+| field | default |
+|---|---|
+| Optimized XYZ (required) | — |
+| ORCA Hessian (required) | — |
+| ORCA charges (required) | — |
+| Charge method | MBIS |
+| Intramolecular nonbonded | off |
+| Output directory / File stem | — / `molecule` |
+| Material | `MOL` |
+| Plugin name / path | `molff` / `./molff.so` |
+| Steps / Temperature / dt | 10000 / 300 K / 1.0 fs |
+| Ewald accuracy / Slab correction | 1e-6 / off |
+
+1. select the three files;
+2. **Info** — check atom count, charge sum and topology;
+3. **Fit** — read the Hessian correlation and frequency RMSE in the log;
+4. **Export force field** — also copies the bundled `molff.so`/`molff.dll`
+   into the output directory.
+
+### Validation
+
+Fit quality is judged by the Hessian correlation (> 0.99) and the frequency
+RMSE (< ~100 cm^-1). Values for the set used here: 52, 48 and 95 cm^-1 at
+correlations 0.997, 0.997 and 0.999. Also check that the charge sum equals the
+molecular charge and that a short NVE run conserves energy.
+
+### Limitations
+
+Harmonic bonds/bends/torsions, OPLS-AA element LJ, fixed MBIS/CHELPG charges;
+no impropers, polarization, charge transfer or bond breaking. One conformer, so
+torsional barriers away from the minimum are approximate. Elements: H, C, N, O,
+F, S, P, Cl, Br, I, Si, Al, Mg, Li, Na, K, Ca, Ti, Zr, Sn; others fall back to
+a default covalent radius and the inferred topology must be checked. Metals,
+open-shell and strongly correlated systems are not validated.
+
+
 ## Adsorption
 
 The **Adsorption** tab computes the rigid-slab adsorption energy of a molecule
