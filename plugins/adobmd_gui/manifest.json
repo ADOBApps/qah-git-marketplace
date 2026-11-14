@@ -1,7 +1,7 @@
 {
   "name": "ADOBMD GUI",
   "id": "adobmd_gui",
-  "version": "1.10.1",
+  "version": "1.10.2",
   "author": "Acxel Orozco",
   "description": "Complete Graphic User Interface for ADOBMD: visualizer, converter, importers (OpenKIM, VASP, Quantum ESPRESSO, ORCA) and adsorption-energy calculator. Bundles the generic molff (molecule) and periodic_ff (Ewald/slab) plugins.",
   "type": "python",

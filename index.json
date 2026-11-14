@@ -1562,9 +1562,19 @@
           "changelog": "1.10.1: documentation of the same-level-of-theory rule and a worked adsorption example.",
           "published": "2026-11-14T02:30:00Z",
           "yanked": false
+        },
+        {
+          "version": "1.10.2",
+          "path": "plugins/adobmd_gui/1.10.2/adobmd_gui-1.10.2.qplugin.zip",
+          "url": "",
+          "sha256": "874e0503e35d50e298b9db8a0f0db10dc97c5d1caeb8c806e58091b2c1a939d7",
+          "size": 58653694,
+          "changelog": "1.10.2: example table restricted to the upright orientations.",
+          "published": "2026-11-14T03:00:00Z",
+          "yanked": false
         }
       ],
-      "version": "1.10.1"
+      "version": "1.10.2"
     }
   ],
   "themes": [

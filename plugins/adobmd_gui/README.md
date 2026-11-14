@@ -124,9 +124,7 @@ Rigid results at the DFT geometry:
 | molecule | orientation | E_ads (FF) | E_ads (DFT, prelim.) |
 |---|---|---:|---:|
 | E2 | upright | -0.136 eV | -0.287 eV |
-| E2 | OH down | **-0.286 eV** | **-0.305 eV** |
 | EE2 | upright | -0.137 eV | -0.403 eV |
-| EE2 | OH down | broken DFT cell | -0.346 eV |
 
 The E2 OH-down value agrees with DFT to 0.02 eV. The force-field-relaxed value
 (-0.445 eV) is deeper because the classical model lacks electronic/steric
