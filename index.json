@@ -1572,6 +1572,16 @@
           "changelog": "1.10.2: example table restricted to the upright orientations.",
           "published": "2026-11-14T03:00:00Z",
           "yanked": false
+        },
+        {
+          "version": "1.10.3",
+          "path": "plugins/adobmd_gui/1.10.3/adobmd_gui-1.10.3.qplugin.zip",
+          "url": "",
+          "sha256": "33a22fbe91de3da8437544e6e377c4c60c4c33b1afd52ce39d2897cc85444f36",
+          "size": 58661661,
+          "changelog": "1.10.3: the exported ORCA force field runs directly with adobmd.x (self-contained molff params, no double-counted bonded terms); documentation for the CLI and GUI workflow.",
+          "published": "2026-11-14T15:00:00Z",
+          "yanked": false
         }
       ],
       "version": "1.10.3"
