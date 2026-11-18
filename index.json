@@ -1592,9 +1592,19 @@
           "changelog": "1.10.4: importer buttons fixed (text fields were not registered, so Convert/Export raised KeyError); VASP Selective-dynamics T/F flags no longer mistaken for element symbols.",
           "published": "2026-11-17T19:40:00Z",
           "yanked": false
+        },
+        {
+          "version": "1.10.5",
+          "path": "plugins/adobmd_gui/1.10.5/adobmd_gui-1.10.5.qplugin.zip",
+          "url": "",
+          "sha256": "a676525248da2c00055f67ffcf1defe6ee63becbaa89331c14290cff73021cd2",
+          "size": 58662288,
+          "changelog": "1.10.5: MD engine loads inside the Flatpak sandbox (bundled BLAS/LuaJIT dependencies are preloaded instead of relying on $ORIGIN); libadobmd updated to v11.7.",
+          "published": "2026-11-17T20:30:00Z",
+          "yanked": false
         }
       ],
-      "version": "1.10.4"
+      "version": "1.10.5"
     }
   ],
   "themes": [
