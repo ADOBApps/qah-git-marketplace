@@ -1582,9 +1582,19 @@
           "changelog": "1.10.3: the exported ORCA force field runs directly with adobmd.x (self-contained molff params, no double-counted bonded terms); documentation for the CLI and GUI workflow.",
           "published": "2026-11-14T15:00:00Z",
           "yanked": false
+        },
+        {
+          "version": "1.10.4",
+          "path": "plugins/adobmd_gui/1.10.4/adobmd_gui-1.10.4.qplugin.zip",
+          "url": "",
+          "sha256": "37a31e216256b0ed232f6a81d89bde5c109200e7cee8c1314c8a5bf1e46c37da",
+          "size": 58661832,
+          "changelog": "1.10.4: importer buttons fixed (text fields were not registered, so Convert/Export raised KeyError); VASP Selective-dynamics T/F flags no longer mistaken for element symbols.",
+          "published": "2026-11-17T19:40:00Z",
+          "yanked": false
         }
       ],
-      "version": "1.10.3"
+      "version": "1.10.4"
     }
   ],
   "themes": [
